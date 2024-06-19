@@ -26,8 +26,10 @@ public class AdminsEntity {
     private String company;
     @Column(name = "organization")
     private String organization;
+    @Column(name = "position")
+    private String position;
     public AdminsEntity(){}
-    public AdminsEntity(String login, String password, String first_name, String middle_name, String last_name, String company, String organization) {
+    public AdminsEntity(String login, String password, String first_name, String middle_name, String last_name, String company, String organization, String position) {
         this.login = login;
         this.password = password;
         this.first_name = first_name;
@@ -35,5 +37,6 @@ public class AdminsEntity {
         this.last_name = last_name;
         this.company = company;
         this.organization = organization;
+        this.position = position;
     }
 }
