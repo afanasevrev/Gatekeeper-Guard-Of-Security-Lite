@@ -9,7 +9,7 @@ public class ClientApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ClientApplication.class.getResource("sign_in.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 200, 300);
+        Scene scene = new Scene(fxmlLoader.load(), 300, 200);
         stage.setTitle("Войти");
         stage.setScene(scene);
         stage.show();
