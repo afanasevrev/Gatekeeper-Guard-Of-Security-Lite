@@ -5,11 +5,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.SignInController" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
    <children>
-      <TextField layoutX="14.0" layoutY="38.0" prefHeight="25.0" prefWidth="270.0" promptText="Login" />
-      <PasswordField layoutX="14.0" layoutY="88.0" prefHeight="25.0" prefWidth="270.0" promptText="Password" />
-      <Button layoutX="14.0" layoutY="136.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="270.0" text="Войти в систему" />
+      <TextField fx:id="textFieldLogin" layoutX="14.0" layoutY="38.0" prefHeight="25.0" prefWidth="270.0" promptText="Login" />
+      <PasswordField fx:id="passwordField" layoutX="14.0" layoutY="88.0" prefHeight="25.0" prefWidth="270.0" promptText="Password" />
+      <Button fx:id="buttonSignIn" layoutX="14.0" layoutY="136.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="270.0" text="Войти в систему" />
    </children>
 </AnchorPane>
