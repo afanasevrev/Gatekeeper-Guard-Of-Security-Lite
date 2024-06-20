@@ -1,4 +1,4 @@
-package com.alrosa.staa.gatekeeper_client_lite;
+package com.alrosa.staa.gatekeeper_client_lite.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
