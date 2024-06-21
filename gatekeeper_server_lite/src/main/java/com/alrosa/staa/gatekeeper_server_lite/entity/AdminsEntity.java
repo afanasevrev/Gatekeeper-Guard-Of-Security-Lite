@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 /**
- * Класс для администраторов связи
+ * Класс для администраторов для связи с БД
  */
 @Getter
 @Setter
