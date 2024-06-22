@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.AdminsPageController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TabPane layoutX="14.0" layoutY="65.0" prefHeight="412.0" prefWidth="668.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Пользователи">
+          <Tab fx:id="tabUsers" text="Пользователи">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="355.0" prefWidth="668.0">
                      <children>
@@ -28,7 +28,7 @@
                               <TableColumn prefWidth="150.00003051757812" text="Уровень доступа" />
                           </columns>
                         </TableView>
-                        <TextField layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="250.0" promptText="Поиск..." />
+                        <TextField fx:id="textFieldSearchUser" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="250.0" promptText="Поиск..." />
                         <Button layoutX="275.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Поиск" />
                         <Button layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text=" Обновить список" />
                         <Button layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
