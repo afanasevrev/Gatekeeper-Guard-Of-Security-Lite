@@ -10,7 +10,7 @@
    <children>
       <ImageView fitHeight="180.0" fitWidth="135.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <TextField layoutX="180.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Фамилия" />
-      <TextField layoutX="180.0" layoutY="60.0" prefWidth="185.0" promptText="Имя" />
+      <TextField layoutX="180.0" layoutY="60.0" prefHeight="25.0" prefWidth="185.0" promptText="Имя" />
       <TextField layoutX="180.0" layoutY="105.0" prefHeight="25.0" prefWidth="185.0" promptText="Отчество" />
       <ComboBox layoutX="180.0" layoutY="150.0" prefHeight="25.0" prefWidth="185.0" promptText="Организация" />
       <ComboBox layoutX="180.0" layoutY="195.0" prefHeight="25.0" prefWidth="185.0" promptText="Подразделение" />
