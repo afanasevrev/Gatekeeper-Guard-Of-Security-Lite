@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+<AnchorPane prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="180.0" fitWidth="135.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField layoutX="180.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Фамилия" />
+      <TextField layoutX="180.0" layoutY="60.0" prefWidth="185.0" promptText="Имя" />
+      <TextField layoutX="180.0" layoutY="105.0" prefHeight="25.0" prefWidth="185.0" promptText="Отчество" />
+      <ComboBox layoutX="180.0" layoutY="150.0" prefHeight="25.0" prefWidth="185.0" promptText="Организация" />
+      <ComboBox layoutX="180.0" layoutY="195.0" prefHeight="25.0" prefWidth="185.0" promptText="Подразделение" />
+      <ComboBox layoutX="180.0" layoutY="240.0" prefHeight="25.0" prefWidth="185.0" promptText="Уровень доступа" />
+      <TextField layoutX="180.0" layoutY="285.0" prefHeight="25.0" prefWidth="185.0" promptText="Карта доступа" />
+      <Button layoutX="20.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Загрузить фото" />
+   </children>
 </AnchorPane>
