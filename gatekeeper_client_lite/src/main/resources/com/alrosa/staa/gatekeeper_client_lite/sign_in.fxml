@@ -9,6 +9,6 @@
    <children>
       <TextField fx:id="textFieldLogin" layoutX="14.0" layoutY="38.0" prefHeight="25.0" prefWidth="270.0" promptText="Login" />
       <PasswordField fx:id="passwordField" layoutX="14.0" layoutY="88.0" prefHeight="25.0" prefWidth="270.0" promptText="Password" />
-      <Button fx:id="buttonSignIn" layoutX="14.0" layoutY="136.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="270.0" text="Войти в систему" />
+      <Button fx:id="buttonSignIn" onAction="#setButtonSignIn" layoutX="14.0" layoutY="136.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="270.0" text="Войти в систему" />
    </children>
 </AnchorPane>

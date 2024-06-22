@@ -11,4 +11,8 @@ public class SignInController {
     private PasswordField passwordField = new PasswordField();
     @FXML
     private Button buttonSignIn = new Button();
+    @FXML
+    private void setButtonSignIn() {
+        
+    }
 }
