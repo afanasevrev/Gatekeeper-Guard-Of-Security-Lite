@@ -12,5 +12,5 @@ public class AdminsPageController {
     private Tab tabUsers = new Tab();
     @FXML
     private TextField textFieldSearchUser = new TextField();
-    
+
 }
