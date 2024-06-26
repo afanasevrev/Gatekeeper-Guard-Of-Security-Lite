@@ -14,4 +14,9 @@ public class UsersServiceImpl implements BoxService<UsersEntity> {
     public List<UsersEntity> readBox() {
         return usersRepository.findAll();
     }
+    @Override
+    public UsersEntity readT(Long id) {
+        UsersEntity user = usersRepository.findById(id).get();
+        return user;
+    }
 }
