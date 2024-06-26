@@ -6,8 +6,8 @@ import java.util.List;
 public class UsersServiceImpl implements BoxService<UsersEntity> {
     private UsersRepository usersRepository;
     @Override
-    public String createBox(Box<UsersEntity> entity) {
-        usersRepository.save(entity.getEntity());
+    public String createBox(UsersEntity entity) {
+        usersRepository.save(entity);
         return "Пользователь успешно добавлен";
     }
     @Override
