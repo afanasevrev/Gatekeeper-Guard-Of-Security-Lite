@@ -19,4 +19,9 @@ public class UsersServiceImpl implements BoxService<UsersEntity> {
         UsersEntity user = usersRepository.findById(id).get();
         return user;
     }
+    @Override
+    public String deleteT(Long id) {
+        
+        return null;
+    }
 }
