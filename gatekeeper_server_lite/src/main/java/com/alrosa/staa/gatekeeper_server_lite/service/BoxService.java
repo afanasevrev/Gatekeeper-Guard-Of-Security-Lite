@@ -6,4 +6,5 @@ public interface BoxService<T> {
     List<T> readBox();
     T readT(Long id);
     String deleteT(Long id);
+    String updateT(T entity, Long id);
 }

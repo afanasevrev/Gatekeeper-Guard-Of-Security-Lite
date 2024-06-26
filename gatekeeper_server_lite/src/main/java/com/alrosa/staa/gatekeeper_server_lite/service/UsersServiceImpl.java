@@ -21,7 +21,11 @@ public class UsersServiceImpl implements BoxService<UsersEntity> {
     }
     @Override
     public String deleteT(Long id) {
-
+        
+        return null;
+    }
+    @Override
+    public String updateT(UsersEntity entity, Long id) {
         return null;
     }
 }
