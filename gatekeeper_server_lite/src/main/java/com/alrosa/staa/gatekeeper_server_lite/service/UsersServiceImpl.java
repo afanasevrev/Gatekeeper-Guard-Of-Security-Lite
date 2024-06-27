@@ -21,11 +21,19 @@ public class UsersServiceImpl implements BoxService<UsersEntity> {
     }
     @Override
     public String deleteT(Long id) {
-
-        return null;
+        UsersEntity user = usersRepository.findById(id).get();
+        usersRepository.delete(user);
+        return "Пользователь с ID = " + id + " удален из базы";
     }
     @Override
     public String updateT(UsersEntity entity, Long id) {
-        return null;
+        UsersEntity user = usersRepository.findById(id).get();
+        user.setFirst_name(entity.getFirst_name());
+        user.setMiddle_name(entity.getMiddle_name());
+        user.setLast_name(entity.getLast_name());
+        user.setCompany(entity.getCompany());
+        user.setOrganization(entity.getOrganization());
+        usersRepository.save(user);
+        return "Обновление пользователя успешно обновлено";
     }
 }
