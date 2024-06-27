@@ -62,6 +62,6 @@ public class UsersServiceImpl implements BoxService<UsersEntity> {
         user.setCompany(entity.getCompany());
         user.setOrganization(entity.getOrganization());
         usersRepository.save(user);
-        return "Обновление пользователя успешно обновлено";
+        return "Пользователь с ID = " + id + " успешно обновлён";
     }
 }

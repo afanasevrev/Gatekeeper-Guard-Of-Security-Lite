@@ -6,28 +6,40 @@ import java.util.List;
 /**
  * Класс для операций над таблицей "Admin" в БД
  */
-public class AdminsServiceImpl implements AdminsService {
+public class AdminsServiceImpl implements BoxService<AdminsEntity> {
     private AdminsRepository adminsRepository;
     @Override
-    public String createAdmin(AdminsEntity admin) {
-        adminsRepository.save(admin);
-        return "Администратор успешно добавлен в БД";
+    public String createBox(AdminsEntity entity) {
+        adminsRepository.save(entity);
+        return "Новый администратор успешно добавлен";
     }
     @Override
-    public List<AdminsEntity> readAdmins() {
+    public List<AdminsEntity> readBox() {
         return adminsRepository.findAll();
     }
     @Override
-    public AdminsEntity readAdmin(Long id) {
-        AdminsEntity admin = adminsRepository.findById(id).get();
-        return admin;
+    public AdminsEntity readT(Long id) {
+        AdminsEntity adminsEntity = adminsRepository.findById(id).get();
+        return adminsEntity;
     }
     @Override
-    public String deleteAdmin(Long id) {
-        return null;
+    public String deleteT(Long id) {
+        AdminsEntity adminsEntity = adminsRepository.findById(id).get();
+        adminsRepository.delete(adminsEntity);
+        return "Администратор с ID = " + id + " успешно удален из базы";
     }
     @Override
-    public String updateAdmin(AdminsEntity adminsEntity, Long id) {
-        return null;
+    public String updateT(AdminsEntity entity, Long id) {
+        AdminsEntity adminsEntity = adminsRepository.findById(id).get();
+        adminsEntity.setFirst_name(entity.getFirst_name());
+        adminsEntity.setMiddle_name(entity.getMiddle_name());
+        adminsEntity.setLast_name(entity.getLast_name());
+        adminsEntity.setLogin(entity.getLogin());
+        adminsEntity.setPassword(entity.getPassword());
+        adminsEntity.setCompany(entity.getCompany());
+        adminsEntity.setOrganization(entity.getOrganization());
+        adminsEntity.setPosition(entity.getPosition());
+        adminsRepository.save(adminsEntity);
+        return "Администратор с ID = " + id + " успешно обновлён";
     }
 }
