@@ -8,26 +8,51 @@ import java.util.List;
  */
 public class AdminsServiceImpl implements BoxService<AdminsEntity> {
     private AdminsRepository adminsRepository;
+    /**
+     * Метод добавляет нового администратора в БД
+     * @param entity
+     * @return Статус выполнения операции
+     */
     @Override
     public String createBox(AdminsEntity entity) {
         adminsRepository.save(entity);
         return "Новый администратор успешно добавлен";
     }
+    /**
+     * Метод возвращает список администраторов из БД
+     * @return List
+     */
     @Override
     public List<AdminsEntity> readBox() {
         return adminsRepository.findAll();
     }
+    /**
+     * Метод возвращает администратора из БД по id
+     * @param id
+     * @return AdminsEntity
+     */
     @Override
     public AdminsEntity readT(Long id) {
-        AdminsEntity adminsEntity = adminsRepository.findById(id).get();
-        return adminsEntity;
+        AdminsEntity admin = adminsRepository.findById(id).get();
+        return admin;
     }
+    /**
+     * Метод удаляет администратора из БД по id
+     * @param id
+     * @return Статус выполнения операции
+     */
     @Override
     public String deleteT(Long id) {
         AdminsEntity adminsEntity = adminsRepository.findById(id).get();
         adminsRepository.delete(adminsEntity);
         return "Администратор с ID = " + id + " успешно удален из базы";
     }
+    /**
+     * Метод обновляет данные администратора по id
+     * @param entity
+     * @param id
+     * @return Статус выполнения операции
+     */
     @Override
     public String updateT(AdminsEntity entity, Long id) {
         AdminsEntity adminsEntity = adminsRepository.findById(id).get();

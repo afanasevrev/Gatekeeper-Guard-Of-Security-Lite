@@ -9,17 +9,17 @@ import java.util.List;
 public class UsersServiceImpl implements BoxService<UsersEntity> {
     private UsersRepository usersRepository;
     /**
-     * Метод добавляет пользователя в БД
+     * Метод добавляет нового пользователя в БД
      * @param entity
      * @return Статус выполнения операции
      */
     @Override
     public String createBox(UsersEntity entity) {
         usersRepository.save(entity);
-        return "Пользователь успешно добавлен";
+        return "Новый пользователь успешно добавлен";
     }
     /**
-     * Метод возвращает массив пользователей из БД
+     * Метод возвращает список пользователей из БД
      * @return List
      */
     @Override
@@ -27,7 +27,7 @@ public class UsersServiceImpl implements BoxService<UsersEntity> {
         return usersRepository.findAll();
     }
     /**
-     * Метод возвращает одного пользователя из БД по id
+     * Метод возвращает пользователя из БД по id
      * @param id
      * @return UsersEntity
      */
@@ -48,7 +48,7 @@ public class UsersServiceImpl implements BoxService<UsersEntity> {
         return "Пользователь с ID = " + id + " удален из базы";
     }
     /**
-     * Метод обновляет пользователя
+     * Метод обновляет данные пользователя по id
      * @param entity UsersEntity
      * @param id int
      * @return Статус выполнения операции
