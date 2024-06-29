@@ -17,6 +17,5 @@ public class GatekeeperServerLiteApplication {
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(GatekeeperServerLiteApplication.class, args);
-		AdminsEntity admins = new AdminsEntity();
 	}
 }
