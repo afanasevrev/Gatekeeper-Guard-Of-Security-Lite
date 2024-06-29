@@ -25,6 +25,7 @@ public class RequestController {
     }
     @GetMapping("/")
     private String getInfo() {
+        boxService.createBox(new UsersEntity("Николаев", "Николай", "Александрович", "АЛРОСА", "СТ Алмазавтоматика"));
         return "Система контроля и управления доступом. Lite версия";
     }
 }
