@@ -27,7 +27,7 @@ public class AdminsServiceImpl implements BoxService<AdminsEntity> {
      */
     @Override
     public List<AdminsEntity> readBox() {
-        return adminsRepository.findAll();
+       return adminsRepository.findAll();
     }
     /**
      * Метод возвращает администратора из БД по id
