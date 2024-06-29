@@ -2,11 +2,13 @@ package com.alrosa.staa.gatekeeper_server_lite.service;
 
 import com.alrosa.staa.gatekeeper_server_lite.entity.UsersEntity;
 import com.alrosa.staa.gatekeeper_server_lite.repository.UsersRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 /**
  * Класс для взаимодействия с пользователями в БД
  */
 public class UsersServiceImpl implements BoxService<UsersEntity> {
+    @Autowired
     private UsersRepository usersRepository;
     /**
      * Метод добавляет нового пользователя в БД
