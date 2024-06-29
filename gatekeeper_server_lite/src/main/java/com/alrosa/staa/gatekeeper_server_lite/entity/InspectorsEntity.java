@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "inspector")
-public class Inspector {
+public class InspectorsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -28,8 +28,8 @@ public class Inspector {
     private String organization;
     @Column(name = "position")
     private String position;
-    public Inspector() {}
-    public Inspector(String first_name, String middle_name, String last_name, String login, String password, String company, String organization, String position) {
+    public InspectorsEntity() {}
+    public InspectorsEntity(String first_name, String middle_name, String last_name, String login, String password, String company, String organization, String position) {
         this.first_name = first_name;
         this.middle_name = middle_name;
         this.last_name = last_name;
