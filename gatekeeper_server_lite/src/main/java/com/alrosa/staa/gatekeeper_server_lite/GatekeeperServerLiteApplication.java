@@ -12,8 +12,8 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class GatekeeperServerLiteApplication {
 	@Bean
-	public BoxService<AdminsEntity> adminsService() {
-		return new AdminsServiceImpl();
+	public BoxService<UsersEntity> adminsService() {
+		return new UsersServiceImpl();
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(GatekeeperServerLiteApplication.class, args);
