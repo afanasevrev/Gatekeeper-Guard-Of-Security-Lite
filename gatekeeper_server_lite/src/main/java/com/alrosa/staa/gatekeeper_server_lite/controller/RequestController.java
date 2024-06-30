@@ -2,6 +2,7 @@ package com.alrosa.staa.gatekeeper_server_lite.controller;
 
 import com.alrosa.staa.gatekeeper_server_lite.service.AdminsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.InspectorsService;
+import com.alrosa.staa.gatekeeper_server_lite.service.OperatorsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,12 +17,14 @@ public class RequestController {
     private AdminsService adminsService;
     private UsersService usersService;
     private InspectorsService inspectorsService;
+    private OperatorsService operatorsService;
     public RequestController() {}
     @Autowired
-    public RequestController(AdminsService adminsService, UsersService usersService, InspectorsService inspectorsService) {
+    public RequestController(AdminsService adminsService, UsersService usersService, InspectorsService inspectorsService, OperatorsService operatorsService) {
         this.adminsService = adminsService;
         this.usersService = usersService;
         this.inspectorsService = inspectorsService;
+        this.operatorsService = operatorsService;
     }
     @GetMapping("/")
     private String getInfo() {

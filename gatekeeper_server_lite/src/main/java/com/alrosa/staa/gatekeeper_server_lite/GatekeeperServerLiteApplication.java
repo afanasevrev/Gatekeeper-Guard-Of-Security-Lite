@@ -19,6 +19,10 @@ public class GatekeeperServerLiteApplication {
 	public InspectorsService inspectorsService() {
 		return new InspectorsServiceImpl();
 	}
+	@Bean
+	public OperatorsService operatorsService() {
+		return new OperatorsServiceImpl();
+	}
 	public static void main(String[] args) {
 		BasicConfigurator.configure();
 		SpringApplication.run(GatekeeperServerLiteApplication.class, args);
