@@ -7,9 +7,7 @@ import com.alrosa.staa.gatekeeper_server_lite.repository.AdminsRepository;
 import com.alrosa.staa.gatekeeper_server_lite.repository.OperatorsRepository;
 import com.alrosa.staa.gatekeeper_server_lite.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
-
 public class BoxServiceImpl<T> implements BoxService<T> {
     @Autowired
     private AdminsRepository adminsRepository;
