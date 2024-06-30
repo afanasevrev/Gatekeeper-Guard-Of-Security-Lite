@@ -5,7 +5,7 @@ import com.alrosa.staa.gatekeeper_server_lite.repository.InspectorsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 /**
- * Класс для операций над таблицей "inspector" в БД
+ * Класс для операций над таблицей "inspectors" в БД
  */
 public class InspectorsServiceImpl implements InspectorsService {
     @Autowired
