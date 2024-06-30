@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Bean;
 public class GatekeeperServerLiteApplication {
 	@Bean
 	public BoxService<UsersEntity> adminsService() {
-		return new UsersServiceImpl();
+		return new AdminsServiceImpl();
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(GatekeeperServerLiteApplication.class, args);
