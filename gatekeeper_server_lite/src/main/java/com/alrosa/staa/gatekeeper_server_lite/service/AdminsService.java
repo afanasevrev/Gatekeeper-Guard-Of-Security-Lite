@@ -1,6 +1,5 @@
 package com.alrosa.staa.gatekeeper_server_lite.service;
 import com.alrosa.staa.gatekeeper_server_lite.entity.AdminsEntity;
-
 import java.util.List;
 public interface AdminsService {
     String createAdmin(AdminsEntity entity);
