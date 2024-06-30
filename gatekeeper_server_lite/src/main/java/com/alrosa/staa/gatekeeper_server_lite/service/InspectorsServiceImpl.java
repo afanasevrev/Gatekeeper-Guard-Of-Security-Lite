@@ -20,20 +20,40 @@ public class InspectorsServiceImpl implements InspectorsService {
        inspectorsRepository.save(entity);
        return "Новый инспектор бюро пропусков успешно добавлен";
     }
+    /**
+     * Метод возвращает из БД список инспекторов бюро пропусков
+     * @return List
+     */
     @Override
     public List<InspectorsEntity> readUsers() {
         return inspectorsRepository.findAll();
     }
+    /**
+     * Метод возвращает из БД одного инспектора по выбранному id
+     * @param id
+     * @return InspectorsEntity
+     */
     @Override
     public InspectorsEntity readInspector(Long id) {
         return inspectorsRepository.findById(id).get();
     }
+    /**
+     * Метод удаляет из БД инспектора бюро пропусков по выбранному id
+     * @param id
+     * @return Статус выполнения запроса
+     */
     @Override
     public String deleteInspector(Long id) {
         InspectorsEntity inspectorsEntity = inspectorsRepository.findById(id).get();
         inspectorsRepository.delete(inspectorsEntity);
         return "Инспектор бюро пропусков с ID = " + id + " успешно удален из базы";
     }
+    /**
+     * Метод обновляет данные инспектора бюро пропусков в БД по выбранному id
+     * @param entity
+     * @param id
+     * @return Статус выполнения запроса
+     */
     @Override
     public String updateInspector(InspectorsEntity entity, Long id) {
         InspectorsEntity inspectorsEntity = inspectorsRepository.findById(id).get();
