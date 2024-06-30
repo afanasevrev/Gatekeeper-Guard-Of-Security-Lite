@@ -1,10 +1,7 @@
 package com.alrosa.staa.gatekeeper_server_lite;
 
+import com.alrosa.staa.gatekeeper_server_lite.service.*;
 import org.apache.log4j.BasicConfigurator;
-import com.alrosa.staa.gatekeeper_server_lite.service.AdminsService;
-import com.alrosa.staa.gatekeeper_server_lite.service.AdminsServiceImpl;
-import com.alrosa.staa.gatekeeper_server_lite.service.UsersService;
-import com.alrosa.staa.gatekeeper_server_lite.service.UsersServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -17,6 +14,10 @@ public class GatekeeperServerLiteApplication {
 	@Bean
 	public UsersService usersService() {
 		return new UsersServiceImpl();
+	}
+	@Bean
+	public InspectorsService inspectorsService() {
+		return new InspectorsServiceImpl();
 	}
 	public static void main(String[] args) {
 		BasicConfigurator.configure();
