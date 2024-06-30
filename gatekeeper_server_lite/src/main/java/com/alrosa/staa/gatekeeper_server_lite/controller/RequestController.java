@@ -1,5 +1,6 @@
 package com.alrosa.staa.gatekeeper_server_lite.controller;
 
+import com.alrosa.staa.gatekeeper_server_lite.entity.OperatorsEntity;
 import com.alrosa.staa.gatekeeper_server_lite.service.AdminsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.InspectorsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.OperatorsService;
