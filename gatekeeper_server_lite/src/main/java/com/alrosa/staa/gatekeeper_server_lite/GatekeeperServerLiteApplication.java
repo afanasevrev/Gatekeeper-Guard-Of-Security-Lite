@@ -1,5 +1,6 @@
 package com.alrosa.staa.gatekeeper_server_lite;
 
+import org.apache.log4j.BasicConfigurator;
 import com.alrosa.staa.gatekeeper_server_lite.service.AdminsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.AdminsServiceImpl;
 import com.alrosa.staa.gatekeeper_server_lite.service.UsersService;
@@ -18,6 +19,7 @@ public class GatekeeperServerLiteApplication {
 		return new UsersServiceImpl();
 	}
 	public static void main(String[] args) {
+		BasicConfigurator.configure();
 		SpringApplication.run(GatekeeperServerLiteApplication.class, args);
 	}
 }
