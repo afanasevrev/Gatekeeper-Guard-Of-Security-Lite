@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Класс для операций над таблицей "Admin" в БД
  */
-public class AdminsServiceImpl implements BoxService<AdminsEntity> {
+public class AdminsServiceImpl implements AdminsService {
     @Autowired
     private AdminsRepository adminsRepository;
     /**
@@ -17,7 +17,7 @@ public class AdminsServiceImpl implements BoxService<AdminsEntity> {
      * @return Статус выполнения операции
      */
     @Override
-    public String createBox(AdminsEntity entity) {
+    public String createAdmin(AdminsEntity entity) {
         adminsRepository.save(entity);
         return "Новый администратор успешно добавлен";
     }
@@ -26,7 +26,7 @@ public class AdminsServiceImpl implements BoxService<AdminsEntity> {
      * @return List
      */
     @Override
-    public List<AdminsEntity> readBox() {
+    public List<AdminsEntity> readAdmins() {
        return adminsRepository.findAll();
     }
     /**
@@ -35,7 +35,7 @@ public class AdminsServiceImpl implements BoxService<AdminsEntity> {
      * @return AdminsEntity
      */
     @Override
-    public AdminsEntity readT(Long id) {
+    public AdminsEntity readAdmin(Long id) {
         AdminsEntity admin = adminsRepository.findById(id).get();
         return admin;
     }
@@ -45,7 +45,7 @@ public class AdminsServiceImpl implements BoxService<AdminsEntity> {
      * @return Статус выполнения операции
      */
     @Override
-    public String deleteT(Long id) {
+    public String deleteAdmin(Long id) {
         AdminsEntity adminsEntity = adminsRepository.findById(id).get();
         adminsRepository.delete(adminsEntity);
         return "Администратор с ID = " + id + " успешно удален из базы";
@@ -57,7 +57,7 @@ public class AdminsServiceImpl implements BoxService<AdminsEntity> {
      * @return Статус выполнения операции
      */
     @Override
-    public String updateT(AdminsEntity entity, Long id) {
+    public String updateAdmin(AdminsEntity entity, Long id) {
         AdminsEntity adminsEntity = adminsRepository.findById(id).get();
         adminsEntity.setFirst_name(entity.getFirst_name());
         adminsEntity.setMiddle_name(entity.getMiddle_name());

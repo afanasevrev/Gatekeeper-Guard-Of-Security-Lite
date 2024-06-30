@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Класс для взаимодействия с пользователями в БД
  */
-public class UsersServiceImpl implements BoxService<UsersEntity> {
+public class UsersServiceImpl implements UsersService {
     @Autowired
     private UsersRepository usersRepository;
     /**
@@ -16,7 +16,7 @@ public class UsersServiceImpl implements BoxService<UsersEntity> {
      * @return Статус выполнения операции
      */
     @Override
-    public String createBox(UsersEntity entity) {
+    public String createUser(UsersEntity entity) {
         usersRepository.save(entity);
         return "Новый пользователь успешно добавлен";
     }
@@ -25,7 +25,7 @@ public class UsersServiceImpl implements BoxService<UsersEntity> {
      * @return List
      */
     @Override
-    public List<UsersEntity> readBox() {
+    public List<UsersEntity> readUsers() {
         return usersRepository.findAll();
     }
     /**
@@ -34,7 +34,7 @@ public class UsersServiceImpl implements BoxService<UsersEntity> {
      * @return UsersEntity
      */
     @Override
-    public UsersEntity readT(Long id) {
+    public UsersEntity readUser(Long id) {
         UsersEntity user = usersRepository.findById(id).get();
         return user;
     }
@@ -44,7 +44,7 @@ public class UsersServiceImpl implements BoxService<UsersEntity> {
      * @return Статус выполнения операции
      */
     @Override
-    public String deleteT(Long id) {
+    public String deleteUser(Long id) {
         UsersEntity user = usersRepository.findById(id).get();
         usersRepository.delete(user);
         return "Пользователь с ID = " + id + " удален из базы";
@@ -56,7 +56,7 @@ public class UsersServiceImpl implements BoxService<UsersEntity> {
      * @return Статус выполнения операции
      */
     @Override
-    public String updateT(UsersEntity entity, Long id) {
+    public String updateUser(UsersEntity entity, Long id) {
         UsersEntity user = usersRepository.findById(id).get();
         user.setFirst_name(entity.getFirst_name());
         user.setMiddle_name(entity.getMiddle_name());
