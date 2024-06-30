@@ -26,11 +26,19 @@ public class OperatorsServiceImpl implements OperatorsService {
     public String deleteOperator(Long id) {
         OperatorsEntity operator = operatorsRepository.findById(id).get();
         operatorsRepository.delete(operator);
-        return "Оператор с ID = " + id + " успешно удален из базы";
+        return "Оператор с ID = " + id + " успешно удален из БД";
     }
     @Override
     public String updateOperator(OperatorsEntity entity, Long id) {
-        
-        return null;
+        OperatorsEntity operators = operatorsRepository.findById(id).get();
+        operators.setFirst_name(entity.getFirst_name());
+        operators.setMiddle_name(entity.getMiddle_name());
+        operators.setLast_name(entity.getLast_name());
+        operators.setLogin(entity.getLogin());
+        operators.setPassword(entity.getPassword());
+        operators.setCompany(entity.getCompany());
+        operators.setOrganization(entity.getOrganization());
+        operators.setPosition(entity.getPosition());
+        return "Оператор с ID = " + id + " успешно обновлен";
     }
 }
