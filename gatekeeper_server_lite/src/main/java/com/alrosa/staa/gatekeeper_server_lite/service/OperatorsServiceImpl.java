@@ -11,22 +11,26 @@ public class OperatorsServiceImpl implements OperatorsService {
     private OperatorsRepository operatorsRepository;
     @Override
     public String createOperator(OperatorsEntity entity) {
+        operatorsRepository.save(entity);
         return "Новый оператор успешно добавлен";
     }
     @Override
     public List<OperatorsEntity> readOperators() {
-        return null;
+        return operatorsRepository.findAll();
     }
     @Override
     public OperatorsEntity readOperator(Long id) {
-        return null;
+        return operatorsRepository.findById(id).get();
     }
     @Override
     public String deleteOperator(Long id) {
-        return null;
+        OperatorsEntity operator = operatorsRepository.findById(id).get();
+        operatorsRepository.delete(operator);
+        return "Оператор с ID = " + id + " успешно удален из базы";
     }
     @Override
     public String updateOperator(OperatorsEntity entity, Long id) {
+        
         return null;
     }
 }

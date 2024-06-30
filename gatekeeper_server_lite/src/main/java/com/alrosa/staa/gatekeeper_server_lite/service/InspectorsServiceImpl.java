@@ -44,8 +44,8 @@ public class InspectorsServiceImpl implements InspectorsService {
      */
     @Override
     public String deleteInspector(Long id) {
-        InspectorsEntity inspectorsEntity = inspectorsRepository.findById(id).get();
-        inspectorsRepository.delete(inspectorsEntity);
+        InspectorsEntity inspector = inspectorsRepository.findById(id).get();
+        inspectorsRepository.delete(inspector);
         return "Инспектор бюро пропусков с ID = " + id + " успешно удален из базы";
     }
     /**
@@ -56,16 +56,16 @@ public class InspectorsServiceImpl implements InspectorsService {
      */
     @Override
     public String updateInspector(InspectorsEntity entity, Long id) {
-        InspectorsEntity inspectorsEntity = inspectorsRepository.findById(id).get();
-        inspectorsEntity.setFirst_name(entity.getFirst_name());
-        inspectorsEntity.setMiddle_name(entity.getMiddle_name());
-        inspectorsEntity.setLast_name(entity.getLast_name());
-        inspectorsEntity.setLogin(entity.getLogin());
-        inspectorsEntity.setPassword(entity.getPassword());
-        inspectorsEntity.setCompany(entity.getCompany());
-        inspectorsEntity.setOrganization(entity.getOrganization());
-        inspectorsEntity.setPosition(entity.getPosition());
-        inspectorsRepository.save(inspectorsEntity);
+        InspectorsEntity inspector = inspectorsRepository.findById(id).get();
+        inspector.setFirst_name(entity.getFirst_name());
+        inspector.setMiddle_name(entity.getMiddle_name());
+        inspector.setLast_name(entity.getLast_name());
+        inspector.setLogin(entity.getLogin());
+        inspector.setPassword(entity.getPassword());
+        inspector.setCompany(entity.getCompany());
+        inspector.setOrganization(entity.getOrganization());
+        inspector.setPosition(entity.getPosition());
+        inspectorsRepository.save(inspector);
         return "Инспектор бюро пропусков с ID = " + id + " успешно обновлён";
     }
 }
