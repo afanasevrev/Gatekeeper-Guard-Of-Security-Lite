@@ -14,11 +14,11 @@ public class AdminsPageController {
     @FXML
     private TextField textFieldSearchUser = new TextField();
     @FXML
-    private Button buttonSearch = new Button();
+    private Button buttonSearchUser = new Button();
     @FXML
-    private Button buttonUpdateList = new Button();
+    private Button buttonUpdateListUsers = new Button();
     @FXML
-    private Button buttonOpenPersonalCard = new Button();
+    private Button buttonOpenPersonalCardUser = new Button();
     @FXML
     private Button buttonDeleteUser = new Button();
 }
