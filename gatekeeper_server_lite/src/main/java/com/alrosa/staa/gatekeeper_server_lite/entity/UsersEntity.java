@@ -3,6 +3,9 @@ package com.alrosa.staa.gatekeeper_server_lite.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+/**
+ * Класс сущность для пользователей
+ */
 @Getter
 @Setter
 @Entity

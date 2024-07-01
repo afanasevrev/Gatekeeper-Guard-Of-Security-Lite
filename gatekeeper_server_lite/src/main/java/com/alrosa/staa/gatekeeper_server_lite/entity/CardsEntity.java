@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 /**
- * Карты доступа для связи с БД
+ * Класс сущность для карт доступа
  */
 @Getter
 @Setter
