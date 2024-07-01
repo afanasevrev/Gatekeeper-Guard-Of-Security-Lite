@@ -30,7 +30,7 @@
                         </TableView>
                         <TextField fx:id="textFieldSearchUser" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="250.0" promptText="Поиск..." />
                         <Button layoutX="275.0" styleClass="button_12" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Поиск" />
-                        <Button layoutX="14.0"  layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text=" Обновить список" />
+                        <Button layoutX="14.0"  layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
                         <Button layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
                         <Button layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить " />
                      </children></AnchorPane>
