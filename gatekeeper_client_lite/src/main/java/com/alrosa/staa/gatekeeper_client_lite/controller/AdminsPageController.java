@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 /**
- * Контроллер для взаимодействия с формой администратора
+ * Контроллер для формы администратора
  */
 public class AdminsPageController {
     //Вкладка "Пользователи"

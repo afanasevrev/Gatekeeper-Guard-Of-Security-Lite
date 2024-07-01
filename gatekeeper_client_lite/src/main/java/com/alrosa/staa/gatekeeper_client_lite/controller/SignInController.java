@@ -4,6 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+/**
+ * Контроллер для формы входа в систему
+ */
 public class SignInController {
     @FXML
     private TextField textFieldLogin = new TextField();
