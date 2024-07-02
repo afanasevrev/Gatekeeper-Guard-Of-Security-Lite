@@ -18,14 +18,14 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="355.0" prefWidth="668.0">
                      <children>
-                        <TableView layoutX="14.0" layoutY="45.0" prefHeight="280.0" prefWidth="640.0">
+                        <TableView fx:id="tableViewUsers" layoutX="14.0" layoutY="45.0" prefHeight="280.0" prefWidth="640.0">
                           <columns>
-                            <TableColumn prefWidth="38.0" text="ID" />
-                            <TableColumn prefWidth="123.0" text="Фамилия" />
-                              <TableColumn prefWidth="106.0" text="Имя" />
-                              <TableColumn prefWidth="105.0" text="Отчество" />
-                              <TableColumn prefWidth="99.0" text="Компания" />
-                              <TableColumn prefWidth="150.0" text="Уровень доступа" />
+                              <TableColumn fx:id="tableColumnUserId" prefWidth="38.0" text="ID" />
+                              <TableColumn fx:id="tableColumnUserFirstName" prefWidth="123.0" text="Фамилия" />
+                              <TableColumn fx:id="tableColumnUserMiddleName" prefWidth="106.0" text="Имя" />
+                              <TableColumn fx:id="tableColumnUserLastName" prefWidth="105.0" text="Отчество" />
+                              <TableColumn fx:id="tableColumnUserCompany" prefWidth="99.0" text="Компания" />
+                              <TableColumn fx:id="tableColumnAccessLevel" prefWidth="150.0" text="Уровень доступа" />
                           </columns>
                         </TableView>
                         <TextField fx:id="textFieldSearchUser" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="250.0" promptText="Поиск..." />

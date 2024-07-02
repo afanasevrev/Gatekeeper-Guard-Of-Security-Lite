@@ -28,4 +28,15 @@ public class AdminsPageController {
     private ObservableList<UsersData> observableListUsers = FXCollections.<UsersData>observableArrayList();
     @FXML
     private TableColumn<UsersData, String> tableColumnUserId = new TableColumn<UsersData, String>("ID");
+    @FXML
+    private TableColumn<UsersData, String> tableColumnUserFirstName = new TableColumn<UsersData, String>("Фамилия");
+    @FXML
+    private TableColumn<UsersData, String> tableColumnUserMiddleName = new TableColumn<UsersData, String>("Имя");
+    @FXML
+    private TableColumn<UsersData, String> tableColumnUserLastName = new TableColumn<UsersData, String>("Отчество");
+    @FXML
+    private TableColumn<UsersData, String> tableColumnUserCompany = new TableColumn<UsersData, String>("Компания");
+    @FXML
+    private TableColumn<UsersData, String> tableColumnAccessLevel = new TableColumn<UsersData, String>("Уровень доступа");
+
 }
