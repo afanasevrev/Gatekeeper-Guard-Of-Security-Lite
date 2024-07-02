@@ -1,5 +1,6 @@
 package com.alrosa.staa.gatekeeper_client_lite.controller;
 
+import com.alrosa.staa.gatekeeper_client_lite.users.PassOfficeData;
 import com.alrosa.staa.gatekeeper_client_lite.users.UsersData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -38,5 +39,25 @@ public class AdminsPageController {
     private TableColumn<UsersData, String> tableColumnUserCompany = new TableColumn<UsersData, String>("Компания");
     @FXML
     private TableColumn<UsersData, String> tableColumnAccessLevel = new TableColumn<UsersData, String>("Уровень доступа");
-
+    //Вкладка "Бюро пропусков"
+    @FXML
+    private Tab tabPassOffice = new Tab();
+    @FXML
+    private TextField textFieldSearchPassOffice = new TextField();
+    @FXML
+    private Button buttonSearchPassOffice = new Button();
+    @FXML
+    private Button buttonUpdateListPassOffice = new Button();
+    @FXML
+    private Button buttonOpenPersonalCardPassOffice = new Button();
+    @FXML
+    private Button buttonDeletePassOffice = new Button();
+    @FXML
+    private TableView<PassOfficeData> tableViewPassOffice = new TableView<PassOfficeData>();
+    private ObservableList<PassOfficeData> observableListPassOffice = FXCollections.<PassOfficeData>observableArrayList();
+    @FXML
+    private TableColumn<PassOfficeData, String> tableColumnPassOfficeId = new TableColumn<PassOfficeData, String>("ID");
+    @FXML
+    private TableColumn<PassOfficeData, String> tableColumnPassOfficeFirstName = new TableColumn<PassOfficeData, String>("Фамилия");
+    
 }
