@@ -59,6 +59,12 @@ public class AdminsPageController {
     private TableColumn<PassOfficeData, String> tableColumnPassOfficeId = new TableColumn<PassOfficeData, String>("ID");
     @FXML
     private TableColumn<PassOfficeData, String> tableColumnPassOfficeFirstName = new TableColumn<PassOfficeData, String>("Фамилия");
+    @FXML
+    private TableColumn<PassOfficeData, String> tableColumnPassOfficeMiddleName = new TableColumn<PassOfficeData, String>("Имя");
+    @FXML
+    private TableColumn<PassOfficeData, String> tableColumnPassOfficeLastName = new TableColumn<PassOfficeData, String>("Отчество");
+    @FXML
+    private TableColumn<PassOfficeData, String> tableColumnPassOfficeLogin = new TableColumn<PassOfficeData, String>("Логин");
     //Вкладка "Операторы"
     @FXML
     private Tab tabOperators = new Tab();

@@ -46,9 +46,9 @@
                           <columns>
                               <TableColumn fx:id="tableColumnPassOfficeId" prefWidth="75.0" text="ID" />
                               <TableColumn fx:id="tableColumnPassOfficeFirstName" prefWidth="124.0" text="Фамилия" />
-                              <TableColumn prefWidth="131.0" text="Имя" />
-                              <TableColumn prefWidth="161.0" text="Отчество" />
-                              <TableColumn prefWidth="142.0" text="Логин" />
+                              <TableColumn fx:id="tableColumnPassOfficeMiddleName" prefWidth="131.0" text="Имя" />
+                              <TableColumn fx:id="tableColumnPassOfficeLastName" prefWidth="161.0" text="Отчество" />
+                              <TableColumn fx:id="tableColumnPassOfficeLogin" prefWidth="142.0" text="Логин" />
                           </columns>
                         </TableView>
                         <Button fx:id="buttonUpdateListPassOffice" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
