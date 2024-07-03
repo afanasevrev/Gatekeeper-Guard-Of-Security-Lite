@@ -7,7 +7,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
 /**
  * Контроллер для формы администратора
  */
@@ -84,5 +83,5 @@ public class AdminsPageController {
     private ObservableList<OperatorsData> observableListOperators = FXCollections.<OperatorsData>observableArrayList();
     @FXML
     private TableColumn<OperatorsData, String> tableColumnOperatorId = new TableColumn<OperatorsData, String>("ID");
-    
+
 }
