@@ -62,5 +62,14 @@ public class AdminsPageController {
     //Вкладка "Операторы"
     @FXML
     private Tab tabOperators = new Tab();
-
+    @FXML
+    private TextField textFieldSearchOperator = new TextField();
+    @FXML
+    private Button buttonSearchOperator = new Button();
+    @FXML
+    private Button buttonUpdateListOperators = new Button();
+    @FXML
+    private Button buttonOpenPersonalCardOperator = new Button();
+    @FXML
+    private Button buttonDeleteOperator = new Button();
 }
