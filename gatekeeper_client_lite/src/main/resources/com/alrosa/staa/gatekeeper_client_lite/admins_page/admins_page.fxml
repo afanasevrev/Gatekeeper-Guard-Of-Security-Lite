@@ -63,9 +63,9 @@
                      <children>
                         <TextField fx:id="textFieldSearchOperator" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="250.0" promptText="Поиск..." />
                         <Button fx:id="buttonSearchOperator" layoutX="275.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Поиск" />
-                        <TableView layoutX="14.0" layoutY="45.0" prefHeight="280.0" prefWidth="640.0">
+                        <TableView fx:id="tableViewOperators" layoutX="14.0" layoutY="45.0" prefHeight="280.0" prefWidth="640.0">
                           <columns>
-                            <TableColumn prefWidth="58.0" text="ID" />
+                            <TableColumn fx:id="tableColumnOperatorId" prefWidth="58.0" text="ID" />
                             <TableColumn prefWidth="91.0" text="Фамилия" />
                               <TableColumn prefWidth="163.0" text="Имя" />
                               <TableColumn prefWidth="151.0" text="Отчество" />

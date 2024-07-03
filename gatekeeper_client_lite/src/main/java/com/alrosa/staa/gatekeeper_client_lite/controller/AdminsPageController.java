@@ -1,5 +1,6 @@
 package com.alrosa.staa.gatekeeper_client_lite.controller;
 
+import com.alrosa.staa.gatekeeper_client_lite.users.OperatorsData;
 import com.alrosa.staa.gatekeeper_client_lite.users.PassOfficeData;
 import com.alrosa.staa.gatekeeper_client_lite.users.UsersData;
 import javafx.collections.FXCollections;
@@ -78,4 +79,10 @@ public class AdminsPageController {
     private Button buttonOpenPersonalCardOperator = new Button();
     @FXML
     private Button buttonDeleteOperator = new Button();
+    @FXML
+    private TableView<OperatorsData> tableViewOperators = new TableView<OperatorsData>();
+    private ObservableList<OperatorsData> observableListOperators = FXCollections.<OperatorsData>observableArrayList();
+    @FXML
+    private TableColumn<OperatorsData, String> tableColumnOperatorId = new TableColumn<OperatorsData, String>("ID");
+    
 }
