@@ -91,4 +91,8 @@ public class AdminsPageController {
     private TableColumn<OperatorsData, String> tableColumnOperatorLastName = new TableColumn<OperatorsData, String>("Отчество");
     @FXML
     private TableColumn<OperatorsData, String> tableColumnOperatorLogin = new TableColumn<OperatorsData, String>("Логин");
+    //Вкладка "Контроллеры"
+    @FXML
+    private Tab tabControllers = new Tab();
+
 }
