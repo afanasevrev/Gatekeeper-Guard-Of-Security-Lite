@@ -66,10 +66,10 @@
                         <TableView fx:id="tableViewOperators" layoutX="14.0" layoutY="45.0" prefHeight="280.0" prefWidth="640.0">
                           <columns>
                             <TableColumn fx:id="tableColumnOperatorId" prefWidth="58.0" text="ID" />
-                            <TableColumn prefWidth="91.0" text="Фамилия" />
-                              <TableColumn prefWidth="163.0" text="Имя" />
-                              <TableColumn prefWidth="151.0" text="Отчество" />
-                              <TableColumn prefWidth="163.0" text="Логин" />
+                            <TableColumn fx:id="tableColumnOperatorFirstName" prefWidth="91.0" text="Фамилия" />
+                              <TableColumn fx:id="tableColumnOperatorMiddleName" prefWidth="163.0" text="Имя" />
+                              <TableColumn fx:id="tableColumnOperatorLastName" prefWidth="151.0" text="Отчество" />
+                              <TableColumn fx:id="tableColumnOperatorLogin" prefWidth="163.0" text="Логин" />
                           </columns>
                         </TableView>
                         <Button fx:id="buttonUpdateListOperators" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />

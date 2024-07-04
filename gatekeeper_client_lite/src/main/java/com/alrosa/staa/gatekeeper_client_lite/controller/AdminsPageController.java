@@ -83,5 +83,12 @@ public class AdminsPageController {
     private ObservableList<OperatorsData> observableListOperators = FXCollections.<OperatorsData>observableArrayList();
     @FXML
     private TableColumn<OperatorsData, String> tableColumnOperatorId = new TableColumn<OperatorsData, String>("ID");
-
+    @FXML
+    private TableColumn<OperatorsData, String> tableColumnOperatorFirstName = new TableColumn<OperatorsData, String>("Фамилия");
+    @FXML
+    private TableColumn<OperatorsData, String> tableColumnOperatorMiddleName = new TableColumn<OperatorsData, String>("Имя");
+    @FXML
+    private TableColumn<OperatorsData, String> tableColumnOperatorLastName = new TableColumn<OperatorsData, String>("Отчество");
+    @FXML
+    private TableColumn<OperatorsData, String> tableColumnOperatorLogin = new TableColumn<OperatorsData, String>("Логин");
 }
