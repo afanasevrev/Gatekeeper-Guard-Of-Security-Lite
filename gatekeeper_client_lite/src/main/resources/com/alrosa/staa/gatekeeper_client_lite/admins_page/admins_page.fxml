@@ -87,17 +87,17 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TableView layoutX="14.0" layoutY="45.0" prefHeight="280.0" prefWidth="640.0">
+                        <TableView fx:id="tableViewControllers" layoutX="14.0" layoutY="45.0" prefHeight="280.0" prefWidth="640.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="ID" />
-                            <TableColumn prefWidth="179.0" text="Наименование" />
+                            <TableColumn fx:id="tableColumnControllerId" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="tableColumnControllerName" prefWidth="179.0" text="Наименование" />
                               <TableColumn prefWidth="192.0" text="IP - адрес" />
                               <TableColumn prefWidth="186.0" text="Online" />
                           </columns>
                         </TableView>
-                        <Button layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
-                        <Button layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
-                        <Button layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button fx:id="buttonUpdateListControllers" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
+                        <Button fx:id="buttonOpenPersonalCardController" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
+                        <Button fx:id="buttonDeleteController" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
                      </children></AnchorPane>
               </content>
             </Tab>

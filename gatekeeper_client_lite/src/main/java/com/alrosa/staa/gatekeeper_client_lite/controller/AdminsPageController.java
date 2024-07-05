@@ -1,5 +1,6 @@
 package com.alrosa.staa.gatekeeper_client_lite.controller;
 
+import com.alrosa.staa.gatekeeper_client_lite.users.ControllersData;
 import com.alrosa.staa.gatekeeper_client_lite.users.OperatorsData;
 import com.alrosa.staa.gatekeeper_client_lite.users.PassOfficeData;
 import com.alrosa.staa.gatekeeper_client_lite.users.UsersData;
@@ -94,5 +95,18 @@ public class AdminsPageController {
     //Вкладка "Контроллеры"
     @FXML
     private Tab tabControllers = new Tab();
+    @FXML
+    private Button buttonUpdateListControllers = new Button();
+    @FXML
+    private Button buttonOpenPersonalCardController = new Button();
+    @FXML
+    private Button buttonDeleteController = new Button();
+    @FXML
+    private TableView<ControllersData> tableViewControllers = new TableView<ControllersData>();
+    private ObservableList<ControllersData> observableListControllers = FXCollections.<ControllersData>observableArrayList();
+    @FXML
+    private TableColumn<ControllersData, String> tableColumnControllerId = new TableColumn<ControllersData, String>("ID");
+    @FXML
+    private TableColumn<ControllersData, String> tableColumnControllerName = new TableColumn<ControllersData, String>("Наименование");
 
 }
