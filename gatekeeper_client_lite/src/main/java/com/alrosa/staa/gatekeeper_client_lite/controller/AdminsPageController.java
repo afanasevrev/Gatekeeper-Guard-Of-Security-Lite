@@ -108,5 +108,9 @@ public class AdminsPageController {
     private TableColumn<ControllersData, String> tableColumnControllerId = new TableColumn<ControllersData, String>("ID");
     @FXML
     private TableColumn<ControllersData, String> tableColumnControllerName = new TableColumn<ControllersData, String>("Наименование");
+    @FXML
+    private TableColumn<ControllersData, String> tableColumnControllerIpAddress = new TableColumn<ControllersData, String>("IP - адрес");
+    @FXML
+    private TableColumn<ControllersData, String> tableColumnControllerStatus = new TableColumn<ControllersData, String>("Online");
 
 }
