@@ -127,5 +127,16 @@ public class AdminsPageController {
     private TableColumn<AccessLevelsData, String> tableColumnAccessLevelName = new TableColumn<AccessLevelsData, String>("Уровень доступа");
     @FXML
     private TableColumn<AccessLevelsData, String> tableColumnAccessLevelControllers = new TableColumn<AccessLevelsData, String>("Контроллеры");
+    //Вкладка "Карты"
+    @FXML
+    private Tab tabCards = new Tab();
+    @FXML
+    private TextField textFieldSearchCard = new TextField();
+    @FXML
+    private Button buttonSearchCard = new Button();
+    @FXML
+    private Button buttonUpdateListCards = new Button();
+    @FXML
+    private Button buttonOpenPersonalCardCard = new Button();
 
 }
