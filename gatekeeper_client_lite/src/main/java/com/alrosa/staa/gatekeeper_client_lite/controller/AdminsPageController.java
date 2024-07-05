@@ -1,9 +1,6 @@
 package com.alrosa.staa.gatekeeper_client_lite.controller;
 
-import com.alrosa.staa.gatekeeper_client_lite.users.ControllersData;
-import com.alrosa.staa.gatekeeper_client_lite.users.OperatorsData;
-import com.alrosa.staa.gatekeeper_client_lite.users.PassOfficeData;
-import com.alrosa.staa.gatekeeper_client_lite.users.UsersData;
+import com.alrosa.staa.gatekeeper_client_lite.data.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -112,5 +109,23 @@ public class AdminsPageController {
     private TableColumn<ControllersData, String> tableColumnControllerIpAddress = new TableColumn<ControllersData, String>("IP - адрес");
     @FXML
     private TableColumn<ControllersData, String> tableColumnControllerStatus = new TableColumn<ControllersData, String>("Online");
+    //Вкладка "Уровни доступа"
+    @FXML
+    private Tab tabAccessLevels = new Tab();
+    @FXML
+    private Button buttonUpdateListAccessLevels = new Button();
+    @FXML
+    private Button buttonOpenPersonalCardAccessLevel = new Button();
+    @FXML
+    private Button buttonDeleteAccessLevel = new Button();
+    @FXML
+    private TableView<AccessLevelsData> tableViewAccessLevels = new TableView<AccessLevelsData>();
+    private ObservableList<AccessLevelsData> observableListAccessLevels = FXCollections.<AccessLevelsData>observableArrayList();
+    @FXML
+    private TableColumn<AccessLevelsData, String> tableColumnAccessLevelId = new TableColumn<AccessLevelsData, String>("ID");
+    @FXML
+    private TableColumn<AccessLevelsData, String> tableColumnAccessLevelName = new TableColumn<AccessLevelsData, String>("Уровень доступа");
+    @FXML
+    private TableColumn<AccessLevelsData, String> tableColumnAccessLevelControllers = new TableColumn<AccessLevelsData, String>("Контроллеры");
 
 }
