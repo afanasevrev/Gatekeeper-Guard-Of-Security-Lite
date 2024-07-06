@@ -151,5 +151,31 @@ public class AdminsPageController {
     private TableColumn<CardsData, String> tableColumnCardUser = new TableColumn<CardsData, String>("Пользователь");
     @FXML
     private TableColumn<CardsData, String> tableColumnCardAccessLevel = new TableColumn<CardsData, String>("Уровень доступа");
+    //Вкладка "Администраторы"
+    @FXML
+    private Tab tabAdmins = new Tab();
+    @FXML
+    private TextField textFieldSearchAdmin = new TextField();
+    @FXML
+    private Button buttonSearchAdmin = new Button();
+    @FXML
+    private Button buttonUpdateListAdmins = new Button();
+    @FXML
+    private Button buttonOpenPersonalCardAdmin = new Button();
+    @FXML
+    private Button buttonDeleteAdmin = new Button();
+    @FXML
+    private TableView<AdminsData> tableViewAdmins = new TableView<AdminsData>();
+    private ObservableList<AdminsData> observableListAdmins = FXCollections.<AdminsData>observableArrayList();
+    @FXML
+    private TableColumn<AdminsData, String> tableColumnAdminId = new TableColumn<AdminsData, String>("ID");
+    @FXML
+    private TableColumn<AdminsData, String> tableColumnAdminFirstName = new TableColumn<AdminsData, String>("Фамилия");
+    @FXML
+    private TableColumn<AdminsData, String> tableColumnAdminMiddleName = new TableColumn<AdminsData, String>("Имя");
+    @FXML
+    private TableColumn<AdminsData, String> tableColumnAdminLogin = new TableColumn<AdminsData,String>("Логин");
+    @FXML
+    private TableColumn<AdminsData, String> tableColumnAdminSuperAdmin = new TableColumn<AdminsData, String>("Суперадмин");
 
 }
