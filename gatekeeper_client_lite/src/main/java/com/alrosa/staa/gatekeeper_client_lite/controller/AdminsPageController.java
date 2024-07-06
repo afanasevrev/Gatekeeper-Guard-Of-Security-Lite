@@ -138,5 +138,18 @@ public class AdminsPageController {
     private Button buttonUpdateListCards = new Button();
     @FXML
     private Button buttonOpenPersonalCardCard = new Button();
+    @FXML
+    private Button buttonDeleteCard = new Button();
+    @FXML
+    private TableView<CardsData> tableViewCards = new TableView<CardsData>();
+    private ObservableList<CardsData> observableListCards = FXCollections.<CardsData>observableArrayList();
+    @FXML
+    private TableColumn<CardsData, String> tableColumnCardId = new TableColumn<CardsData, String>("ID");
+    @FXML
+    private TableColumn<CardsData, String> tableColumnCardIdentifier = new TableColumn<CardsData, String>("Идентификатор");
+    @FXML
+    private TableColumn<CardsData, String> tableColumnCardUser = new TableColumn<CardsData, String>("Пользователь");
+    @FXML
+    private TableColumn<CardsData, String> tableColumnCardAccessLevel = new TableColumn<CardsData, String>("Уровень доступа");
 
 }

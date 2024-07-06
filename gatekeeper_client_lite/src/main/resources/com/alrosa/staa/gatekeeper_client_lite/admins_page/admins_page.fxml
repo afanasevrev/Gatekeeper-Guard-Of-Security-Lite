@@ -129,17 +129,17 @@
                      <children>
                         <TextField fx:id="textFieldSearchCard" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="250.0" promptText="Поиск..." />
                         <Button fx:id="buttonSearchCard" layoutX="275.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Поиск" />
-                        <TableView layoutX="14.0" layoutY="45.0" prefHeight="280.0" prefWidth="640.0">
+                        <TableView fx:id="tableViewCards" layoutX="14.0" layoutY="45.0" prefHeight="280.0" prefWidth="640.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="ID" />
-                            <TableColumn prefWidth="139.0" text="Идентификатор" />
-                              <TableColumn prefWidth="240.0" text="Пользователь" />
-                              <TableColumn prefWidth="177.0" text="Уровень доступа" />
+                            <TableColumn fx:id="tableColumnCardId" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="tableColumnCardIdentifier" prefWidth="139.0" text="Идентификатор" />
+                              <TableColumn fx:id="tableColumnCardUser" prefWidth="240.0" text="Пользователь" />
+                              <TableColumn fx:id="tableColumnCardAccessLevel" prefWidth="177.0" text="Уровень доступа" />
                           </columns>
                         </TableView>
                         <Button fx:id="buttonUpdateListCards" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
                         <Button fx:id="buttonOpenPersonalCardCard" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
-                        <Button layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button fx:id="buttonDeleteCard" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
                      </children>
                   </AnchorPane>
               </content>
