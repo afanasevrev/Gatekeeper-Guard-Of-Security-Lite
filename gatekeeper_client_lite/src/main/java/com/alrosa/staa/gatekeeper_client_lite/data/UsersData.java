@@ -2,7 +2,6 @@ package com.alrosa.staa.gatekeeper_client_lite.data;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-
 public class UsersData {
     public StringProperty id;
     public StringProperty first_name;
