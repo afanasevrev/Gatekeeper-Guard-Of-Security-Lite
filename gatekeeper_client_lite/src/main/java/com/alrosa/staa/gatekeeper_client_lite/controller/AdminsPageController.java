@@ -4,11 +4,16 @@ import com.alrosa.staa.gatekeeper_client_lite.data.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
 /**
  * Контроллер для формы администратора
  */
-public class AdminsPageController {
+public class AdminsPageController implements Initializable {
     //Вкладка "Пользователи"
     @FXML
     private Tab tabUsers = new Tab();
@@ -177,5 +182,8 @@ public class AdminsPageController {
     private TableColumn<AdminsData, String> tableColumnAdminLogin = new TableColumn<AdminsData,String>("Логин");
     @FXML
     private TableColumn<AdminsData, String> tableColumnAdminSuperAdmin = new TableColumn<AdminsData, String>("Суперадмин");
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        
+    }
 }
