@@ -190,8 +190,33 @@ public class AdminsPageController implements Initializable {
         tableColumnUserLastName.setCellValueFactory(cellData -> cellData.getValue().last_nameProperty());
         tableColumnUserCompany.setCellValueFactory(cellData -> cellData.getValue().companyProperty());
         tableColumnUserAccessLevel.setCellValueFactory(cellData -> cellData.getValue().access_levelProperty());
+
         //Обновляем таблицу для бюро пропусков
         tableViewPassOffice.setItems(observableListPassOffice);
+        tableColumnPassOfficeId.setCellValueFactory(cellData -> cellData.getValue().idProperty());
+        tableColumnPassOfficeFirstName.setCellValueFactory(cellData -> cellData.getValue().first_nameProperty());
+        tableColumnPassOfficeMiddleName.setCellValueFactory(cellData -> cellData.getValue().middle_nameProperty());
+        tableColumnPassOfficeLastName.setCellValueFactory(cellData -> cellData.getValue().last_nameProperty());
+        tableColumnPassOfficeLogin.setCellValueFactory(cellData -> cellData.getValue().loginProperty());
+
+        //Обновляем таблицу для операторов
+        tableViewOperators.setItems(observableListOperators);
+        tableColumnOperatorId.setCellValueFactory(cellData -> cellData.getValue().idProperty());
+        tableColumnOperatorFirstName.setCellValueFactory(cellData -> cellData.getValue().first_nameProperty());
+        tableColumnOperatorMiddleName.setCellValueFactory(cellData -> cellData.getValue().middle_nameProperty());
+        tableColumnOperatorLastName.setCellValueFactory(cellData -> cellData.getValue().last_nameProperty());
+        tableColumnOperatorLogin.setCellValueFactory(cellData -> cellData.getValue().loginProperty());
+
+        //Обновляем таблицу для контроллеров
+        tableViewControllers.setItems(observableListControllers);
+        tableColumnControllerId.setCellValueFactory(cellData -> cellData.getValue().idProperty());
+        tableColumnControllerIpAddress.setCellValueFactory(cellData -> cellData.getValue().ip_addressProperty());
+        tableColumnControllerName.setCellValueFactory(cellData -> cellData.getValue().controller_nameProperty());
+        tableColumnControllerStatus.setCellValueFactory(cellData -> cellData.getValue().statusProperty());
+
+        //Обновляем таблицу для уровней доступа
+        tableViewAccessLevels.setItems(observableListAccessLevels);
+        tableColumnAccessLevelId.setCellValueFactory(cellData -> cellData.getValue().idProperty());
         
     }
 }
