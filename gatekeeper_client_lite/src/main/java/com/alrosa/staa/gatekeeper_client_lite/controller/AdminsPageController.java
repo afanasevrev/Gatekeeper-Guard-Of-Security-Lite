@@ -6,10 +6,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-
 import java.net.URL;
 import java.util.ResourceBundle;
-
 /**
  * Контроллер для формы администратора
  */
@@ -41,7 +39,7 @@ public class AdminsPageController implements Initializable {
     @FXML
     private TableColumn<UsersData, String> tableColumnUserCompany = new TableColumn<UsersData, String>("Компания");
     @FXML
-    private TableColumn<UsersData, String> tableColumnAccessLevel = new TableColumn<UsersData, String>("Уровень доступа");
+    private TableColumn<UsersData, String> tableColumnUserAccessLevel = new TableColumn<UsersData, String>("Уровень доступа");
     //Вкладка "Бюро пропусков"
     @FXML
     private Tab tabPassOffice = new Tab();
@@ -184,6 +182,16 @@ public class AdminsPageController implements Initializable {
     private TableColumn<AdminsData, String> tableColumnAdminSuperAdmin = new TableColumn<AdminsData, String>("Суперадмин");
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //Обновляем таблицу для пользователей
+        tableViewUsers.setItems(observableListUsers);
+        tableColumnUserId.setCellValueFactory(cellData -> cellData.getValue().idProperty());
+        tableColumnUserFirstName.setCellValueFactory(cellData -> cellData.getValue().first_nameProperty());
+        tableColumnUserMiddleName.setCellValueFactory(cellData -> cellData.getValue().middle_nameProperty());
+        tableColumnUserLastName.setCellValueFactory(cellData -> cellData.getValue().last_nameProperty());
+        tableColumnUserCompany.setCellValueFactory(cellData -> cellData.getValue().companyProperty());
+        tableColumnUserAccessLevel.setCellValueFactory(cellData -> cellData.getValue().access_levelProperty());
+        //Обновляем таблицу для бюро пропусков
+        tableViewPassOffice.setItems(observableListPassOffice);
 
     }
 }
