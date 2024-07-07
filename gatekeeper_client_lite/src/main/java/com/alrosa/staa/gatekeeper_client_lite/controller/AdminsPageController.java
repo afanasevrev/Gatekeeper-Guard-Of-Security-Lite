@@ -184,6 +184,6 @@ public class AdminsPageController implements Initializable {
     private TableColumn<AdminsData, String> tableColumnAdminSuperAdmin = new TableColumn<AdminsData, String>("Суперадмин");
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        
     }
 }
