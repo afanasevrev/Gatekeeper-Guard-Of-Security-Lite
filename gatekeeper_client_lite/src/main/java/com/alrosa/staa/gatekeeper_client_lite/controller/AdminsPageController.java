@@ -192,6 +192,6 @@ public class AdminsPageController implements Initializable {
         tableColumnUserAccessLevel.setCellValueFactory(cellData -> cellData.getValue().access_levelProperty());
         //Обновляем таблицу для бюро пропусков
         tableViewPassOffice.setItems(observableListPassOffice);
-
+        
     }
 }
