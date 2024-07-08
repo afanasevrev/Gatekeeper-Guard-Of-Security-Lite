@@ -217,6 +217,23 @@ public class AdminsPageController implements Initializable {
         //Обновляем таблицу для уровней доступа
         tableViewAccessLevels.setItems(observableListAccessLevels);
         tableColumnAccessLevelId.setCellValueFactory(cellData -> cellData.getValue().idProperty());
+        tableColumnAccessLevelName.setCellValueFactory(cellData -> cellData.getValue().access_levelProperty());
+        tableColumnAccessLevelControllers.setCellValueFactory(cellData -> cellData.getValue().controllersProperty());
+
+        //Обновляем таблицу для карт доступа
+        tableViewCards.setItems(observableListCards);
+        tableColumnCardId.setCellValueFactory(cellData -> cellData.getValue().idProperty());
+        tableColumnCardIdentifier.setCellValueFactory(cellData -> cellData.getValue().identifierProperty());
+        tableColumnCardAccessLevel.setCellValueFactory(cellData -> cellData.getValue().access_levelProperty());
+        tableColumnCardUser.setCellValueFactory(cellData -> cellData.getValue().userProperty());
+
+        //Обновляем таблицу для администраторов
+        tableViewAdmins.setItems(observableListAdmins);
+        tableColumnAdminId.setCellValueFactory(cellData -> cellData.getValue().idProperty());
+        tableColumnAdminFirstName.setCellValueFactory(cellData -> cellData.getValue().first_nameProperty());
+        tableColumnAdminMiddleName.setCellValueFactory(cellData-> cellData.getValue().middle_nameProperty());
+        tableColumnAdminLogin.setCellValueFactory(cellData -> cellData.getValue().loginProperty());
+        tableColumnAdminSuperAdmin.setCellValueFactory(cellData -> cellData.getValue().super_adminProperty());
         
     }
 }
