@@ -29,10 +29,11 @@
                           </columns>
                         </TableView>
                         <TextField fx:id="textFieldSearchUser" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="250.0" promptText="Поиск..." />
-                        <Button fx:id="buttonSearchUser" layoutX="275.0" styleClass="button_12" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Поиск" />
-                        <Button fx:id="buttonUpdateListUsers" layoutX="14.0"  layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
+                        <Button fx:id="buttonSearchUser" layoutX="275.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" styleClass="button_12" text="Поиск" />
+                        <Button fx:id="buttonUpdateListUsers" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
                         <Button fx:id="buttonOpenPersonalCardUser" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
                         <Button fx:id="buttonDeleteUser" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить " />
+                        <Button layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
                      </children></AnchorPane>
             </content>
           </Tab>
@@ -54,6 +55,7 @@
                         <Button fx:id="buttonUpdateListPassOffice" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
                         <Button fx:id="buttonOpenPersonalCardPassOffice" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
                         <Button fx:id="buttonDeletePassOffice" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
                      </children></AnchorPane>
               </content>
             </Tab>
@@ -75,6 +77,7 @@
                         <Button fx:id="buttonUpdateListOperators" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
                         <Button fx:id="buttonOpenPersonalCardOperator" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
                         <Button fx:id="buttonDeleteOperator" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
                      </children></AnchorPane>
               </content>
             </Tab>
@@ -98,6 +101,7 @@
                         <Button fx:id="buttonUpdateListControllers" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
                         <Button fx:id="buttonOpenPersonalCardController" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
                         <Button fx:id="buttonDeleteController" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
                      </children></AnchorPane>
               </content>
             </Tab>
@@ -120,6 +124,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
+                        <Button layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
                      </children></AnchorPane>
               </content>
             </Tab>
@@ -140,6 +145,7 @@
                         <Button fx:id="buttonUpdateListCards" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
                         <Button fx:id="buttonOpenPersonalCardCard" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
                         <Button fx:id="buttonDeleteCard" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
                      </children>
                   </AnchorPane>
               </content>
@@ -162,6 +168,7 @@
                         <Button fx:id="buttonUpdateListAdmins" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
                         <Button fx:id="buttonOpenPersonalCardAdmin" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
                         <Button fx:id="buttonDeleteAdmin" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
                      </children></AnchorPane>
             </content>
           </Tab>

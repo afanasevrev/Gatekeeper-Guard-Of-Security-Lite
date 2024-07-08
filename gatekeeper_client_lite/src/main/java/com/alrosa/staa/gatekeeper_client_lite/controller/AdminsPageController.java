@@ -234,6 +234,6 @@ public class AdminsPageController implements Initializable {
         tableColumnAdminMiddleName.setCellValueFactory(cellData-> cellData.getValue().middle_nameProperty());
         tableColumnAdminLogin.setCellValueFactory(cellData -> cellData.getValue().loginProperty());
         tableColumnAdminSuperAdmin.setCellValueFactory(cellData -> cellData.getValue().super_adminProperty());
-        
+
     }
 }
