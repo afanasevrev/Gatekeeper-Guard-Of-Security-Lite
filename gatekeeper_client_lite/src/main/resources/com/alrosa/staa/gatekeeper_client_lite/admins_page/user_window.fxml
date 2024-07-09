@@ -17,5 +17,6 @@
       <ComboBox layoutX="180.0" layoutY="240.0" prefHeight="25.0" prefWidth="185.0" promptText="Уровень доступа" />
       <TextField layoutX="180.0" layoutY="285.0" prefHeight="25.0" prefWidth="185.0" promptText="Карта доступа" />
       <Button layoutX="20.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Загрузить фото" />
+      <Button layoutX="20.0" layoutY="240.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Изменить" />
    </children>
 </AnchorPane>

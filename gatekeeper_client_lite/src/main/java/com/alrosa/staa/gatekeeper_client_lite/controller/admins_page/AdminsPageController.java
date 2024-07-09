@@ -1,4 +1,4 @@
-package com.alrosa.staa.gatekeeper_client_lite.controller;
+package com.alrosa.staa.gatekeeper_client_lite.controller.admins_page;
 
 import com.alrosa.staa.gatekeeper_client_lite.data.*;
 import javafx.collections.FXCollections;
