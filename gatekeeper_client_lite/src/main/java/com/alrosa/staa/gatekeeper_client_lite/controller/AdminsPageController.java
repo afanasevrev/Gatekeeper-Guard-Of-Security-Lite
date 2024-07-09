@@ -26,6 +26,8 @@ public class AdminsPageController implements Initializable {
     @FXML
     private Button buttonDeleteUser = new Button();
     @FXML
+    private Button buttonAddUser = new Button();
+    @FXML
     private TableView<UsersData> tableViewUsers = new TableView<UsersData>();
     private ObservableList<UsersData> observableListUsers = FXCollections.<UsersData>observableArrayList();
     @FXML
@@ -54,6 +56,8 @@ public class AdminsPageController implements Initializable {
     @FXML
     private Button buttonDeletePassOffice = new Button();
     @FXML
+    private Button buttonAddPassOffice = new Button();
+    @FXML
     private TableView<PassOfficeData> tableViewPassOffice = new TableView<PassOfficeData>();
     private ObservableList<PassOfficeData> observableListPassOffice = FXCollections.<PassOfficeData>observableArrayList();
     @FXML
@@ -80,6 +84,8 @@ public class AdminsPageController implements Initializable {
     @FXML
     private Button buttonDeleteOperator = new Button();
     @FXML
+    private Button buttonAddOperator = new Button();
+    @FXML
     private TableView<OperatorsData> tableViewOperators = new TableView<OperatorsData>();
     private ObservableList<OperatorsData> observableListOperators = FXCollections.<OperatorsData>observableArrayList();
     @FXML
@@ -102,6 +108,8 @@ public class AdminsPageController implements Initializable {
     @FXML
     private Button buttonDeleteController = new Button();
     @FXML
+    private Button buttonAddController = new Button();
+    @FXML
     private TableView<ControllersData> tableViewControllers = new TableView<ControllersData>();
     private ObservableList<ControllersData> observableListControllers = FXCollections.<ControllersData>observableArrayList();
     @FXML
@@ -121,6 +129,8 @@ public class AdminsPageController implements Initializable {
     private Button buttonOpenPersonalCardAccessLevel = new Button();
     @FXML
     private Button buttonDeleteAccessLevel = new Button();
+    @FXML
+    private Button buttonAddAccessLevel = new Button();
     @FXML
     private TableView<AccessLevelsData> tableViewAccessLevels = new TableView<AccessLevelsData>();
     private ObservableList<AccessLevelsData> observableListAccessLevels = FXCollections.<AccessLevelsData>observableArrayList();
@@ -143,6 +153,8 @@ public class AdminsPageController implements Initializable {
     private Button buttonOpenPersonalCardCard = new Button();
     @FXML
     private Button buttonDeleteCard = new Button();
+    @FXML
+    private Button buttonAddCard = new Button();
     @FXML
     private TableView<CardsData> tableViewCards = new TableView<CardsData>();
     private ObservableList<CardsData> observableListCards = FXCollections.<CardsData>observableArrayList();
@@ -167,6 +179,8 @@ public class AdminsPageController implements Initializable {
     private Button buttonOpenPersonalCardAdmin = new Button();
     @FXML
     private Button buttonDeleteAdmin = new Button();
+    @FXML
+    private Button buttonAddAdmins = new Button();
     @FXML
     private TableView<AdminsData> tableViewAdmins = new TableView<AdminsData>();
     private ObservableList<AdminsData> observableListAdmins = FXCollections.<AdminsData>observableArrayList();
