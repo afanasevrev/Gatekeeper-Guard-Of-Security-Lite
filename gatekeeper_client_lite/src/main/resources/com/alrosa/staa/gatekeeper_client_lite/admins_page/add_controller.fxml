@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="150.0" prefWidth="230.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TextField layoutX="20.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Наименование" />
+        <TextField layoutX="20.0" layoutY="60.0" prefHeight="25.0" prefWidth="185.0" promptText="IP - адрес" />
+        <Button layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="186.0" text="Добавить" />
+    </children>
+</AnchorPane>
