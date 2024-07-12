@@ -12,8 +12,8 @@
         <TextField layoutX="180.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Фамилия" />
         <TextField layoutX="180.0" layoutY="60.0" prefHeight="25.0" prefWidth="185.0" promptText="Имя" />
         <TextField layoutX="180.0" layoutY="105.0" prefHeight="25.0" prefWidth="185.0" promptText="Отчество" />
-        <ComboBox layoutX="180.0" layoutY="150.0" prefHeight="25.0" prefWidth="185.0" promptText="Организация" />
-        <ComboBox layoutX="180.0" layoutY="195.0" prefHeight="25.0" prefWidth="185.0" promptText="Подразделение" />
+        <TextField layoutX="180.0" layoutY="150.0" prefHeight="25.0" prefWidth="185.0" promptText="Организация" />
+        <TextField layoutX="180.0" layoutY="195.0" prefHeight="25.0" prefWidth="185.0" promptText="Подразделение" />
         <ComboBox layoutX="180.0" layoutY="240.0" prefHeight="25.0" prefWidth="185.0" promptText="Уровень доступа" />
         <TextField layoutX="180.0" layoutY="285.0" prefHeight="25.0" prefWidth="185.0" promptText="Карта доступа" />
         <Button layoutX="20.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Загрузить фото" />
