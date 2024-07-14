@@ -11,7 +11,7 @@ public class DeleteUserController {
     private Button buttonCancel;
     @FXML
     private void setButtonDeleteUser() {
-        
+
     }
     @FXML
     private void setButtonCancel() {
