@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TextField layoutX="180.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Идентификатор" />
+        <TextField layoutX="180.0" layoutY="60.0" prefHeight="25.0" prefWidth="185.0" promptText="Пользователь" />
+        <TextField layoutX="180.0" layoutY="105.0" prefHeight="25.0" prefWidth="185.0" promptText="Уровень доступа" />
+        <Button layoutX="20.0" layoutY="240.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Закрыть" />
+    </children>
+</AnchorPane>
