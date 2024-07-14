@@ -13,7 +13,7 @@ public class Variables {
     public static int server_port;
     static {
         Properties properties = new Properties();
-        String propertiesFilePath = "settings.properties";
+        String propertiesFilePath = "src/main/resources/com/alrosa/staa/gatekeeper_client_lite/settings.properties";
         try {
             InputStream inputStream = new FileInputStream(propertiesFilePath);
             properties.load(inputStream);

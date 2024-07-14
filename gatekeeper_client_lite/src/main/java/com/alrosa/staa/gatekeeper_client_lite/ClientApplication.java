@@ -1,5 +1,6 @@
 package com.alrosa.staa.gatekeeper_client_lite;
 
+import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
