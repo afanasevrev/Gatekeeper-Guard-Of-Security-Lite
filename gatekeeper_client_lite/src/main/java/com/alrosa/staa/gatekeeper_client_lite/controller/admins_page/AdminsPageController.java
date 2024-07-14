@@ -12,6 +12,8 @@ import java.util.ResourceBundle;
  * Контроллер для формы администратора
  */
 public class AdminsPageController implements Initializable {
+    //id пользователя
+    public static Long user_id;
     //Вкладка "Пользователи"
     @FXML
     private Tab tabUsers = new Tab();
