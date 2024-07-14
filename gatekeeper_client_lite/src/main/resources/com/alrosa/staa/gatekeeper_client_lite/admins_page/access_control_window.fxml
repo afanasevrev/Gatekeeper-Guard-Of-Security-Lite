@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="292.0" prefWidth="225.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <TextField layoutX="21.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Уровень доступа" />
-        <TextField layoutX="21.0" layoutY="60.0" prefHeight="25.0" prefWidth="185.0" promptText="Контроллеры" />
+        <TextArea layoutX="21.0" layoutY="60.0" prefHeight="117.0" prefWidth="186.0" promptText="Контроллеры" />
+        <Button layoutX="21.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Добавить / Удалить" />
         <Button layoutX="21.0" layoutY="237.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Изменить" />
     </children>
 </AnchorPane>
