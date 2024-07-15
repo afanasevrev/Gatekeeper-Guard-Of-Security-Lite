@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 /**
- * Контроллер для формы "Удалить пользователя"
+ * Контроллер для формы "delete_user.fxml"
  */
 public class DeleteUserController {
     @FXML

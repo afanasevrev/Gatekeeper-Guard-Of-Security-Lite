@@ -9,7 +9,7 @@ import javafx.scene.control.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 /**
- * Контроллер для формы администратора
+ * Контроллер для формы "admins_page.fxml"
  */
 public class AdminsPageController implements Initializable {
     //id пользователя

@@ -5,10 +5,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+
 /**
- * Контроллер для формы "user_window.fxml"
+ * Контроллер для формы "add_user.fxml"
  */
-public class UserWindowController {
+public class AddUserController {
     @FXML
     private ImageView imageViewPhotoUser = new ImageView();
     @FXML
@@ -28,13 +29,13 @@ public class UserWindowController {
     @FXML
     private Button buttonLoadPhoto = new Button();
     @FXML
-    private Button buttonEdit = new Button();
+    private Button buttonAdd = new Button();
     @FXML
     private void setButtonLoadPhoto() {
 
     }
     @FXML
-    private void setButtonEdit() {
+    private void setButtonAdd() {
 
     }
 }

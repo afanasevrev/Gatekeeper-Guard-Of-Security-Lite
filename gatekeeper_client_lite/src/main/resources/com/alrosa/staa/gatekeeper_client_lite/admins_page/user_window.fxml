@@ -16,7 +16,7 @@
       <TextField fx:id="textFieldDepartment" layoutX="180.0" layoutY="195.0" prefHeight="25.0" prefWidth="185.0" promptText="Подразделение" />
       <ComboBox fx:id="comboBoxAccessControl" layoutX="180.0" layoutY="240.0" prefHeight="25.0" prefWidth="185.0" promptText="Уровень доступа" />
       <TextField fx:id="textFieldCard" layoutX="180.0" layoutY="285.0" prefHeight="25.0" prefWidth="185.0" promptText="Карта доступа" />
-      <Button fx:id="buttonLoadPhoto" layoutX="20.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Загрузить фото" />
-      <Button fx:id="buttonEdit" layoutX="20.0" layoutY="240.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Изменить" />
+      <Button fx:id="buttonLoadPhoto" onAction="#setButtonLoadPhoto" layoutX="20.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Загрузить фото" />
+      <Button fx:id="buttonEdit" onAction="#setButtonEdit" layoutX="20.0" layoutY="240.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Изменить" />
    </children>
 </AnchorPane>
