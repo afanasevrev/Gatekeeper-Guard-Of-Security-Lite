@@ -5,7 +5,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-
+/**
+ * Контроллер для формы "Окно пользователя"
+ */
 public class UserWindowController {
     @FXML
     private ImageView imageViewPhotoUser = new ImageView();

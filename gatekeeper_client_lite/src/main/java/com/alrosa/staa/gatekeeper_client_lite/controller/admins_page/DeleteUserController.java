@@ -1,9 +1,11 @@
 package com.alrosa.staa.gatekeeper_client_lite.controller.admins_page;
 
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+/**
+ * Контроллер для формы "Удалить пользователя"
+ */
 public class DeleteUserController {
     @FXML
     private Button buttonDeleteUser;
