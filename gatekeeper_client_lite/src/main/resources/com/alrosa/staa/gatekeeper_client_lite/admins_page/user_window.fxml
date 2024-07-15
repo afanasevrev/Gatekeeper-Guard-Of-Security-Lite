@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.admins_page.UserWindowController" prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="180.0" fitWidth="135.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <TextField layoutX="180.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Фамилия" />
