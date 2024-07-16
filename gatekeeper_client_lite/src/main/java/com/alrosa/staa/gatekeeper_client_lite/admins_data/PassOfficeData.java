@@ -1,16 +1,15 @@
-package com.alrosa.staa.gatekeeper_client_lite.data;
+package com.alrosa.staa.gatekeeper_client_lite.admins_data;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-
-public class OperatorsData {
+public class PassOfficeData {
     public StringProperty id;
     public StringProperty first_name;
     public StringProperty middle_name;
     public StringProperty last_name;
     public StringProperty login;
-    public OperatorsData() {}
-    public OperatorsData(String id, String first_name, String middle_name, String last_name, String login) {
+    public PassOfficeData() {}
+    public PassOfficeData(String id, String first_name, String middle_name, String last_name, String login) {
         this.id = new SimpleStringProperty(this, "id", id);
         this.first_name = new SimpleStringProperty(this, "first_name", first_name);
         this.middle_name = new SimpleStringProperty(this, "middle_name", middle_name);

@@ -1,4 +1,4 @@
-package com.alrosa.staa.gatekeeper_client_lite.data;
+package com.alrosa.staa.gatekeeper_client_lite.admins_data;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
