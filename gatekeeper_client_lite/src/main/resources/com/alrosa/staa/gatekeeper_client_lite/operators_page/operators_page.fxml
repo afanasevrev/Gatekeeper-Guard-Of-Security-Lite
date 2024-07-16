@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.operators_page.OperatorsPageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.operators_page.OperatorsPageController">
    <children>
       <SplitPane fx:id="splitPaneVertical" dividerPositions="0.5" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
         <items>
@@ -20,11 +20,11 @@
                <children>
                   <TableView fx:id="tableViewLogsData" prefHeight="200.0" prefWidth="600.0">
                     <columns>
-                      <TableColumn prefWidth="108.0" text="Дата" />
-                      <TableColumn prefWidth="109.0" text="Контроллер" />
-                        <TableColumn prefWidth="122.0" text="Направление" />
-                        <TableColumn prefWidth="130.0" text="Пользователь" />
-                        <TableColumn prefWidth="119.0" text="Доступ" />
+                      <TableColumn fx:id="tableColumnDate" prefWidth="108.0" text="Дата" />
+                      <TableColumn fx:id="tableColumnController" prefWidth="109.0" text="Контроллер" />
+                        <TableColumn fx:id="tableColumnDirection" prefWidth="122.0" text="Направление" />
+                        <TableColumn fx:id="tableColumnUser" prefWidth="130.0" text="Пользователь" />
+                        <TableColumn fx:id="tableColumnAccess" prefWidth="119.0" text="Доступ" />
                     </columns>
                   </TableView>
                </children>
