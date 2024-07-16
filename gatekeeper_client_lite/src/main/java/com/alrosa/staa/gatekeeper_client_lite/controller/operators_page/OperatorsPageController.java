@@ -48,7 +48,7 @@ public class OperatorsPageController implements Initializable {
         AnchorPane.setTopAnchor(tableViewLogsData, 0.0);
         AnchorPane.setRightAnchor(tableViewLogsData, 0.0);
         AnchorPane.setLeftAnchor(tableViewLogsData, 0.0);
-        //Обновляем таблицу
+        //Позиционируем таблицу
         tableViewLogsData.setItems(observableListLogsData);
         tableColumnDate.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
         tableColumnController.setCellValueFactory(cellData -> cellData.getValue().controllerNameProperty());
