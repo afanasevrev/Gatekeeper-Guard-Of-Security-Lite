@@ -3,7 +3,6 @@ package com.alrosa.staa.gatekeeper_server_lite.service;
 import com.alrosa.staa.gatekeeper_server_lite.entity.AdminsEntity;
 import com.alrosa.staa.gatekeeper_server_lite.repository.AdminsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 /**
  * Класс для операций над таблицей "Admin" в БД
