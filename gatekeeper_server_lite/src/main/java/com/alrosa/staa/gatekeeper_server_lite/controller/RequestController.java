@@ -5,8 +5,10 @@ import com.alrosa.staa.gatekeeper_server_lite.service.AdminsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.InspectorsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.OperatorsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.UsersService;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.apache.log4j.Logger;
 /**
@@ -14,6 +16,8 @@ import org.apache.log4j.Logger;
  */
 @RestController
 public class RequestController {
+    @Autowired
+    private AmqpTemplate template;
     private Logger logger = Logger.getLogger(RequestController.class);
     private AdminsService adminsService;
     private UsersService usersService;
@@ -30,5 +34,9 @@ public class RequestController {
     @GetMapping("/")
     private String getInfo() {
         return "Система контроля и управления доступом. Lite - версия";
+    }
+    @PostMapping("/fromController")
+    private void messageFromController() {
+        
     }
 }

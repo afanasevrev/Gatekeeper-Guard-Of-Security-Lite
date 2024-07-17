@@ -13,6 +13,6 @@ public class RabbitMqListener {
     private AmqpTemplate template;
     @RabbitListener(queues = "OPERATOR")
     private void Queue(String message) {
-        
+
     }
 }
