@@ -39,6 +39,6 @@ public class RequestController {
     }
     @PostMapping("/fromController")
     private void messageFromController(@RequestBody General general) {
-        
+        logger.info(general.getCard_identifier());
     }
 }
