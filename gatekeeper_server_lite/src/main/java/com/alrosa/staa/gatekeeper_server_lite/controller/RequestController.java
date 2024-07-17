@@ -1,6 +1,7 @@
 package com.alrosa.staa.gatekeeper_server_lite.controller;
 
 import com.alrosa.staa.gatekeeper_server_lite.entity.OperatorsEntity;
+import com.alrosa.staa.gatekeeper_server_lite.general.General;
 import com.alrosa.staa.gatekeeper_server_lite.service.AdminsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.InspectorsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.OperatorsService;
@@ -9,6 +10,7 @@ import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.apache.log4j.Logger;
 /**
@@ -36,7 +38,7 @@ public class RequestController {
         return "Система контроля и управления доступом. Lite - версия";
     }
     @PostMapping("/fromController")
-    private void messageFromController() {
+    private void messageFromController(@RequestBody General general) {
         
     }
 }
