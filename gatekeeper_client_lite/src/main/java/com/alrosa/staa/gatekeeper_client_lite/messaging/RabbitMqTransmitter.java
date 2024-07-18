@@ -17,7 +17,11 @@ public class RabbitMqTransmitter {
     private static RabbitMqListener INSTANCE;
     private ConnectionFactory connectionFactory = new ConnectionFactory();
     private Logger logger = Logger.getLogger(RabbitMqTransmitter.class);
-    private RabbitMqTransmitter() {}
+    private RabbitMqTransmitter() {
+        connectionFactory.setHost(Variables.rabbit_server_ip);
+        connectionFactory.setUsername(Variables.rabbit_server_login);
+        connectionFactory.setPassword(Variables.rabbit_server_password);
+    }
     public synchronized static RabbitMqListener getInstance() {
         if (INSTANCE == null) {
             INSTANCE = new RabbitMqListener();
@@ -31,9 +35,6 @@ public class RabbitMqTransmitter {
      * @throws TimeoutException
      */
     public synchronized void sendMessage(String text) throws IOException, TimeoutException {
-        connectionFactory.setHost(Variables.rabbit_server_ip);
-        connectionFactory.setUsername(Variables.rabbit_server_login);
-        connectionFactory.setPassword(Variables.rabbit_server_password);
         Connection connection = connectionFactory.newConnection();
         Channel channel = connection.createChannel();
         channel.basicPublish("", Variables.queue_send_server, null, text.getBytes(StandardCharsets.UTF_8));
