@@ -14,7 +14,7 @@ public class Variables {
     public static String rabbit_server_login;
     public static String rabbit_server_password;
     public static String queue_send_server = "Server";
-    public static String queue_receive_server = "admin";
+    public static String queue_receive_server = "Operator";
     static {
         Properties properties = new Properties();
         String propertiesFilePath = "src/main/resources/com/alrosa/staa/gatekeeper_client_lite/settings.properties";

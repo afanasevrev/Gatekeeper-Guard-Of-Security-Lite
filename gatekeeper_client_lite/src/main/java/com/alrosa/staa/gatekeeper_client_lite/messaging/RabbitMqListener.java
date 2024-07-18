@@ -1,15 +1,17 @@
 package com.alrosa.staa.gatekeeper_client_lite.messaging;
 
+import com.alrosa.staa.gatekeeper_client_lite.general.General;
 import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.DeliverCallback;
 import org.apache.log4j.Logger;
-
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeoutException;
-
 public class RabbitMqListener {
     private Logger logger = Logger.getLogger(RabbitMqListener.class);
     private static RabbitMqListener INSTANCE;
@@ -31,5 +33,17 @@ public class RabbitMqListener {
         Channel channel = connection.createChannel();
         channel.queueDeclare(Variables.queue_receive_server, true, false, false, null);
         logger.info("Receiver is started");
+        DeliverCallback deliverCallback = (consumerTag, delivery) -> {
+            String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
+            logger.info("Received from the server: " + message);
+            General general = null;
+            try {
+                general = gson.fromJson(message, General.class);
+                logger.info(general.getCard_identifier());
+            } catch (JsonSyntaxException e) {
+                logger.error("Получен неизвестный тип от сервера");
+                general = new General();
+            }
+        };
     }
 }

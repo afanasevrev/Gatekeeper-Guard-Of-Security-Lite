@@ -1,15 +1,12 @@
 package com.alrosa.staa.gatekeeper_client_lite.messaging;
 import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
-import com.google.gson.Gson;
 import org.apache.log4j.Logger;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeoutException;
-
 /**
  * Класс отвечает за отправку сообщений на сервер
  */
