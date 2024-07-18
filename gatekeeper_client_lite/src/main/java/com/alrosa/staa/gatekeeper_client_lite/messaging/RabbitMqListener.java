@@ -2,8 +2,14 @@ package com.alrosa.staa.gatekeeper_client_lite.messaging;
 
 import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
 import com.google.gson.Gson;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import org.apache.log4j.Logger;
+
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
+
 public class RabbitMqListener {
     private Logger logger = Logger.getLogger(RabbitMqListener.class);
     private static RabbitMqListener INSTANCE;
@@ -19,5 +25,11 @@ public class RabbitMqListener {
             INSTANCE = new RabbitMqListener();
         }
         return INSTANCE;
+    }
+    public synchronized void start() throws IOException, TimeoutException {
+        Connection connection = connectionFactory.newConnection();
+        Channel channel = connection.createChannel();
+        channel.queueDeclare(Variables.queue_receive_server, true, false, false, null);
+        logger.info("Receiver is started");
     }
 }

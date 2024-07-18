@@ -14,7 +14,7 @@ import java.util.concurrent.TimeoutException;
  * Класс отвечает за отправку сообщений на сервер
  */
 public class RabbitMqTransmitter {
-    private static RabbitMqListener INSTANCE;
+    private static RabbitMqTransmitter INSTANCE;
     private ConnectionFactory connectionFactory = new ConnectionFactory();
     private Logger logger = Logger.getLogger(RabbitMqTransmitter.class);
     private RabbitMqTransmitter() {
@@ -22,9 +22,9 @@ public class RabbitMqTransmitter {
         connectionFactory.setUsername(Variables.rabbit_server_login);
         connectionFactory.setPassword(Variables.rabbit_server_password);
     }
-    public synchronized static RabbitMqListener getInstance() {
+    public synchronized static RabbitMqTransmitter getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new RabbitMqListener();
+            INSTANCE = new RabbitMqTransmitter();
         }
         return INSTANCE;
     }
