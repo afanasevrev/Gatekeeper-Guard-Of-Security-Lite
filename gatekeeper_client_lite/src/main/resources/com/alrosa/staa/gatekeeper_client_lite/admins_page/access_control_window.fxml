@@ -9,7 +9,7 @@
     <children>
         <TextField fx:id="textFieldAccessControl" layoutX="21.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Уровень доступа" />
         <TextArea fx:id="textAreaControllers" layoutX="21.0" layoutY="60.0" prefHeight="117.0" prefWidth="186.0" promptText="Контроллеры" />
-        <Button fx:id="buttonAddDelete" layoutX="21.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Добавить / Удалить" />
-        <Button fx:id="buttonEdit" layoutX="21.0" layoutY="237.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Изменить" />
+        <Button fx:id="buttonAddDelete" onAction="#setButtonAddDelete" layoutX="21.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Добавить / Удалить" />
+        <Button fx:id="buttonEdit" onAction="#setButtonEdit" layoutX="21.0" layoutY="237.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Изменить" />
     </children>
 </AnchorPane>
