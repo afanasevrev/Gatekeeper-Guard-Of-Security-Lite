@@ -1,11 +1,18 @@
 package com.alrosa.staa.gatekeeper_server_lite;
 
+import com.alrosa.staa.gatekeeper_server_lite.messaging.RabbitConfiguration;
 import com.alrosa.staa.gatekeeper_server_lite.service.*;
 import org.apache.log4j.BasicConfigurator;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 @SpringBootApplication
+@Import(RabbitConfiguration.class)
+@EnableAutoConfiguration
+@ComponentScan
 public class GatekeeperServerLiteApplication {
 	@Bean
 	public AdminsService adminsService() {
