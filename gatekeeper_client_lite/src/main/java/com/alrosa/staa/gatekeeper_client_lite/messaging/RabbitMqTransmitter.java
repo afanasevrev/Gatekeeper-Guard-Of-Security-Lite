@@ -7,6 +7,7 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeoutException;
 
 /**
@@ -16,7 +17,6 @@ public class RabbitMqTransmitter {
     private static RabbitMqListener INSTANCE;
     private ConnectionFactory connectionFactory = new ConnectionFactory();
     private Logger logger = Logger.getLogger(RabbitMqTransmitter.class);
-    private Gson gson = new Gson();
     private RabbitMqTransmitter() {}
     public synchronized static RabbitMqListener getInstance() {
         if (INSTANCE == null) {
@@ -24,13 +24,18 @@ public class RabbitMqTransmitter {
         }
         return INSTANCE;
     }
-
+    /**
+     * Метод отправляет на сервер сообщение
+     * @param text
+     * @throws IOException
+     * @throws TimeoutException
+     */
     public synchronized void sendMessage(String text) throws IOException, TimeoutException {
         connectionFactory.setHost(Variables.rabbit_server_ip);
         connectionFactory.setUsername(Variables.rabbit_server_login);
         connectionFactory.setPassword(Variables.rabbit_server_password);
         Connection connection = connectionFactory.newConnection();
         Channel channel = connection.createChannel();
-
+        channel.basicPublish("", Variables.queue_send_server, null, text.getBytes(StandardCharsets.UTF_8));
     }
 }
