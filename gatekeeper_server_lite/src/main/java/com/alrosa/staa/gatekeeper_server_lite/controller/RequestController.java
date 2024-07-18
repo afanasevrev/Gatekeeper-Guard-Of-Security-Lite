@@ -5,6 +5,7 @@ import com.alrosa.staa.gatekeeper_server_lite.service.AdminsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.InspectorsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.OperatorsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.UsersService;
+import com.google.gson.Gson;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,8 @@ import org.apache.log4j.Logger;
 public class RequestController {
     @Autowired
     private AmqpTemplate template;
+    private Gson gson = new Gson();
+    private String text;
     private Logger logger = Logger.getLogger(RequestController.class);
     private AdminsService adminsService;
     private UsersService usersService;
@@ -38,7 +41,8 @@ public class RequestController {
     }
     @PostMapping("/fromController")
     private void messageFromController(@RequestBody General general) {
-        template.convertAndSend("Operator", general);
+        text = gson.toJson(general, General.class);
+        template.convertAndSend("Operator", text);
         logger.info(general.getCard_identifier());
     }
 }
