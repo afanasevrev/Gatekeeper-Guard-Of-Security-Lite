@@ -7,6 +7,8 @@ module com.alrosa.staa.gatekeeper_client_lite {
     requires spring.context;
     requires spring.beans;
     requires com.google.gson;
+    requires spring.boot;
+    requires spring.boot.autoconfigure;
     opens com.alrosa.staa.gatekeeper_client_lite to javafx.fxml;
     exports com.alrosa.staa.gatekeeper_client_lite;
     exports com.alrosa.staa.gatekeeper_client_lite.controller;

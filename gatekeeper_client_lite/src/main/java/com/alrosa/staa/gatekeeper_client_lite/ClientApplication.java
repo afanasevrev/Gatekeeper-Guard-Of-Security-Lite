@@ -1,14 +1,10 @@
 package com.alrosa.staa.gatekeeper_client_lite;
 
-import com.alrosa.staa.gatekeeper_client_lite.messaging.RabbitConfiguration;
-import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.springframework.context.annotation.Import;
 import java.io.IOException;
-@Import(RabbitConfiguration.class)
 public class ClientApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
