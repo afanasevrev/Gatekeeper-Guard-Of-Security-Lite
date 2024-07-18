@@ -1,6 +1,5 @@
 package com.alrosa.staa.gatekeeper_server_lite.controller;
 
-import com.alrosa.staa.gatekeeper_server_lite.entity.OperatorsEntity;
 import com.alrosa.staa.gatekeeper_server_lite.general.General;
 import com.alrosa.staa.gatekeeper_server_lite.service.AdminsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.InspectorsService;
@@ -39,7 +38,7 @@ public class RequestController {
     }
     @PostMapping("/fromController")
     private void messageFromController(@RequestBody General general) {
-        template.convertAndSend(general);
+        template.convertAndSend("Operator", general);
         logger.info(general.getCard_identifier());
     }
 }
