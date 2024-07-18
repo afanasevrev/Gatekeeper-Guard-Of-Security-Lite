@@ -5,11 +5,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="292.0" prefWidth="225.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.admins_page.AccessControlWindowController" prefHeight="292.0" prefWidth="225.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <TextField layoutX="21.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Уровень доступа" />
-        <TextArea layoutX="21.0" layoutY="60.0" prefHeight="117.0" prefWidth="186.0" promptText="Контроллеры" />
-        <Button layoutX="21.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Добавить / Удалить" />
-        <Button layoutX="21.0" layoutY="237.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Изменить" />
+        <TextField fx:id="textFieldAccessControl" layoutX="21.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Уровень доступа" />
+        <TextArea fx:id="textAreaControllers" layoutX="21.0" layoutY="60.0" prefHeight="117.0" prefWidth="186.0" promptText="Контроллеры" />
+        <Button fx:id="buttonAddDelete" layoutX="21.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Добавить / Удалить" />
+        <Button fx:id="buttonEdit" layoutX="21.0" layoutY="237.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Изменить" />
     </children>
 </AnchorPane>
