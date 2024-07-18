@@ -9,6 +9,7 @@ module com.alrosa.staa.gatekeeper_client_lite {
     requires com.google.gson;
     requires spring.boot;
     requires spring.boot.autoconfigure;
+    requires com.rabbitmq.client;
     opens com.alrosa.staa.gatekeeper_client_lite to javafx.fxml;
     exports com.alrosa.staa.gatekeeper_client_lite;
     exports com.alrosa.staa.gatekeeper_client_lite.controller;

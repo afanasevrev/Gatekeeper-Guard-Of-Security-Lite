@@ -30,6 +30,6 @@ public class RabbitConfiguration {
     }
     @Bean
     public Queue queueForOperator() {
-        return new Queue("Operator");
+        return new Queue("Server");
     }
 }

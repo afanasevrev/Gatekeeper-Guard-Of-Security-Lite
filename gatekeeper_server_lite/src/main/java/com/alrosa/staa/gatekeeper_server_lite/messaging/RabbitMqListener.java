@@ -15,7 +15,7 @@ public class RabbitMqListener {
     private String text;
     @Autowired
     private AmqpTemplate template;
-    @RabbitListener(queues = "Operator")
+    @RabbitListener(queues = "Server")
     private void Queue(String message) {
         logger.info(message);
     }
