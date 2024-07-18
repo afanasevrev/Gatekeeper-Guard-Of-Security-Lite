@@ -30,6 +30,8 @@ public class OperatorsPageController implements Initializable {
     @FXML
     private TableColumn<LogsData, String> tableColumnUser = new TableColumn<LogsData, String>("Пользователь");
     @FXML
+    private TableColumn<LogsData, String> tableColumnIdentifier = new TableColumn<LogsData, String>("Идентификатор карты");
+    @FXML
     private TableColumn<LogsData, String> tableColumnAccess = new TableColumn<LogsData, String>("Доступ");
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -54,6 +56,7 @@ public class OperatorsPageController implements Initializable {
         tableColumnController.setCellValueFactory(cellData -> cellData.getValue().controllerNameProperty());
         tableColumnDirection.setCellValueFactory(cellData -> cellData.getValue().directionProperty());
         tableColumnUser.setCellValueFactory(cellData -> cellData.getValue().userProperty());
+        tableColumnIdentifier.setCellValueFactory(cellData -> cellData.getValue().identifierProperty());
         tableColumnAccess.setCellValueFactory(cellData -> cellData.getValue().accessProperty());
     }
 }

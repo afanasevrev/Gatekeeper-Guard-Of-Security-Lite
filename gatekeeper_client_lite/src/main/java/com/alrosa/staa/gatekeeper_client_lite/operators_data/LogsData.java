@@ -10,13 +10,15 @@ public class LogsData {
     public StringProperty controllerName;
     public StringProperty direction;
     public StringProperty user;
+    public StringProperty identifier;
     public StringProperty access;
     public LogsData() {}
-    public LogsData(String date, String controllerName, String direction, String user, String access) {
+    public LogsData(String date, String controllerName, String direction, String user, String identifier, String access) {
         this.date = new SimpleStringProperty(this, "date", date);
         this.controllerName = new SimpleStringProperty(this, "controllerName", controllerName);
         this.direction = new SimpleStringProperty(this, "direction", direction);
         this.user = new SimpleStringProperty(this, "user", user);
+        this.identifier = new SimpleStringProperty(this, "identifier", identifier);
         this.access = new SimpleStringProperty(this, "access", access);
     }
     public String getDate() {
@@ -63,5 +65,14 @@ public class LogsData {
     }
     public void setAccess(String access) {
         this.access.set(access);
+    }
+    public String getIdentifier() {
+        return identifier.get();
+    }
+    public StringProperty identifierProperty() {
+        return identifier;
+    }
+    public void setIdentifier(String identifier) {
+        this.identifier.set(identifier);
     }
 }
