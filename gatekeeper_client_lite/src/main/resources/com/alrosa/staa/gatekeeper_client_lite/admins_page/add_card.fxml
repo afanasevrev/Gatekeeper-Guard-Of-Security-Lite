@@ -7,6 +7,6 @@
 <AnchorPane fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.admins_page.AddCardController" prefHeight="100.0" prefWidth="230.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <TextField fx:id="textFieldIdentifier" layoutX="20.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Идентификатор" />
-        <Button fx:id="buttonAdd" layoutX="19.0" layoutY="62.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="186.0" text="Добавить" />
+        <Button fx:id="buttonAdd" onAction="#setButtonAdd" layoutX="19.0" layoutY="62.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="186.0" text="Добавить" />
     </children>
 </AnchorPane>
