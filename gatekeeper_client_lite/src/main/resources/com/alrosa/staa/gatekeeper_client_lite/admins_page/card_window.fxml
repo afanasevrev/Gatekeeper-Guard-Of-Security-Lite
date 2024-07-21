@@ -4,11 +4,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="200.0" prefWidth="230.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.admins_page.CardWindowController" prefHeight="200.0" prefWidth="230.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <TextField layoutX="20.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Идентификатор" />
-        <TextField layoutX="20.0" layoutY="60.0" prefHeight="25.0" prefWidth="185.0" promptText="Пользователь" />
-        <TextField layoutX="20.0" layoutY="105.0" prefHeight="25.0" prefWidth="185.0" promptText="Уровень доступа" />
-        <Button layoutX="20.0" layoutY="150.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Закрыть" />
+        <TextField fx:id="textFieldIdentifier" layoutX="20.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Идентификатор" />
+        <TextField fx:id="textFieldUser" layoutX="20.0" layoutY="60.0" prefHeight="25.0" prefWidth="185.0" promptText="Пользователь" />
+        <TextField fx:id="textFieldAccessControl" layoutX="20.0" layoutY="105.0" prefHeight="25.0" prefWidth="185.0" promptText="Уровень доступа" />
+        <Button fx:id="buttonClose" onAction="#setButtonClose" layoutX="20.0" layoutY="150.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Закрыть" />
     </children>
 </AnchorPane>
