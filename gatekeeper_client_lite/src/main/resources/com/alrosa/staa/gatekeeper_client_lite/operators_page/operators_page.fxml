@@ -24,7 +24,7 @@
                       <TableColumn fx:id="tableColumnController" prefWidth="109.0" text="Контроллер" />
                         <TableColumn fx:id="tableColumnDirection" prefWidth="122.0" text="Направление" />
                         <TableColumn fx:id="tableColumnUser" prefWidth="130.0" text="Пользователь" />
-                        <TableColumn fx:id="tableColumnIdentifier" prefWidth="130.0" text="Идентификатор карты" />
+                        <TableColumn fx:id="tableColumnIdentifier" prefWidth="150.0" text="Идентификатор карты" />
                         <TableColumn fx:id="tableColumnAccess" prefWidth="119.0" text="Доступ" />
                     </columns>
                   </TableView>

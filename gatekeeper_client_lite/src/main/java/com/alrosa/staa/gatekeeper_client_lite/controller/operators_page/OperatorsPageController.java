@@ -58,5 +58,7 @@ public class OperatorsPageController implements Initializable {
         tableColumnUser.setCellValueFactory(cellData -> cellData.getValue().userProperty());
         tableColumnIdentifier.setCellValueFactory(cellData -> cellData.getValue().identifierProperty());
         tableColumnAccess.setCellValueFactory(cellData -> cellData.getValue().accessProperty());
+        //Привязываем столбец по правому краю таблицы
+        tableColumnAccess.prefWidthProperty().bind(tableViewLogsData.widthProperty().subtract(619));
     }
 }
