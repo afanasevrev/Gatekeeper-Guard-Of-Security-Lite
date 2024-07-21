@@ -4,10 +4,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="150.0" prefWidth="225.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.admins_page.ControllerWindowController" prefHeight="150.0" prefWidth="225.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <TextField layoutX="20.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Наименование" />
-        <TextField layoutX="20.0" layoutY="60.0" prefHeight="25.0" prefWidth="185.0" promptText="IP - адрес" />
-        <Button layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Изменить" />
+        <TextField fx:id="textFieldControllerName" layoutX="20.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Наименование" />
+        <TextField fx:id="textFieldIpAddress" layoutX="20.0" layoutY="60.0" prefHeight="25.0" prefWidth="185.0" promptText="IP - адрес" />
+        <Button fx:id="buttonEdit" onAction="#setButtonEdit" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Изменить" />
     </children>
 </AnchorPane>
