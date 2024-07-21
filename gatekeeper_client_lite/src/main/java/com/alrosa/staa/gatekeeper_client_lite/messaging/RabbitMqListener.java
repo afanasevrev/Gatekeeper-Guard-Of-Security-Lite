@@ -12,6 +12,9 @@ import org.apache.log4j.Logger;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeoutException;
+/**
+ * Класс для приёма сообщений
+ */
 public class RabbitMqListener {
     private Logger logger = Logger.getLogger(RabbitMqListener.class);
     private static RabbitMqListener INSTANCE;
@@ -32,10 +35,10 @@ public class RabbitMqListener {
         Connection connection = connectionFactory.newConnection();
         Channel channel = connection.createChannel();
         channel.queueDeclare(Variables.queue_receive_server, true, false, false, null);
-        logger.info("Receiver is started");
+        logger.info("1. RabbitMQ receiver is started");
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
-            logger.info("Received from the server: " + message);
+            logger.info("Получено сообщение от сервера: " + message);
             General general = null;
             try {
                 general = gson.fromJson(message, General.class);
