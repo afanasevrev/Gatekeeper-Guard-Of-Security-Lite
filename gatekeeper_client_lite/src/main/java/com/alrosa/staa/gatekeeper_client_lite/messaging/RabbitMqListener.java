@@ -45,7 +45,6 @@ public class RabbitMqListener {
                 logger.info(general.getCard_identifier());
             } catch (JsonSyntaxException e) {
                 logger.error("Получен неизвестный тип от сервера");
-                general = new General();
             }
         };
         channel.basicConsume(Variables.queue_receive_server, true, deliverCallback, consumerTag -> {});
