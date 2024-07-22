@@ -43,6 +43,5 @@ public class RequestController {
     private void messageFromController(@RequestBody General general) {
         text = gson.toJson(general);
         template.convertAndSend("Operator", text);
-        //logger.info(general.getCard_identifier());
     }
 }
