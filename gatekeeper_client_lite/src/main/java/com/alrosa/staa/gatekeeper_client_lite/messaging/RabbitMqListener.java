@@ -1,6 +1,8 @@
 package com.alrosa.staa.gatekeeper_client_lite.messaging;
 
+import com.alrosa.staa.gatekeeper_client_lite.controller.operators_page.OperatorsPageController;
 import com.alrosa.staa.gatekeeper_client_lite.general.General;
+import com.alrosa.staa.gatekeeper_client_lite.operators_data.LogsData;
 import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
@@ -43,6 +45,7 @@ public class RabbitMqListener {
             try {
                 general = gson.fromJson(message, General.class);
                 logger.info(general.getCard_identifier());
+                OperatorsPageController.observableListLogsData.add(new LogsData(general.getCard_identifier()));
             } catch (JsonSyntaxException e) {
                 logger.error("Получен неизвестный тип от сервера");
             }

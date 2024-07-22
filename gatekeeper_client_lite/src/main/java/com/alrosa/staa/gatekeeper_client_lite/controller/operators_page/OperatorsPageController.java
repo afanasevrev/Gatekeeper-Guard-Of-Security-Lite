@@ -20,7 +20,7 @@ public class OperatorsPageController implements Initializable {
     private HBox hbox = new HBox();
     @FXML
     private TableView<LogsData> tableViewLogsData = new TableView<LogsData>();
-    private ObservableList<LogsData> observableListLogsData = FXCollections.<LogsData>observableArrayList();
+    public static ObservableList<LogsData> observableListLogsData = FXCollections.<LogsData>observableArrayList();
     @FXML
     private TableColumn<LogsData, String> tableColumnDate = new TableColumn<LogsData, String>("Дата");
     @FXML

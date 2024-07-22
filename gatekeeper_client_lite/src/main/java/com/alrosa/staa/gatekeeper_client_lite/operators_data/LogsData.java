@@ -21,6 +21,9 @@ public class LogsData {
         this.identifier = new SimpleStringProperty(this, "identifier", identifier);
         this.access = new SimpleStringProperty(this, "access", access);
     }
+    public LogsData(String identifier) {
+        this.identifier = new SimpleStringProperty(this, "identifier", identifier);
+    }
     public String getDate() {
         return date.get();
     }
