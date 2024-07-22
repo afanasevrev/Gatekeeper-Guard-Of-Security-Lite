@@ -80,3 +80,6 @@
     -fx-text-fill: #777777;
     -fx-font-style: italic;
 }
+.table-cell {
+    -fx-alignment: CENTER-RIGHT;
+}
