@@ -16,5 +16,4 @@ public class PhotosEntity {
     @Lob
     @Column(name = "photo")
     private byte[] photo;
-
 }
