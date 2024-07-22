@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.operators_page.OperatorsPageController">
    <children>
       <SplitPane fx:id="splitPaneVertical" dividerPositions="0.5" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
@@ -18,7 +17,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TableView fx:id="tableViewLogsData" prefHeight="200.0" prefWidth="600.0">
+                  <TableView fx:id="tableViewLogsData" prefHeight="200.0" prefWidth="600.0" stylesheets="@../css/table_style.css">
                     <columns>
                       <TableColumn fx:id="tableColumnDate" prefWidth="108.0" text="Дата" />
                       <TableColumn fx:id="tableColumnController" prefWidth="109.0" text="Контроллер" />
