@@ -48,5 +48,6 @@ public class RabbitMqListener {
                 general = new General();
             }
         };
+        channel.basicConsume(Variables.queue_receive_server, true, deliverCallback, consumerTag -> {});
     }
 }
