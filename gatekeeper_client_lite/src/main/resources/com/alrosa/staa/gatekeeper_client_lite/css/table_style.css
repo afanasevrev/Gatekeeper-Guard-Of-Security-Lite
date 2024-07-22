@@ -83,8 +83,4 @@
 .table-cell {
     -fx-alignment: CENTER-RIGHT;
 }
-.table-view .table-column:last-visible {
-    -fx-border-width: 0 1 0 0;
-    -fx-border-color: -fx-box-border;
-}
 
