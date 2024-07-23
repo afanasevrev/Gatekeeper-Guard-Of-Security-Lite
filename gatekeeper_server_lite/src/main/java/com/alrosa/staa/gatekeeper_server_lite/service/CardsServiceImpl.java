@@ -28,4 +28,8 @@ public class CardsServiceImpl implements CardsService {
     public String updateCard(UsersEntity entity, Long id) {
         return null;
     }
+    @Override
+    public CardsEntity readCard(String card_id) {
+        return null;
+    }
 }
