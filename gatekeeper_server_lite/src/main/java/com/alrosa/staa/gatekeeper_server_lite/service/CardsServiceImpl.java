@@ -28,6 +28,11 @@ public class CardsServiceImpl implements CardsService {
     public String updateCard(UsersEntity entity, Long id) {
         return null;
     }
+    /**
+     * 
+     * @param card_id
+     * @return
+     */
     @Override
     public CardsEntity readCard(String card_id) {
         return cardsRepository.findByCardId(card_id);
