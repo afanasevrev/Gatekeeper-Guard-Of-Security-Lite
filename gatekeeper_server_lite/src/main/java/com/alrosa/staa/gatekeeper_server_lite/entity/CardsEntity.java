@@ -17,6 +17,9 @@ public class CardsEntity {
     private Long id;
     @Column(name = "card_id")
     private String card_id;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private UsersEntity usersEntity;
     public CardsEntity() {}
     public CardsEntity(String card_id) {
         this.card_id = card_id;

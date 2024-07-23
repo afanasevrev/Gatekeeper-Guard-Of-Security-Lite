@@ -25,20 +25,12 @@ public class UsersEntity {
     private String company;
     @Column(name = "organization")
     private String organization;
-    @ManyToOne
-    @JoinColumn(name = "card_id", nullable = false)
-    private CardsEntity cardsEntity;
-    @ManyToOne
-    @JoinColumn(name = "photo_id", nullable = false)
-    private PhotosEntity photosEntity;
     public UsersEntity() {}
-    public UsersEntity(String first_name, String middle_name, String last_name, String company, String organization, CardsEntity cardsEntity, PhotosEntity photosEntity) {
+    public UsersEntity(String first_name, String middle_name, String last_name, String company, String organization) {
         this.first_name = first_name;
         this.middle_name = middle_name;
         this.last_name = last_name;
         this.company = company;
         this.organization = organization;
-        this.cardsEntity = cardsEntity;
-        this.photosEntity = photosEntity;
     }
 }
