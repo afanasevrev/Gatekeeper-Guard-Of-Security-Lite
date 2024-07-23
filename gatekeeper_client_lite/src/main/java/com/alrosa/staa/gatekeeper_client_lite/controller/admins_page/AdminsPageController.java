@@ -1,18 +1,30 @@
 package com.alrosa.staa.gatekeeper_client_lite.controller.admins_page;
 
 import com.alrosa.staa.gatekeeper_client_lite.admins_data.*;
+import com.alrosa.staa.gatekeeper_client_lite.view.DeleteUserConsole;
+import com.alrosa.staa.gatekeeper_client_lite.view.UserWindowConsole;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 /**
  * Контроллер для формы "admins_page.fxml"
  */
 public class AdminsPageController implements Initializable {
-    //id пользователя
+    //Создаем экземпляр класса Stage
+    private Stage stage = new Stage();
+    //Создаем экземпляр класса для изменения пользователя
+    private UserWindowConsole userWindowConsole = new UserWindowConsole();
+    //Создаем экземпляр класса для удаления пользователя
+    private DeleteUserConsole deleteUserConsole = new DeleteUserConsole();
+    //ID пользователя
     public static Long user_id;
     //Вкладка "Пользователи"
     @FXML
@@ -26,7 +38,15 @@ public class AdminsPageController implements Initializable {
     @FXML
     private Button buttonOpenPersonalCardUser = new Button();
     @FXML
+    private void setButtonOpenPersonalCardUser() throws IOException {
+        userWindowConsole.start(stage);
+    }
+    @FXML
     private Button buttonDeleteUser = new Button();
+    @FXML
+    private void setButtonDeleteUser() throws IOException {
+        deleteUserConsole.start(stage);
+    }
     @FXML
     private Button buttonAddUser = new Button();
     @FXML

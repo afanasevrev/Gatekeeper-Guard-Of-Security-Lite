@@ -31,8 +31,8 @@
                         <TextField fx:id="textFieldSearchUser" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="250.0" promptText="Поиск..." />
                         <Button fx:id="buttonSearchUser" layoutX="275.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" styleClass="button_12" text="Поиск" />
                         <Button fx:id="buttonUpdateListUsers" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
-                        <Button fx:id="buttonOpenPersonalCardUser" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
-                        <Button fx:id="buttonDeleteUser" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить " />
+                        <Button fx:id="buttonOpenPersonalCardUser" onAction="#setButtonOpenPersonalCardUser" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
+                        <Button fx:id="buttonDeleteUser" onAction="#setButtonDeleteUser" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить " />
                         <Button fx:id="buttonAddUser" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
                      </children></AnchorPane>
             </content>
