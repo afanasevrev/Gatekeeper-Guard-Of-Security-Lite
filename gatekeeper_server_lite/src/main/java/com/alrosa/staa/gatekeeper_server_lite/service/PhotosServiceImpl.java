@@ -57,7 +57,7 @@ public class PhotosServiceImpl implements PhotosService {
     @Override
     public String updatePhoto(PhotosEntity entity, Long id) {
         PhotosEntity photosEntity = photosRepository.findById(id).get();
-        
-        return null;
+        photosEntity.setUser_photo(entity.getUser_photo());
+        return "Фотография с ID = " + id + " успешно обновлена в БД";
     }
 }
