@@ -42,6 +42,7 @@ public class RequestController {
     @PostMapping("/fromController")
     private void messageFromController(@RequestBody General general) {
         text = gson.toJson(general);
+
         template.convertAndSend("Operator", text);
     }
 }
