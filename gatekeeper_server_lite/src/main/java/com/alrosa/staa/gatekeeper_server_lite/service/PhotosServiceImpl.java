@@ -29,22 +29,35 @@ public class PhotosServiceImpl implements PhotosService {
         return photosRepository.findAll();
     }
     /**
-     * 
+     * Метод возвращает фотографию из БД по выбранному id
      * @param id
-     * @return
+     * @return PhotosEntity
      */
     @Override
     public PhotosEntity readPhoto(Long id) {
-        return null;
+        return photosRepository.findById(id).get();
     }
-
+    /**
+     * Метод удаляет из БД фотографию по выбранному id
+     * @param id
+     * @return Статус выполнения запроса
+     */
     @Override
     public String deletePhoto(Long id) {
-        return null;
+        PhotosEntity photosEntity = photosRepository.findById(id).get();
+        photosRepository.delete(photosEntity);
+        return "Фотография с ID = " + id + " успешно удалена из БД";
     }
-
+    /**
+     * Метод обновляет в БД по выбранному id
+     * @param entity
+     * @param id
+     * @return Статус выполнения запроса
+     */
     @Override
     public String updatePhoto(PhotosEntity entity, Long id) {
+        PhotosEntity photosEntity = photosRepository.findById(id).get();
+        
         return null;
     }
 }
