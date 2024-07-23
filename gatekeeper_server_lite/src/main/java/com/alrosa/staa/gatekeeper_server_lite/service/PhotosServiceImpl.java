@@ -10,17 +10,29 @@ import java.util.List;
 public class PhotosServiceImpl implements PhotosService {
     @Autowired
     private PhotosRepository photosRepository;
-
+    /**
+     * Метод добавляет в БД новую фотографию
+     * @param entity
+     * @return Статус выполнения запроса
+     */
     @Override
     public String createPhoto(PhotosEntity entity) {
-        return null;
+        photosRepository.save(entity);
+        return "Новая фотография успешно добавлена";
     }
-
+    /**
+     * Метод возвращает все фотографии из БД
+     * @return List
+     */
     @Override
     public List<PhotosEntity> readPhotos() {
-        return null;
+        return photosRepository.findAll();
     }
-
+    /**
+     * 
+     * @param id
+     * @return
+     */
     @Override
     public PhotosEntity readPhoto(Long id) {
         return null;
