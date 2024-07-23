@@ -15,5 +15,7 @@ public class PhotosEntity {
     @Lob()
     @Column(name = "user_photo", columnDefinition = "LONGBLOB")
     private byte[] user_photo;
-
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private UsersEntity usersEntity;
 }
