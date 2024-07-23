@@ -18,4 +18,9 @@ public class PhotosEntity {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private UsersEntity usersEntity;
+    public PhotosEntity() {}
+    public PhotosEntity(byte[] user_photo, UsersEntity userEntity) {
+        this.user_photo = user_photo;
+        this.usersEntity = userEntity;
+    }
 }
