@@ -3,15 +3,14 @@ package com.alrosa.staa.gatekeeper_server_lite.service;
 import com.alrosa.staa.gatekeeper_server_lite.entity.AccessLevelsEntity;
 import com.alrosa.staa.gatekeeper_server_lite.repository.AccessLevelsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
-
 public class AccessLevelsServiceImpl implements AccessLevelsService {
     @Autowired
     private AccessLevelsRepository accessLevelsRepository;
     @Override
     public String createAccessLevel(AccessLevelsEntity entity) {
-        return null;
+        accessLevelsRepository.save(entity);
+        return "Уровень доступа успешно добавлен в БД";
     }
     @Override
     public List<AccessLevelsEntity> readAccessLevels() {
