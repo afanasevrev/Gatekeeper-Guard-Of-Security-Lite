@@ -1,10 +1,9 @@
 package com.alrosa.staa.gatekeeper_server_lite.controller;
 
+import com.alrosa.staa.gatekeeper_server_lite.entity.CardsEntity;
+import com.alrosa.staa.gatekeeper_server_lite.entity.PhotosEntity;
 import com.alrosa.staa.gatekeeper_server_lite.general.General;
-import com.alrosa.staa.gatekeeper_server_lite.service.AdminsService;
-import com.alrosa.staa.gatekeeper_server_lite.service.InspectorsService;
-import com.alrosa.staa.gatekeeper_server_lite.service.OperatorsService;
-import com.alrosa.staa.gatekeeper_server_lite.service.UsersService;
+import com.alrosa.staa.gatekeeper_server_lite.service.*;
 import com.google.gson.Gson;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +26,17 @@ public class RequestController {
     private UsersService usersService;
     private InspectorsService inspectorsService;
     private OperatorsService operatorsService;
+    private CardsService cardsService;
+    private PhotosService photosService;
     public RequestController() {}
     @Autowired
-    public RequestController(AdminsService adminsService, UsersService usersService, InspectorsService inspectorsService, OperatorsService operatorsService) {
+    public RequestController(AdminsService adminsService, UsersService usersService, InspectorsService inspectorsService, OperatorsService operatorsService, CardsService cardsService, PhotosService photosService) {
         this.adminsService = adminsService;
         this.usersService = usersService;
         this.inspectorsService = inspectorsService;
         this.operatorsService = operatorsService;
+        this.cardsService = cardsService;
+        this.photosService = photosService;
     }
     @GetMapping("/")
     private String getInfo() {
