@@ -1,6 +1,7 @@
 package com.alrosa.staa.gatekeeper_client_lite.controller.admins_page;
 
 import com.alrosa.staa.gatekeeper_client_lite.admins_data.*;
+import com.alrosa.staa.gatekeeper_client_lite.view.AddUserConsole;
 import com.alrosa.staa.gatekeeper_client_lite.view.DeleteUserConsole;
 import com.alrosa.staa.gatekeeper_client_lite.view.UserWindowConsole;
 import javafx.collections.FXCollections;
@@ -24,6 +25,8 @@ public class AdminsPageController implements Initializable {
     private UserWindowConsole userWindowConsole = new UserWindowConsole();
     //Создаем экземпляр класса для удаления пользователя
     private DeleteUserConsole deleteUserConsole = new DeleteUserConsole();
+    //Создаем экземпляр класса для добавления пользователя
+    private AddUserConsole addUserConsole = new AddUserConsole();
     //ID пользователя
     public static Long user_id;
     //Вкладка "Пользователи"
@@ -49,6 +52,10 @@ public class AdminsPageController implements Initializable {
     }
     @FXML
     private Button buttonAddUser = new Button();
+    @FXML
+    private void setButtonAddUser() throws IOException {
+        addUserConsole.start(stage);
+    }
     @FXML
     private TableView<UsersData> tableViewUsers = new TableView<UsersData>();
     private ObservableList<UsersData> observableListUsers = FXCollections.<UsersData>observableArrayList();

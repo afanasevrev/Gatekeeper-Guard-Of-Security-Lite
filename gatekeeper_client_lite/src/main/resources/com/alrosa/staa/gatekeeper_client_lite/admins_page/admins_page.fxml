@@ -33,7 +33,7 @@
                         <Button fx:id="buttonUpdateListUsers" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
                         <Button fx:id="buttonOpenPersonalCardUser" onAction="#setButtonOpenPersonalCardUser" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
                         <Button fx:id="buttonDeleteUser" onAction="#setButtonDeleteUser" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить " />
-                        <Button fx:id="buttonAddUser" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
+                        <Button fx:id="buttonAddUser" onAction="#setButtonAddUser" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
                      </children></AnchorPane>
             </content>
           </Tab>
