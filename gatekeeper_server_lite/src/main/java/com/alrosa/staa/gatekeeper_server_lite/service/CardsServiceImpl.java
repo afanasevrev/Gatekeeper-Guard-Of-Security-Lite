@@ -36,6 +36,6 @@ public class CardsServiceImpl implements CardsService {
     @Override
     public CardsEntity readCard(String card_id) {
         return null;
-        //return cardsRepository.findCardByCards(card_id);
+        //cardsRepository.findById(card_id);
     }
 }
