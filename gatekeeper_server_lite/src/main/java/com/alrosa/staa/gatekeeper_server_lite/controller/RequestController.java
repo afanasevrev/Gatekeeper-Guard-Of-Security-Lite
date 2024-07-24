@@ -25,18 +25,18 @@ public class RequestController {
     private InspectorsService inspectorsService;
     private OperatorsService operatorsService;
     private AccessLevelsService accessLevelsService;
-   // private CardsService cardsService;
-   // private PhotosService photosService;
+    private CardsService cardsService;
+    private PhotosService photosService;
     public RequestController() {}
     @Autowired
-    public RequestController(AdminsService adminsService, UsersService usersService, InspectorsService inspectorsService, OperatorsService operatorsService, AccessLevelsService accessLevelsService) {
+    public RequestController(AdminsService adminsService, UsersService usersService, InspectorsService inspectorsService, OperatorsService operatorsService, AccessLevelsService accessLevelsService, CardsService cardsService, PhotosService photosService) {
         this.adminsService = adminsService;
         this.usersService = usersService;
         this.inspectorsService = inspectorsService;
         this.operatorsService = operatorsService;
         this.accessLevelsService = accessLevelsService;
-       // this.cardsService = cardsService;
-       // this.photosService = photosService;
+        this.cardsService = cardsService;
+        this.photosService = photosService;
     }
     @GetMapping("/")
     private String getInfo() {

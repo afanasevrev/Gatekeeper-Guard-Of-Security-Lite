@@ -3,7 +3,9 @@ package com.alrosa.staa.gatekeeper_server_lite.service;
 import com.alrosa.staa.gatekeeper_server_lite.entity.AccessLevelsEntity;
 import com.alrosa.staa.gatekeeper_server_lite.repository.AccessLevelsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.util.List;
+@Service
 public class AccessLevelsServiceImpl implements AccessLevelsService {
     @Autowired
     private AccessLevelsRepository accessLevelsRepository;

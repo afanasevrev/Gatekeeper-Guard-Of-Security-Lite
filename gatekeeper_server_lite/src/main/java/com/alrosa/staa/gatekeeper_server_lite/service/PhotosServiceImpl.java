@@ -3,10 +3,12 @@ package com.alrosa.staa.gatekeeper_server_lite.service;
 import com.alrosa.staa.gatekeeper_server_lite.entity.PhotosEntity;
 import com.alrosa.staa.gatekeeper_server_lite.repository.PhotosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.util.List;
 /**
  * Класс для взаимодействия с фотографиями в БД
  */
+@Service
 public class PhotosServiceImpl implements PhotosService {
     @Autowired
     private PhotosRepository photosRepository;
