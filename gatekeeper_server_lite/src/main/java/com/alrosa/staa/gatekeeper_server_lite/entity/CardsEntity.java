@@ -16,13 +16,13 @@ public class CardsEntity {
     @Column(name = "id")
     private Long id;
     @Column(name = "card_id")
-    private String card_id;
+    private String cardId;
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private UsersEntity usersEntity;
     public CardsEntity() {}
-    public CardsEntity(String card_id, UsersEntity usersEntity) {
-        this.card_id = card_id;
+    public CardsEntity(String cardId, UsersEntity usersEntity) {
+        this.cardId = cardId;
         this.usersEntity = usersEntity;
     }
 }

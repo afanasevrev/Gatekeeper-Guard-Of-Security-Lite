@@ -4,6 +4,7 @@ import com.alrosa.staa.gatekeeper_server_lite.entity.CardsEntity;
 import com.alrosa.staa.gatekeeper_server_lite.entity.UsersEntity;
 import org.springframework.stereotype.Service;
 import java.util.List;
+@Service
 public interface CardsService {
     String createCard(CardsEntity entity);
     List<CardsEntity> readCards();
