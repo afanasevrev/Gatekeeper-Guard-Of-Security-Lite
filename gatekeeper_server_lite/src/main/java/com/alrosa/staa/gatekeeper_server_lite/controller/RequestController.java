@@ -45,6 +45,7 @@ public class RequestController {
     @PostMapping("/fromController")
     private void messageFromController(@RequestBody General general) {
         text = gson.toJson(general);
+        logger.info(cardsService.findByCard(general.getCard_identifier()).getUsersEntity().getFirst_name());
         template.convertAndSend("Operator", text);
     }
 }

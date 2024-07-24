@@ -32,8 +32,7 @@ public class CardsServiceImpl implements CardsService {
         return null;
     }
     @Override
-    public CardsEntity findByCard(String card_id) {
-        return null;
-        //cardsRepository.findById(card_id);
+    public CardsEntity findByCard(String cardId) {
+        return cardsRepository.findByCardId(cardId);
     }
 }
