@@ -1,7 +1,5 @@
 package com.alrosa.staa.gatekeeper_server_lite.controller;
 
-import com.alrosa.staa.gatekeeper_server_lite.entity.CardsEntity;
-import com.alrosa.staa.gatekeeper_server_lite.entity.PhotosEntity;
 import com.alrosa.staa.gatekeeper_server_lite.general.General;
 import com.alrosa.staa.gatekeeper_server_lite.service.*;
 import com.google.gson.Gson;
@@ -45,7 +43,6 @@ public class RequestController {
     @PostMapping("/fromController")
     private void messageFromController(@RequestBody General general) {
         text = gson.toJson(general);
-
         template.convertAndSend("Operator", text);
     }
 }

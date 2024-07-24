@@ -9,5 +9,5 @@ public interface CardsService {
     CardsEntity readCard(Long id);
     String deleteCard(Long id);
     String updateCard(UsersEntity entity, Long id);
-    CardsEntity readCard(String card_id);
+    CardsEntity findByCard(String card_id);
 }
