@@ -24,17 +24,17 @@ public class RequestController {
     private UsersService usersService;
     private InspectorsService inspectorsService;
     private OperatorsService operatorsService;
-    private CardsService cardsService;
-    private PhotosService photosService;
+   // private CardsService cardsService;
+   // private PhotosService photosService;
     public RequestController() {}
     @Autowired
-    public RequestController(AdminsService adminsService, UsersService usersService, InspectorsService inspectorsService, OperatorsService operatorsService, CardsService cardsService, PhotosService photosService) {
+    public RequestController(AdminsService adminsService, UsersService usersService, InspectorsService inspectorsService, OperatorsService operatorsService) {
         this.adminsService = adminsService;
         this.usersService = usersService;
         this.inspectorsService = inspectorsService;
         this.operatorsService = operatorsService;
-        this.cardsService = cardsService;
-        this.photosService = photosService;
+       // this.cardsService = cardsService;
+       // this.photosService = photosService;
     }
     @GetMapping("/")
     private String getInfo() {
