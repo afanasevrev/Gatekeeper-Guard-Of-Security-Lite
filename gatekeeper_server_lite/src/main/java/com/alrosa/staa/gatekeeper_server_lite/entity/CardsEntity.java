@@ -17,11 +17,12 @@ public class CardsEntity {
     private Long id;
     @Column(name = "card_id")
     private String card_id;
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private UsersEntity usersEntity;
     public CardsEntity() {}
-    public CardsEntity(String card_id) {
+    public CardsEntity(String card_id, UsersEntity usersEntity) {
         this.card_id = card_id;
+        this.usersEntity = usersEntity;
     }
 }
