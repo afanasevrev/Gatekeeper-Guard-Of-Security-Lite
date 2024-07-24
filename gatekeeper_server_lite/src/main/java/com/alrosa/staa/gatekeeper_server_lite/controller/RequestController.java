@@ -24,15 +24,17 @@ public class RequestController {
     private UsersService usersService;
     private InspectorsService inspectorsService;
     private OperatorsService operatorsService;
+    private AccessLevelsService accessLevelsService;
    // private CardsService cardsService;
    // private PhotosService photosService;
     public RequestController() {}
     @Autowired
-    public RequestController(AdminsService adminsService, UsersService usersService, InspectorsService inspectorsService, OperatorsService operatorsService) {
+    public RequestController(AdminsService adminsService, UsersService usersService, InspectorsService inspectorsService, OperatorsService operatorsService, AccessLevelsService accessLevelsService) {
         this.adminsService = adminsService;
         this.usersService = usersService;
         this.inspectorsService = inspectorsService;
         this.operatorsService = operatorsService;
+        this.accessLevelsService = accessLevelsService;
        // this.cardsService = cardsService;
        // this.photosService = photosService;
     }
