@@ -3,6 +3,7 @@ package com.alrosa.staa.gatekeeper_client_lite.controller.admins_page;
 import com.alrosa.staa.gatekeeper_client_lite.admins_data.*;
 import com.alrosa.staa.gatekeeper_client_lite.view.AddUserConsole;
 import com.alrosa.staa.gatekeeper_client_lite.view.DeleteUserConsole;
+import com.alrosa.staa.gatekeeper_client_lite.view.PassOfficeWindowConsole;
 import com.alrosa.staa.gatekeeper_client_lite.view.UserWindowConsole;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -27,6 +28,8 @@ public class AdminsPageController implements Initializable {
     private DeleteUserConsole deleteUserConsole = new DeleteUserConsole();
     //Создаем экземпляр класса для добавления пользователя
     private AddUserConsole addUserConsole = new AddUserConsole();
+    //Создаем экземпляр класса для карточки инспектора бюро пропусков
+    private PassOfficeWindowConsole passOfficeWindowConsole = new PassOfficeWindowConsole();
     //ID пользователя
     public static Long user_id;
     //Вкладка "Пользователи"
@@ -82,6 +85,10 @@ public class AdminsPageController implements Initializable {
     private Button buttonUpdateListPassOffice = new Button();
     @FXML
     private Button buttonOpenPersonalCardPassOffice = new Button();
+    @FXML
+    private void setButtonOpenPersonalCardPassOffice() throws IOException {
+        passOfficeWindowConsole.start(stage);
+    }
     @FXML
     private Button buttonDeletePassOffice = new Button();
     @FXML
