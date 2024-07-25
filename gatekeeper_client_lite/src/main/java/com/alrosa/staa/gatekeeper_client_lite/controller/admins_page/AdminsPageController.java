@@ -1,10 +1,7 @@
 package com.alrosa.staa.gatekeeper_client_lite.controller.admins_page;
 
 import com.alrosa.staa.gatekeeper_client_lite.admins_data.*;
-import com.alrosa.staa.gatekeeper_client_lite.view.AddUserConsole;
-import com.alrosa.staa.gatekeeper_client_lite.view.DeleteUserConsole;
-import com.alrosa.staa.gatekeeper_client_lite.view.PassOfficeWindowConsole;
-import com.alrosa.staa.gatekeeper_client_lite.view.UserWindowConsole;
+import com.alrosa.staa.gatekeeper_client_lite.view.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -30,6 +27,10 @@ public class AdminsPageController implements Initializable {
     private AddUserConsole addUserConsole = new AddUserConsole();
     //Создаем экземпляр класса для карточки инспектора бюро пропусков
     private PassOfficeWindowConsole passOfficeWindowConsole = new PassOfficeWindowConsole();
+    //Создаем экземпляр класса для добавления инспектора бюро пропусков
+    private AddPassOfficeConsole addPassOfficeConsole = new AddPassOfficeConsole();
+    //Создаем экземпляр класса для удаления инспектора бюро пропусков
+    private DeletePassOfficeConsole deletePassOfficeConsole = new DeletePassOfficeConsole();
     //ID пользователя
     public static Long user_id;
     //Вкладка "Пользователи"
@@ -92,7 +93,15 @@ public class AdminsPageController implements Initializable {
     @FXML
     private Button buttonDeletePassOffice = new Button();
     @FXML
+    private void setButtonDeletePassOffice() throws IOException {
+        deletePassOfficeConsole.start(stage);
+    }
+    @FXML
     private Button buttonAddPassOffice = new Button();
+    @FXML
+    private void setButtonAddPassOffice() throws IOException {
+        addPassOfficeConsole.start(stage);
+    }
     @FXML
     private TableView<PassOfficeData> tableViewPassOffice = new TableView<PassOfficeData>();
     private ObservableList<PassOfficeData> observableListPassOffice = FXCollections.<PassOfficeData>observableArrayList();

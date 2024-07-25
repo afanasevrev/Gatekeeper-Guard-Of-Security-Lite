@@ -54,8 +54,8 @@
                         </TableView>
                         <Button fx:id="buttonUpdateListPassOffice" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
                         <Button fx:id="buttonOpenPersonalCardPassOffice" onAction="#setButtonOpenPersonalCardPassOffice" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
-                        <Button fx:id="buttonDeletePassOffice" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
-                        <Button fx:id="buttonAddPassOffice" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
+                        <Button fx:id="buttonDeletePassOffice" onAction="#setButtonDeletePassOffice" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button fx:id="buttonAddPassOffice" onAction="#setButtonAddPassOffice" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
                      </children></AnchorPane>
               </content>
             </Tab>
