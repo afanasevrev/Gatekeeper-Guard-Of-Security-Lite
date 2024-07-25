@@ -2,6 +2,7 @@ package com.alrosa.staa.gatekeeper_server_lite.controller;
 
 import com.alrosa.staa.gatekeeper_server_lite.general.General;
 import com.alrosa.staa.gatekeeper_server_lite.general.LogsData;
+import com.alrosa.staa.gatekeeper_server_lite.general.MessageType;
 import com.alrosa.staa.gatekeeper_server_lite.service.*;
 import com.google.gson.Gson;
 import org.springframework.amqp.core.AmqpTemplate;
@@ -55,11 +56,13 @@ public class RequestController {
     }
     @PostMapping("/fromController")
     private void messageFromController(@RequestBody General general) {
-        currentDate = new Date();
-        formattedDate = simpleDateFormat.format(currentDate);
-        String user = cardsService.findByCard(general.getCardId()).getUsersEntity().toString();
-        LogsData logsData = new LogsData(general.getCurrentDate(), general.getIpAddress(), general.getDirection(), user, general.getCardId(), general.isAccess());
-        text = gson.toJson(logsData);
-        template.convertAndSend("Operator", text);
+        if (general.getMessageType() == MessageType.OPERATOR) {
+            currentDate = new Date();
+            formattedDate = simpleDateFormat.format(currentDate);
+            String user = cardsService.findByCard(general.getCardId()).getUsersEntity().toString();
+            LogsData logsData = new LogsData(general.getCurrentDate(), general.getIpAddress(), general.getDirection(), user, general.getCardId(), general.isAccess());
+            text = gson.toJson(logsData);
+            template.convertAndSend("Operator", text);
+        }
     }
 }
