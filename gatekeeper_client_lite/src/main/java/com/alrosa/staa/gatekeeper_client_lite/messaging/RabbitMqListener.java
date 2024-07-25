@@ -2,6 +2,7 @@ package com.alrosa.staa.gatekeeper_client_lite.messaging;
 
 import com.alrosa.staa.gatekeeper_client_lite.controller.operators_page.OperatorsPageController;
 import com.alrosa.staa.gatekeeper_client_lite.general.General;
+import com.alrosa.staa.gatekeeper_client_lite.general.MessageType;
 import com.alrosa.staa.gatekeeper_client_lite.operators_data.LogsData;
 import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
 import com.google.gson.Gson;
@@ -42,12 +43,12 @@ public class RabbitMqListener {
             String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
             logger.info("Получено сообщение от сервера: " + message);
             General general = null;
-            try {
-                general = gson.fromJson(message, General.class);
-                OperatorsPageController.observableListLogsData.add(new LogsData(general.getCurrentDate(), general.getControllerName(), String.valueOf(general.getDirection()), general.getUser(), general.getCardId(), String.valueOf(general.isAccess())));
-            } catch (JsonSyntaxException e) {
-                logger.error("Получен неизвестный тип от сервера");
-            }
+                try {
+                    general = gson.fromJson(message, General.class);
+                    OperatorsPageController.observableListLogsData.add(new LogsData(general.getCurrentDate(), general.getControllerName(), String.valueOf(general.getDirection()), general.getUser(), general.getCardId(), String.valueOf(general.isAccess())));
+                } catch (JsonSyntaxException e) {
+                    logger.error("Получен неизвестный тип от сервера");
+                }
         };
         channel.basicConsume(Variables.queue_receive_server, true, deliverCallback, consumerTag -> {});
     }
