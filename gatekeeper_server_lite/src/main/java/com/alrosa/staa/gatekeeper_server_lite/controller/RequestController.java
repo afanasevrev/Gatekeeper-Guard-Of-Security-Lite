@@ -27,7 +27,7 @@ public class RequestController {
     //Форматируем дату по своему усмотрению
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
     //Отформатированную дату отправляем клиенту
-    String formattedDate;
+    private String formattedDate;
     private String text;
     private Logger logger = Logger.getLogger(RequestController.class);
     private AdminsService adminsService;
