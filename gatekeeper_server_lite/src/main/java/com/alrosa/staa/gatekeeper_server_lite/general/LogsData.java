@@ -2,6 +2,9 @@ package com.alrosa.staa.gatekeeper_server_lite.general;
 
 import lombok.Getter;
 import lombok.Setter;
+/**
+ * Сформируем класс и отправляем клиенту
+ */
 @Getter
 @Setter
 public class LogsData {
