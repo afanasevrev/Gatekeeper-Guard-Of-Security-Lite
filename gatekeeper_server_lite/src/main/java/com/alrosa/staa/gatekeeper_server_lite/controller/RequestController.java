@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.apache.log4j.Logger;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Контроллер, отвечает на запросы от клиентов
  */
@@ -18,6 +22,12 @@ public class RequestController {
     @Autowired
     private AmqpTemplate template;
     private Gson gson = new Gson();
+    //Получаем текущую дату
+    private Date currentDate;
+    //Форматируем дату по своему усмотрению
+    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+    //Отформатированную дату отправляем клиенту
+    String formattedDate;
     private String text;
     private Logger logger = Logger.getLogger(RequestController.class);
     private AdminsService adminsService;
@@ -44,8 +54,10 @@ public class RequestController {
     }
     @PostMapping("/fromController")
     private void messageFromController(@RequestBody General general) {
+        currentDate = new Date();
+        formattedDate = simpleDateFormat.format(currentDate);
+
         text = gson.toJson(general);
-        logger.info(cardsService.findByCard(general.getCard_identifier()).getUsersEntity().toString());
         template.convertAndSend("Operator", text);
     }
 }
