@@ -15,9 +15,12 @@ public class General {
     private int direction;
     //Доступ
     private boolean access;
+    //Текущая дата
+    private String currentDate;
     public General(){}
-    public General(MessageType messageType, String cardId, String ipAddress, int direction, boolean access) {
+    public General(MessageType messageType, String currentDate, String cardId, String ipAddress, int direction, boolean access) {
         this.messageType = messageType;
+        this.currentDate = currentDate;
         this.cardId = cardId;
         this.ipAddress = ipAddress;
         this.direction = direction;

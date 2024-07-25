@@ -5,15 +5,15 @@ import lombok.Setter;
 @Getter
 @Setter
 public class LogsData {
-    private String date;
+    private String currentDate;
     private String controllerName;
     private int direction;
     private String user;
     private String cardId;
     private boolean access;
     public LogsData() {}
-    public LogsData(String date, String controllerName, int direction, String user, String cardId, boolean access) {
-        this.date = date;
+    public LogsData(String currentDate, String controllerName, int direction, String user, String cardId, boolean access) {
+        this.currentDate = currentDate;
         this.controllerName = controllerName;
         this.direction = direction;
         this.user = user;
