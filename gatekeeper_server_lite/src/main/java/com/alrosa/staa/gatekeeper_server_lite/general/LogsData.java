@@ -11,5 +11,13 @@ public class LogsData {
     private String user;
     private String cardId;
     private boolean access;
-
+    public LogsData() {}
+    public LogsData(String date, String controllerName, int direction, String user, String cardId, boolean access) {
+        this.date = date;
+        this.controllerName = controllerName;
+        this.direction = direction;
+        this.user = user;
+        this.cardId = cardId;
+        this.access = access;
+    }
 }
