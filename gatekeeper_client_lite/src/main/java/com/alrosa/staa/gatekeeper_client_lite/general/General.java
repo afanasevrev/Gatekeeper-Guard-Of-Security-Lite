@@ -5,9 +5,19 @@ import lombok.Setter;
 @Getter
 @Setter
 public class General {
-    private String card_identifier;
+    private String currentDate;
+    private String controllerName;
+    private int direction;
+    private String user;
+    private String cardId;
+    private boolean access;
     public General() {}
-    public General(String card_identifier) {
-        this.card_identifier = card_identifier;
+    public General(String currentDate, String controllerName, int direction, String user, String cardId, boolean access) {
+        this.currentDate = currentDate;
+        this.controllerName = controllerName;
+        this.direction = direction;
+        this.user = user;
+        this.cardId = cardId;
+        this.access = access;
     }
 }

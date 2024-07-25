@@ -44,8 +44,7 @@ public class RabbitMqListener {
             General general = null;
             try {
                 general = gson.fromJson(message, General.class);
-                logger.info(general.getCard_identifier());
-                OperatorsPageController.observableListLogsData.add(new LogsData(general.getCard_identifier()));
+                OperatorsPageController.observableListLogsData.add(new LogsData(general.getCurrentDate(), general.getControllerName(), String.valueOf(general.getDirection()), general.getUser(), general.getCardId(), String.valueOf(general.isAccess())));
             } catch (JsonSyntaxException e) {
                 logger.error("Получен неизвестный тип от сервера");
             }
