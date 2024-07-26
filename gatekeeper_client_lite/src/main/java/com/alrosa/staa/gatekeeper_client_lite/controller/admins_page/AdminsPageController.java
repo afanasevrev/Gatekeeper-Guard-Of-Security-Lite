@@ -31,6 +31,12 @@ public class AdminsPageController implements Initializable {
     private AddPassOfficeConsole addPassOfficeConsole = new AddPassOfficeConsole();
     //Создаем экземпляр класса для удаления инспектора бюро пропусков
     private DeletePassOfficeConsole deletePassOfficeConsole = new DeletePassOfficeConsole();
+    //Создаем экземпляр класса для карточки оператора
+    private OperatorWindowConsole operatorWindowConsole = new OperatorWindowConsole();
+    //Создаем экземпляр класса для удаления оператора
+    private DeleteOperatorConsole deleteOperatorConsole = new DeleteOperatorConsole();
+    //Создаем экземпляр класса для добавления оператора
+    private AddOperatorConsole addOperatorConsole = new AddOperatorConsole();
     //ID пользователя
     public static Long user_id;
     //Вкладка "Пользователи"
@@ -127,9 +133,21 @@ public class AdminsPageController implements Initializable {
     @FXML
     private Button buttonOpenPersonalCardOperator = new Button();
     @FXML
+    private void setButtonOpenPersonalCardOperator() throws IOException {
+        operatorWindowConsole.start(stage);
+    }
+    @FXML
     private Button buttonDeleteOperator = new Button();
     @FXML
+    private void setButtonDeleteOperator() throws IOException {
+        deleteOperatorConsole.start(stage);
+    }
+    @FXML
     private Button buttonAddOperator = new Button();
+    @FXML
+    private void setButtonAddOperator() throws IOException {
+        addOperatorConsole.start(stage);
+    }
     @FXML
     private TableView<OperatorsData> tableViewOperators = new TableView<OperatorsData>();
     private ObservableList<OperatorsData> observableListOperators = FXCollections.<OperatorsData>observableArrayList();

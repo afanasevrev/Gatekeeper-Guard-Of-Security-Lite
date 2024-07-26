@@ -75,9 +75,9 @@
                           </columns>
                         </TableView>
                         <Button fx:id="buttonUpdateListOperators" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
-                        <Button fx:id="buttonOpenPersonalCardOperator" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
-                        <Button fx:id="buttonDeleteOperator" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
-                        <Button fx:id="buttonAddOperator" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
+                        <Button fx:id="buttonOpenPersonalCardOperator" onAction="#setButtonOpenPersonalCardOperator" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
+                        <Button fx:id="buttonDeleteOperator" onAction="#setButtonDeleteOperator" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button fx:id="buttonAddOperator" onAction="#setButtonAddOperator" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
                      </children></AnchorPane>
               </content>
             </Tab>
