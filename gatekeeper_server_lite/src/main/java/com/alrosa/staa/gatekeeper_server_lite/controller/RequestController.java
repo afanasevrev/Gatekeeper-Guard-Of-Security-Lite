@@ -59,7 +59,12 @@ public class RequestController {
         if (general.getMessageType() == MessageType.OPERATOR) {
             currentDate = new Date();
             formattedDate = simpleDateFormat.format(currentDate);
-            String user = cardsService.findByCard(general.getCardId()).getUsersEntity().toString();
+            String user;
+            try {
+                user = cardsService.findByCard(general.getCardId()).getUsersEntity().toString();
+            } catch (NullPointerException e) {
+                user = "Неизвестный пользователь";
+            }
             LogsData logsData = new LogsData(general.getCurrentDate(), general.getIpAddress(), general.getDirection(), user, general.getCardId(), general.isAccess());
             text = gson.toJson(logsData);
             template.convertAndSend("Operator", text);
