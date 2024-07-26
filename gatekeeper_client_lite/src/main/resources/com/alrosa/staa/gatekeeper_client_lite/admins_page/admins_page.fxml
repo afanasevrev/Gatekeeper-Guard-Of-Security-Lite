@@ -99,7 +99,7 @@
                           </columns>
                         </TableView>
                         <Button fx:id="buttonUpdateListControllers" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
-                        <Button fx:id="buttonOpenPersonalCardController" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
+                        <Button fx:id="buttonOpenPersonalCardController" onAction="#setButtonOpenPersonalCardController" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
                         <Button fx:id="buttonDeleteController" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
                         <Button fx:id="buttonAddController" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
                      </children></AnchorPane>

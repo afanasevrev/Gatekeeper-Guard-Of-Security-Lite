@@ -37,6 +37,8 @@ public class AdminsPageController implements Initializable {
     private DeleteOperatorConsole deleteOperatorConsole = new DeleteOperatorConsole();
     //Создаем экземпляр класса для добавления оператора
     private AddOperatorConsole addOperatorConsole = new AddOperatorConsole();
+    //Создаем экземпляр класса для карточки контроллера
+    private ControllerWindowConsole controllerWindowConsole = new ControllerWindowConsole();
     //ID пользователя
     public static Long user_id;
     //Вкладка "Пользователи"
@@ -168,6 +170,10 @@ public class AdminsPageController implements Initializable {
     private Button buttonUpdateListControllers = new Button();
     @FXML
     private Button buttonOpenPersonalCardController = new Button();
+    @FXML
+    private void setButtonOpenPersonalCardController() throws IOException {
+        controllerWindowConsole.start(stage);
+    }
     @FXML
     private Button buttonDeleteController = new Button();
     @FXML
