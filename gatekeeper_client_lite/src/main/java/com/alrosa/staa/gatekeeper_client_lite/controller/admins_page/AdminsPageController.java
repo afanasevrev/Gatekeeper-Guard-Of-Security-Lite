@@ -39,6 +39,10 @@ public class AdminsPageController implements Initializable {
     private AddOperatorConsole addOperatorConsole = new AddOperatorConsole();
     //Создаем экземпляр класса для карточки контроллера
     private ControllerWindowConsole controllerWindowConsole = new ControllerWindowConsole();
+    //Создаем экземпляр класса для удаления контроллера
+    private DeleteControllerConsole deleteControllerConsole = new DeleteControllerConsole();
+    //Создаем экземпляр класса для добавления контроллера
+    private AddControllerConsole addControllerConsole = new AddControllerConsole();
     //ID пользователя
     public static Long user_id;
     //Вкладка "Пользователи"
@@ -177,7 +181,15 @@ public class AdminsPageController implements Initializable {
     @FXML
     private Button buttonDeleteController = new Button();
     @FXML
+    private void setButtonDeleteController() throws IOException {
+        deleteControllerConsole.start(stage);
+    }
+    @FXML
     private Button buttonAddController = new Button();
+    @FXML
+    private void setButtonAddController() throws IOException {
+        addControllerConsole.start(stage);
+    }
     @FXML
     private TableView<ControllersData> tableViewControllers = new TableView<ControllersData>();
     private ObservableList<ControllersData> observableListControllers = FXCollections.<ControllersData>observableArrayList();
