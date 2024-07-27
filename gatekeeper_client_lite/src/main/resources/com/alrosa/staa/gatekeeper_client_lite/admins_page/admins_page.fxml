@@ -117,14 +117,14 @@
                           </columns>
                         </TableView>
                         <Button fx:id="buttonUpdateListAccessLevels" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
-                        <Button fx:id="buttonOpenPersonalCardAccessLevel" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
-                        <Button fx:id="buttonDeleteAccessLevel" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button fx:id="buttonOpenPersonalCardAccessLevel" onAction="#setButtonOpenPersonalCardAccessLevel" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
+                        <Button fx:id="buttonDeleteAccessLevel" onAction="#setButtonDeleteAccessLevel" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
                         <Label layoutX="14.0" layoutY="14.0" text="Уровни доступа" textFill="#794040">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button fx:id="buttonAddAccessLevel" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
+                        <Button fx:id="buttonAddAccessLevel" onAction="#setButtonAddAccessControl" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
                      </children></AnchorPane>
               </content>
             </Tab>

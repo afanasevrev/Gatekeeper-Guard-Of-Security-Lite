@@ -43,6 +43,12 @@ public class AdminsPageController implements Initializable {
     private DeleteControllerConsole deleteControllerConsole = new DeleteControllerConsole();
     //Создаем экземпляр класса для добавления контроллера
     private AddControllerConsole addControllerConsole = new AddControllerConsole();
+    //Создаем экземпляр класса для добавления уровня доступа
+    private AddAccessControlConsole addAccessControlConsole = new AddAccessControlConsole();
+    //Создаем экземпляр класса для карточки уровня доступа
+    private AccessControlWindowConsole accessControlWindowConsole = new AccessControlWindowConsole();
+    //Создаем экземпляр класса для удаления уровня доступа
+    private DeleteAccessControlConsole deleteAccessControlConsole = new DeleteAccessControlConsole();
     //ID пользователя
     public static Long user_id;
     //Вкладка "Пользователи"
@@ -209,9 +215,21 @@ public class AdminsPageController implements Initializable {
     @FXML
     private Button buttonOpenPersonalCardAccessLevel = new Button();
     @FXML
+    private void setButtonOpenPersonalCardAccessLevel() throws IOException {
+        accessControlWindowConsole.start(stage);
+    }
+    @FXML
     private Button buttonDeleteAccessLevel = new Button();
     @FXML
+    private void setButtonDeleteAccessLevel() throws IOException {
+        deleteAccessControlConsole.start(stage);
+    }
+    @FXML
     private Button buttonAddAccessLevel = new Button();
+    @FXML
+    private void setButtonAddAccessControl() throws IOException {
+        addAccessControlConsole.start(stage);
+    }
     @FXML
     private TableView<AccessLevelsData> tableViewAccessLevels = new TableView<AccessLevelsData>();
     private ObservableList<AccessLevelsData> observableListAccessLevels = FXCollections.<AccessLevelsData>observableArrayList();
