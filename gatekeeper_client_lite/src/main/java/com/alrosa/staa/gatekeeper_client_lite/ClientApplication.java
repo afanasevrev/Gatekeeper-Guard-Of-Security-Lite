@@ -6,9 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 import java.io.IOException;
+import java.net.ConnectException;
 import java.util.concurrent.TimeoutException;
 public class ClientApplication extends Application {
+    private static Logger logger = Logger.getLogger(ClientApplication.class);
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ClientApplication.class.getResource("admins_page/admins_page.fxml"));
@@ -19,9 +22,14 @@ public class ClientApplication extends Application {
         stage.show();
     }
     public static void main(String[] args) throws IOException, TimeoutException {
-        BasicConfigurator.configure();
-        RabbitMqListener rabbitMqListener = RabbitMqListener.getInstance();
-        rabbitMqListener.start();
-        launch();
+        try {
+            BasicConfigurator.configure();
+            RabbitMqListener rabbitMqListener = RabbitMqListener.getInstance();
+            rabbitMqListener.start();
+            launch();
+        } catch (ConnectException e) {
+            logger.error("Сервер RabbitMQ не доступен");
+            System.exit(0);
+        }
     }
 }

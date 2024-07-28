@@ -13,6 +13,8 @@ import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
 import org.apache.log4j.Logger;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.net.ConnectException;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeoutException;
 /**
@@ -35,21 +37,22 @@ public class RabbitMqListener {
         return INSTANCE;
     }
     public synchronized void start() throws IOException, TimeoutException {
-        Connection connection = connectionFactory.newConnection();
-        Channel channel = connection.createChannel();
-        channel.queueDeclare(Variables.queue_receive_server, true, false, false, null);
-        logger.info("1. RabbitMQ receiver is started");
-        DeliverCallback deliverCallback = (consumerTag, delivery) -> {
-            String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
-            logger.info("Получено сообщение от сервера: " + message);
-            General general = null;
+            Connection connection = connectionFactory.newConnection();
+            Channel channel = connection.createChannel();
+            channel.queueDeclare(Variables.queue_receive_server, true, false, false, null);
+            logger.info("1. RabbitMQ receiver is started");
+            DeliverCallback deliverCallback = (consumerTag, delivery) -> {
+                String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
+                logger.info("Получено сообщение от сервера: " + message);
+                General general = null;
                 try {
                     general = gson.fromJson(message, General.class);
                     OperatorsPageController.observableListLogsData.add(new LogsData(general.getCurrentDate(), general.getControllerName(), String.valueOf(general.getDirection()), general.getUser(), general.getCardId(), String.valueOf(general.isAccess())));
                 } catch (JsonSyntaxException e) {
                     logger.error("Получен неизвестный тип от сервера");
                 }
-        };
-        channel.basicConsume(Variables.queue_receive_server, true, deliverCallback, consumerTag -> {});
+            };
+            channel.basicConsume(Variables.queue_receive_server, true, deliverCallback, consumerTag -> {
+            });
     }
 }
