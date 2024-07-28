@@ -55,6 +55,12 @@ public class AdminsPageController implements Initializable {
     private DeleteCardConsole deleteCardConsole = new DeleteCardConsole();
     //Создаем экземпляр класса для карты доступа
     private CardWindowConsole cardWindowConsole = new CardWindowConsole();
+    //Создаем экземпляр класса для карточки администратора
+    private AdminWindowConsole adminWindowConsole = new AdminWindowConsole();
+    //Создаем экземпляр класса для удаления администратора
+    private DeleteAdminConsole deleteAdminConsole = new DeleteAdminConsole();
+    //Создаем экземпляр класса для добавления администратора
+    private AddAdminConsole addAdminConsole = new AddAdminConsole();
     //ID пользователя
     public static Long user_id;
     //Вкладка "Пользователи"
@@ -295,9 +301,21 @@ public class AdminsPageController implements Initializable {
     @FXML
     private Button buttonOpenPersonalCardAdmin = new Button();
     @FXML
+    private void setButtonOpenPersonalCardAdmin() throws IOException {
+        adminWindowConsole.start(stage);
+    }
+    @FXML
     private Button buttonDeleteAdmin = new Button();
     @FXML
-    private Button buttonAddAdmins = new Button();
+    private void setButtonDeleteAdmin() throws IOException {
+       deleteAdminConsole.start(stage);
+    }
+    @FXML
+    private Button buttonAddAdmin = new Button();
+    @FXML
+    private void setButtonAddAdmin() throws IOException {
+        addAdminConsole.start(stage);
+    }
     @FXML
     private TableView<AdminsData> tableViewAdmins = new TableView<AdminsData>();
     private ObservableList<AdminsData> observableListAdmins = FXCollections.<AdminsData>observableArrayList();
