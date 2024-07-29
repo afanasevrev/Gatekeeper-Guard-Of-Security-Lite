@@ -25,6 +25,9 @@ public class UsersEntity {
     private String company;
     @Column(name = "organization")
     private String organization;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "photo_id")
+    private PhotosEntity photosEntity;
     public UsersEntity() {}
     public UsersEntity(String first_name, String middle_name, String last_name, String company, String organization) {
         this.first_name = first_name;
