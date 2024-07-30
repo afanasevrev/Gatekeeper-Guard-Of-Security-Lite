@@ -53,14 +53,14 @@ public class RabbitMqListener {
                     if (general.getPhoto() == null) {
                         OperatorsPageController.observableListLogsData.add(new LogsData(general.getCurrentDate(), general.getControllerName(), String.valueOf(general.getDirection()), general.getUser(), general.getCardId(), String.valueOf(general.isAccess())));
                     } else {
-                        //ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(general.getPhoto());
-                        image = new Image("C:\\JavaProjects\\Gatekeeper-Guard-Of-Security-Lite\\gatekeeper_client_lite\\src\\main\\resources\\Man.JPG");
+                        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(general.getPhoto());
+                        image = new Image(byteArrayInputStream);
                         imageView.setImage(image);
                         imageView.setFitHeight(50);
                         imageView.setFitWidth(50);
                         imageView.setPreserveRatio(true);
+                        byteArrayInputStream.close();
                         OperatorsPageController.hbox.getChildren().add(imageView);
-                        //logger.info(general.getPhoto());
                     }
                     } catch (JsonSyntaxException e) {
                     logger.error("Получен неизвестный тип от сервера");
