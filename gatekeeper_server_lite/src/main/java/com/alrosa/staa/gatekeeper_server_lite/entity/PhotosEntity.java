@@ -14,9 +14,9 @@ public class PhotosEntity {
     private Long id;
     @Lob()
     @Column(name = "user_photo", columnDefinition = "LONGBLOB")
-    private byte[] user_photo;
+    private byte[] userPhoto;
     public PhotosEntity() {}
-    public PhotosEntity(byte[] user_photo) {
-        this.user_photo = user_photo;
+    public PhotosEntity(byte[] userPhoto) {
+        this.userPhoto = userPhoto;
     }
 }

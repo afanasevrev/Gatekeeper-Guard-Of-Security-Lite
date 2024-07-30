@@ -2,7 +2,6 @@ package com.alrosa.staa.gatekeeper_client_lite.messaging;
 
 import com.alrosa.staa.gatekeeper_client_lite.controller.operators_page.OperatorsPageController;
 import com.alrosa.staa.gatekeeper_client_lite.general.General;
-import com.alrosa.staa.gatekeeper_client_lite.general.MessageType;
 import com.alrosa.staa.gatekeeper_client_lite.operators_data.LogsData;
 import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
 import com.google.gson.Gson;
@@ -11,10 +10,12 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import org.apache.log4j.Logger;
+
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.net.ConnectException;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeoutException;
 /**
@@ -24,6 +25,8 @@ public class RabbitMqListener {
     private Logger logger = Logger.getLogger(RabbitMqListener.class);
     private static RabbitMqListener INSTANCE;
     private Gson gson = new Gson();
+    private Image image;
+    private ImageView imageView = new ImageView();
     private ConnectionFactory connectionFactory = new ConnectionFactory();
     private RabbitMqListener(){
         connectionFactory.setHost(Variables.rabbit_server_ip);
@@ -47,8 +50,19 @@ public class RabbitMqListener {
                 General general = null;
                 try {
                     general = gson.fromJson(message, General.class);
-                    OperatorsPageController.observableListLogsData.add(new LogsData(general.getCurrentDate(), general.getControllerName(), String.valueOf(general.getDirection()), general.getUser(), general.getCardId(), String.valueOf(general.isAccess())));
-                } catch (JsonSyntaxException e) {
+                    if (general.getPhoto() == null) {
+                        OperatorsPageController.observableListLogsData.add(new LogsData(general.getCurrentDate(), general.getControllerName(), String.valueOf(general.getDirection()), general.getUser(), general.getCardId(), String.valueOf(general.isAccess())));
+                    } else {
+                        //ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(general.getPhoto());
+                        image = new Image("C:\\JavaProjects\\Gatekeeper-Guard-Of-Security-Lite\\gatekeeper_client_lite\\src\\main\\resources\\Man.JPG");
+                        imageView.setImage(image);
+                        imageView.setFitHeight(50);
+                        imageView.setFitWidth(50);
+                        imageView.setPreserveRatio(true);
+                        OperatorsPageController.hbox.getChildren().add(imageView);
+                        //logger.info(general.getPhoto());
+                    }
+                    } catch (JsonSyntaxException e) {
                     logger.error("Получен неизвестный тип от сервера");
                 }
             };

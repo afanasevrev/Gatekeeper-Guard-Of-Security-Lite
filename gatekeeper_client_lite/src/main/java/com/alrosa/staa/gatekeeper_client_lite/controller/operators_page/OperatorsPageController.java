@@ -17,7 +17,7 @@ public class OperatorsPageController implements Initializable {
     @FXML
     private SplitPane splitPaneVertical = new SplitPane();
     @FXML
-    private HBox hbox = new HBox();
+    public static HBox hbox = new HBox();
     @FXML
     private TableView<LogsData> tableViewLogsData = new TableView<LogsData>();
     public static ObservableList<LogsData> observableListLogsData = FXCollections.<LogsData>observableArrayList();

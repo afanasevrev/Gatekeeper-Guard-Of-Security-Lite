@@ -11,6 +11,7 @@ public class General {
     private String user;
     private String cardId;
     private boolean access;
+    private byte[] photo;
     public General() {}
     public General(String currentDate, String controllerName, int direction, String user, String cardId, boolean access) {
         this.currentDate = currentDate;
@@ -19,5 +20,8 @@ public class General {
         this.user = user;
         this.cardId = cardId;
         this.access = access;
+    }
+    public General(byte[] photo) {
+        this.photo = photo;
     }
 }

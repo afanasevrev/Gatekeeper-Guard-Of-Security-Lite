@@ -1,8 +1,10 @@
 package com.alrosa.staa.gatekeeper_server_lite.controller;
 
+import com.alrosa.staa.gatekeeper_server_lite.entity.UsersEntity;
 import com.alrosa.staa.gatekeeper_server_lite.general.General;
 import com.alrosa.staa.gatekeeper_server_lite.general.LogsData;
 import com.alrosa.staa.gatekeeper_server_lite.general.MessageType;
+import com.alrosa.staa.gatekeeper_server_lite.general.PhotoData;
 import com.alrosa.staa.gatekeeper_server_lite.service.*;
 import com.google.gson.Gson;
 import org.springframework.amqp.core.AmqpTemplate;
@@ -31,6 +33,7 @@ public class RequestController {
     //Отформатированную дату отправляем клиенту
     private String formattedDate;
     private String text;
+    private String textPhoto;
     private Logger logger = Logger.getLogger(RequestController.class);
     private AdminsService adminsService;
     private UsersService usersService;
@@ -60,14 +63,21 @@ public class RequestController {
             currentDate = new Date();
             formattedDate = simpleDateFormat.format(currentDate);
             String user;
+            UsersEntity usersEntity = cardsService.findByCard(general.getCardId()).getUsersEntity();
+            PhotoData photoData = null;
             try {
-                user = cardsService.findByCard(general.getCardId()).getUsersEntity().toString();
+                user = usersEntity.toString();
+                photoData = new PhotoData(usersEntity.getPhotosEntity().getUserPhoto());
+                textPhoto = gson.toJson(photoData);
             } catch (NullPointerException e) {
                 user = "Неизвестный пользователь";
             }
             LogsData logsData = new LogsData(general.getCurrentDate(), general.getIpAddress(), general.getDirection(), user, general.getCardId(), general.isAccess());
             text = gson.toJson(logsData);
             template.convertAndSend("Operator", text);
+            if (photoData != null) {
+                template.convertAndSend("Operator", textPhoto);
+            }
         }
     }
 }
