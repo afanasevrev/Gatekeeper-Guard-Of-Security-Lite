@@ -13,23 +13,28 @@ public class CardsServiceImpl implements CardsService {
     private CardsRepository cardsRepository;
     @Override
     public String createCard(CardsEntity entity) {
-        return null;
+        cardsRepository.save(entity);
+        return "Карта доступа успешно сохранена в БД";
     }
     @Override
     public List<CardsEntity> readCards() {
-        return null;
+        return cardsRepository.findAll();
     }
     @Override
     public CardsEntity readCard(Long id) {
-        return null;
+        return cardsRepository.findById(id).get();
     }
     @Override
     public String deleteCard(Long id) {
-        return null;
+        return "Карта доступа с ID = " + id + " успешно удалён из БД";
     }
     @Override
-    public String updateCard(UsersEntity entity, Long id) {
-        return null;
+    public String updateCard(CardsEntity entity, Long id) {
+        CardsEntity card = cardsRepository.findById(id).get();
+        card.setUsersEntity(entity.getUsersEntity());
+        card.setCardId(entity.getCardId());
+        cardsRepository.save(card);
+        return "Карта доступа с ID = " + id + " успешно обновлена";
     }
     @Override
     public CardsEntity findByCard(String cardId) {

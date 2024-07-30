@@ -10,6 +10,6 @@ public interface CardsService {
     List<CardsEntity> readCards();
     CardsEntity readCard(Long id);
     String deleteCard(Long id);
-    String updateCard(UsersEntity entity, Long id);
+    String updateCard(CardsEntity entity, Long id);
     CardsEntity findByCard(String card_id);
 }
