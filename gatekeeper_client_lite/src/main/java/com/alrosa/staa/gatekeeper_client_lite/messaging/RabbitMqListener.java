@@ -60,7 +60,7 @@ public class RabbitMqListener {
                         imageView.setFitWidth(50);
                         imageView.setPreserveRatio(true);
                         byteArrayInputStream.close();
-                       // OperatorsPageController.hbox.getChildren().add(imageView);
+                        //OperatorsPageController.hbox.getChildren().add(imageView);
                     }
                     } catch (JsonSyntaxException e) {
                     logger.error("Получен неизвестный тип от сервера");
