@@ -14,7 +14,7 @@ public class ClientApplication extends Application {
     private static Logger logger = Logger.getLogger(ClientApplication.class);
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ClientApplication.class.getResource("operators_page/operators_page.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ClientApplication.class.getResource("admins_page/admins_page.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 500);
         stage.setTitle("Войти");
         //stage.setResizable(false);

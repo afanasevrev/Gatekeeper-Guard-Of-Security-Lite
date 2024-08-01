@@ -1,22 +1,32 @@
 package com.alrosa.staa.gatekeeper_client_lite.controller.admins_page;
 
 import com.alrosa.staa.gatekeeper_client_lite.admins_data.*;
+import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
 import com.alrosa.staa.gatekeeper_client_lite.view.*;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 /**
  * Контроллер для формы "admins_page.fxml"
  */
 public class AdminsPageController implements Initializable {
+    //Адрес сервера
+    private String server_ip = Variables.server_ip;
+    //Порт сервера
+    private int server_port = Variables.server_port;
+    //Создаем экземпляр класса RestTemplate
+    private RestTemplate restTemplate = new RestTemplate();
     //Создаем экземпляр класса Stage
     private Stage stage = new Stage();
     //Создаем экземпляр класса для изменения пользователя
@@ -72,6 +82,16 @@ public class AdminsPageController implements Initializable {
     private Button buttonSearchUser = new Button();
     @FXML
     private Button buttonUpdateListUsers = new Button();
+    @FXML
+    private void setButtonUpdateListUsers() {
+        String url_getListUsers = "http://" + server_ip + ":" + server_port + "/getUsers";
+        ResponseEntity<List<UsersData>> response = null;
+        try {
+            response = restTemplate.exchange(url_getListUsers, HttpMethod.GET, null, new ParameterizedTypeReference<List<UsersData>>(){});
+        } catch (RuntimeException e) {
+
+        }
+    }
     @FXML
     private Button buttonOpenPersonalCardUser = new Button();
     @FXML

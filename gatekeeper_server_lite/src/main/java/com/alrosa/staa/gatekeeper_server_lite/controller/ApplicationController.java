@@ -4,6 +4,7 @@ import com.alrosa.staa.gatekeeper_server_lite.entity.UsersEntity;
 import com.alrosa.staa.gatekeeper_server_lite.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
@@ -14,5 +15,9 @@ public class ApplicationController {
     @GetMapping("/getUsers")
     private List<UsersEntity> getUsers() {
         return usersService.readUsers();
+    }
+    @GetMapping("/getUser/{id}")
+    private UsersEntity getUser(@PathVariable Long id) {
+        return usersService.readUser(id);
     }
 }
