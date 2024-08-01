@@ -8,11 +8,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 public class OperatorsPageController implements Initializable {
+    public static ImageView imageView = new ImageView();
     //Вертикальный сплиттер
     @FXML
     private SplitPane splitPaneVertical = new SplitPane();
@@ -62,5 +64,7 @@ public class OperatorsPageController implements Initializable {
         tableColumnAccess.prefWidthProperty().bind(tableViewLogsData.widthProperty().subtract(619));
         tableViewLogsData.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
+        hbox.getChildren().add(imageView);
+        hbox.setSpacing(10);
     }
 }

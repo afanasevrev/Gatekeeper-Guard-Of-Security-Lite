@@ -55,10 +55,10 @@ public class RabbitMqListener {
                     } else {
                         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(general.getPhoto());
                         image = new Image(byteArrayInputStream);
-                        imageView.setImage(image);
-                        imageView.setFitHeight(50);
-                        imageView.setFitWidth(50);
-                        imageView.setPreserveRatio(true);
+                        OperatorsPageController.imageView.setImage(image);
+                        OperatorsPageController.imageView.setFitHeight(200);
+                        OperatorsPageController.imageView.setFitWidth(200);
+                        OperatorsPageController.imageView.setPreserveRatio(true);
                         byteArrayInputStream.close();
                         //OperatorsPageController.hbox.getChildren().add(imageView);
                     }
