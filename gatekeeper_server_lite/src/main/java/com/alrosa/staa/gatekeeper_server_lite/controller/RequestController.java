@@ -66,7 +66,7 @@ public class RequestController {
             PhotoData photoData = null;
             try {
                 user = usersEntity.toString();
-                photoData = new PhotoData(usersEntity.getPhotosEntity().getUserPhoto());
+                //photoData = new PhotoData(usersEntity.getPhotosEntity().getUserPhoto());
                 textPhoto = gson.toJson(photoData);
             } catch (NullPointerException e) {
                 user = "Неизвестный пользователь";
