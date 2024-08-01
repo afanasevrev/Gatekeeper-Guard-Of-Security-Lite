@@ -29,15 +29,16 @@ public class UsersEntity {
     @JoinColumn(name = "photo_id")
     private PhotosEntity photosEntity;
     public UsersEntity() {}
-    public UsersEntity(String first_name, String middle_name, String last_name, String company, String organization) {
+    public UsersEntity(String first_name, String middle_name, String last_name, String company, String organization, PhotosEntity photosEntity) {
         this.first_name = first_name;
         this.middle_name = middle_name;
         this.last_name = last_name;
         this.company = company;
         this.organization = organization;
+        this.photosEntity = photosEntity;
     }
     @Override
     public String toString() {
-        return this.first_name + " " + this.middle_name + " " + this.last_name;
+        return this.middle_name + " " + this.first_name + " " + this.last_name;
     }
 }
