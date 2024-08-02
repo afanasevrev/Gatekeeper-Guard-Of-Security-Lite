@@ -8,15 +8,16 @@ public class UsersData {
     public StringProperty middle_name;
     public StringProperty last_name;
     public StringProperty company;
-    public StringProperty access_level;
+    public StringProperty organization;
     public UsersData() {}
-    public UsersData(String id, String first_name, String middle_name, String last_name, String company, String access_level) {
-        this.id = new SimpleStringProperty(this, "id", id);
+    public UsersData(Long id, String first_name, String middle_name, String last_name, String company, String organization) {
+        String idLong = String.valueOf(id);
+        this.id = new SimpleStringProperty(this, "id", idLong);
         this.first_name = new SimpleStringProperty(this, "first_name", first_name);
         this.middle_name = new SimpleStringProperty(this, "middle_name", middle_name);
         this.last_name = new SimpleStringProperty(this, "last_name", last_name);
         this.company = new SimpleStringProperty(this, "company", company);
-        this.access_level = new SimpleStringProperty(this, "access_level", access_level);
+        this.organization = new SimpleStringProperty(this, "organization", organization);
     }
     public String getId() {
         return id.get();
@@ -63,13 +64,13 @@ public class UsersData {
     public void setCompany(String company) {
         this.company.set(company);
     }
-    public String getAccess_level() {
-        return access_level.get();
+    public String getOrganization() {
+        return organization.get();
     }
-    public StringProperty access_levelProperty() {
-        return access_level;
+    public StringProperty organizationProperty() {
+        return organization;
     }
-    public void setAccess_level(String access_level) {
-        this.access_level.set(access_level);
+    public void setOrganization(String organization) {
+        this.organization.set(organization);
     }
 }
