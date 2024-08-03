@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.apache.log4j.Logger;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 /**
  * Контроллер, отвечает на запросы от клиентов
  */
