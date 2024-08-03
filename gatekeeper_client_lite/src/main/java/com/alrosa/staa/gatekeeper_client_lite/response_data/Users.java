@@ -11,6 +11,8 @@ public class Users {
     private String last_name;
     private String company;
     private String organization;
+    private Photos photos;
+    private Cards cards;
     public Users() {}
     public Users(Long id, String first_name, String middle_name, String last_name, String company, String organization) {
         this.id = id;

@@ -1,5 +1,7 @@
 package com.alrosa.staa.gatekeeper_server_lite.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +27,10 @@ public class UsersEntity {
     private String company;
     @Column(name = "organization")
     private String organization;
+    @OneToOne(mappedBy = "usersEntity", cascade = CascadeType.ALL)
+    private PhotosEntity photosEntity;
+    @OneToOne(mappedBy = "usersEntity", cascade = CascadeType.ALL)
+    private CardsEntity cardsEntity;
     public UsersEntity() {}
     public UsersEntity(String first_name, String middle_name, String last_name, String company, String organization) {
         this.first_name = first_name;
@@ -35,6 +41,6 @@ public class UsersEntity {
     }
     @Override
     public String toString() {
-        return this.middle_name + " " + this.first_name + " " + this.last_name;
+        return this.first_name + " " + this.middle_name + " " + this.last_name;
     }
 }
