@@ -10,6 +10,8 @@ module com.alrosa.staa.gatekeeper_client_lite {
     opens com.alrosa.staa.gatekeeper_client_lite to javafx.fxml;
     exports com.alrosa.staa.gatekeeper_client_lite;
     exports com.alrosa.staa.gatekeeper_client_lite.controller;
+    exports com.alrosa.staa.gatekeeper_client_lite.response_data;
+    exports com.alrosa.staa.gatekeeper_client_lite.admins_data;
     opens com.alrosa.staa.gatekeeper_client_lite.controller to javafx.fxml;
     exports com.alrosa.staa.gatekeeper_client_lite.controller.admins_page;
     opens com.alrosa.staa.gatekeeper_client_lite.controller.admins_page to javafx.fxml;

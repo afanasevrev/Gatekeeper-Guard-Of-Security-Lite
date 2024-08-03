@@ -10,9 +10,8 @@ public class UsersData {
     public StringProperty company;
     public StringProperty organization;
     public UsersData() {}
-    public UsersData(Long id, String first_name, String middle_name, String last_name, String company, String organization) {
-        String idLong = String.valueOf(id);
-        this.id = new SimpleStringProperty(this, "id", idLong);
+    public UsersData(String id, String first_name, String middle_name, String last_name, String company, String organization) {
+        this.id = new SimpleStringProperty(this, "id", id);
         this.first_name = new SimpleStringProperty(this, "first_name", first_name);
         this.middle_name = new SimpleStringProperty(this, "middle_name", middle_name);
         this.last_name = new SimpleStringProperty(this, "last_name", last_name);

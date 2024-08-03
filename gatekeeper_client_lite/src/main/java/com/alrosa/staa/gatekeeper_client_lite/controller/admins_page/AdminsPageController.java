@@ -1,8 +1,10 @@
 package com.alrosa.staa.gatekeeper_client_lite.controller.admins_page;
 
 import com.alrosa.staa.gatekeeper_client_lite.admins_data.*;
+import com.alrosa.staa.gatekeeper_client_lite.response_data.Users;
 import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
 import com.alrosa.staa.gatekeeper_client_lite.view.*;
+import org.apache.log4j.Logger;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +27,8 @@ public class AdminsPageController implements Initializable {
     private String server_ip = Variables.server_ip;
     //Порт сервера
     private int server_port = Variables.server_port;
+    //Печатаем лог событий
+    private Logger logger = Logger.getLogger(AdminsPageController.class);
     //Создаем экземпляр класса RestTemplate
     private RestTemplate restTemplate = new RestTemplate();
     //Создаем экземпляр класса Stage
@@ -85,11 +89,16 @@ public class AdminsPageController implements Initializable {
     @FXML
     private void setButtonUpdateListUsers() {
         String url_getListUsers = "http://" + server_ip + ":" + server_port + "/getUsers";
-        ResponseEntity<List<UsersData>> response = null;
+        ResponseEntity<List<Users>> response = null;
         try {
-            response = restTemplate.exchange(url_getListUsers, HttpMethod.GET, null, new ParameterizedTypeReference<List<UsersData>>(){});
-        } catch (RuntimeException e) {
-
+            observableListUsers.clear();
+            response = restTemplate.exchange(url_getListUsers, HttpMethod.GET, null, new ParameterizedTypeReference<List<Users>>(){});
+            List<Users> users = response.getBody();
+            for (Users user: users) {
+                observableListUsers.add(new UsersData(String.valueOf(user.getId()), user.getFirst_name(), user.getMiddle_name(), user.getLast_name(), user.getCompany(), user.getOrganization()));
+            }
+            } catch (RuntimeException e) {
+            logger.error(e);
         }
     }
     @FXML
@@ -124,7 +133,7 @@ public class AdminsPageController implements Initializable {
     @FXML
     private TableColumn<UsersData, String> tableColumnUserCompany = new TableColumn<UsersData, String>("Компания");
     @FXML
-    private TableColumn<UsersData, String> tableColumnUserAccessLevel = new TableColumn<UsersData, String>("Уровень доступа");
+    private TableColumn<UsersData, String> tableColumnUserOrganization = new TableColumn<UsersData, String>("Организация");
     //Вкладка "Бюро пропусков"
     @FXML
     private Tab tabPassOffice = new Tab();
@@ -358,7 +367,7 @@ public class AdminsPageController implements Initializable {
         tableColumnUserMiddleName.setCellValueFactory(cellData -> cellData.getValue().middle_nameProperty());
         tableColumnUserLastName.setCellValueFactory(cellData -> cellData.getValue().last_nameProperty());
         tableColumnUserCompany.setCellValueFactory(cellData -> cellData.getValue().companyProperty());
-        tableColumnUserAccessLevel.setCellValueFactory(cellData -> cellData.getValue().access_levelProperty());
+        tableColumnUserOrganization.setCellValueFactory(cellData -> cellData.getValue().organizationProperty());
 
         //Обновляем таблицу для бюро пропусков
         tableViewPassOffice.setItems(observableListPassOffice);
