@@ -27,10 +27,6 @@ public class UsersEntity {
     private String company;
     @Column(name = "organization")
     private String organization;
-    @OneToOne(mappedBy = "usersEntity", cascade = CascadeType.ALL)
-    private PhotosEntity photosEntity;
-    @OneToOne(mappedBy = "usersEntity", cascade = CascadeType.ALL)
-    private CardsEntity cardsEntity;
     public UsersEntity() {}
     public UsersEntity(String first_name, String middle_name, String last_name, String company, String organization) {
         this.first_name = first_name;
