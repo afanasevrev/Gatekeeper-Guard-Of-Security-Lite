@@ -2,6 +2,7 @@ package com.alrosa.staa.gatekeeper_client_lite.messaging;
 
 import com.alrosa.staa.gatekeeper_client_lite.controller.operators_page.OperatorsPageController;
 import com.alrosa.staa.gatekeeper_client_lite.general.General;
+import com.alrosa.staa.gatekeeper_client_lite.general.MessageType;
 import com.alrosa.staa.gatekeeper_client_lite.operators_data.LogsData;
 import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
 import com.google.gson.Gson;
@@ -50,7 +51,7 @@ public class RabbitMqListener {
                 General general = null;
                 try {
                     general = gson.fromJson(message, General.class);
-                    if (general.getPhoto() == null) {
+                    if (general.getMessageType() == MessageType.OPERATOR && general.getPhoto() == null) {
                         OperatorsPageController.observableListLogsData.add(new LogsData(general.getCurrentDate(), general.getControllerName(), String.valueOf(general.getDirection()), general.getUser(), general.getCardId(), String.valueOf(general.isAccess())));
                     } else {
                         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(general.getPhoto());

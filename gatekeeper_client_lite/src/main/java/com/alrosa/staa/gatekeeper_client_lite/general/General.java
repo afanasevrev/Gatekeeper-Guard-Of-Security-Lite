@@ -5,6 +5,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class General {
+    private MessageType messageType;
     private String currentDate;
     private String controllerName;
     private int direction;
@@ -13,7 +14,8 @@ public class General {
     private boolean access;
     private byte[] photo;
     public General() {}
-    public General(String currentDate, String controllerName, int direction, String user, String cardId, boolean access) {
+    public General(MessageType messageType, String currentDate, String controllerName, int direction, String user, String cardId, boolean access) {
+        this.messageType = messageType;
         this.currentDate = currentDate;
         this.controllerName = controllerName;
         this.direction = direction;
@@ -21,7 +23,8 @@ public class General {
         this.cardId = cardId;
         this.access = access;
     }
-    public General(byte[] photo) {
+    public General(MessageType messageType, byte[] photo) {
+        this.messageType = messageType;
         this.photo = photo;
     }
 }

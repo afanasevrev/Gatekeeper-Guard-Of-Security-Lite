@@ -5,11 +5,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PhotoData {
-    private MessageType messageType;
     private byte[] photo;
     public PhotoData() {}
-    public PhotoData(byte[] photo, MessageType messageType) {
+    public PhotoData(byte[] photo) {
         this.photo = photo;
-        this.messageType = messageType;
     }
 }

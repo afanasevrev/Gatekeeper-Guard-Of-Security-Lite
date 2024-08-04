@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import org.apache.log4j.Logger;
@@ -14,6 +15,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.ByteArrayInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -31,6 +33,8 @@ public class UserWindowController implements Initializable {
     private Logger logger = Logger.getLogger(UserWindowController.class);
     @FXML
     private ImageView imageViewPhotoUser = new ImageView();
+    private Image image;
+    private ByteArrayInputStream byteArrayInputStream;
     @FXML
     private TextField textFieldFirstName = new TextField();
     @FXML
@@ -69,6 +73,12 @@ public class UserWindowController implements Initializable {
             textFieldLastName.setText(user.getLast_name());
             textFieldCompany.setText(user.getCompany());
             textFieldOrganization.setText(user.getOrganization());
+            byteArrayInputStream = new ByteArrayInputStream(user.getPhoto());
+            image = new Image(byteArrayInputStream);
+            imageViewPhotoUser.setPreserveRatio(true);
+            imageViewPhotoUser.setFitWidth(135);
+            imageViewPhotoUser.setFitHeight(180);
+            imageViewPhotoUser.setImage(image);
         } catch (RuntimeException e) {
             logger.error(e);
         }
