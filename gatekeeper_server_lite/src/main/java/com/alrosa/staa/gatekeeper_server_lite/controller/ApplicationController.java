@@ -16,7 +16,7 @@ public class ApplicationController {
         return usersService.readUsers();
     }
     @GetMapping("/getUser/{id}")
-    private UsersEntity getUser(@PathVariable Long id) {
-        return usersService.readUser(id);
+    private UsersEntity getUser(@PathVariable String id) {
+        return usersService.readUser(Long.parseLong(id));
     }
 }

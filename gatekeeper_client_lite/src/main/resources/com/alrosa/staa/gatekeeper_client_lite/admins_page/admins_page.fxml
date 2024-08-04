@@ -25,7 +25,7 @@
                               <TableColumn fx:id="tableColumnUserMiddleName" prefWidth="106.0" text="Имя" />
                               <TableColumn fx:id="tableColumnUserLastName" prefWidth="105.0" text="Отчество" />
                               <TableColumn fx:id="tableColumnUserCompany" prefWidth="99.0" text="Компания" />
-                              <TableColumn fx:id="tableColumnAccessLevel" prefWidth="150.0" text="Уровень доступа" />
+                              <TableColumn fx:id="tableColumnUserOrganization" prefWidth="150.0" text="Организация" />
                           </columns>
                         </TableView>
                         <TextField fx:id="textFieldSearchUser" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="250.0" promptText="Поиск..." />

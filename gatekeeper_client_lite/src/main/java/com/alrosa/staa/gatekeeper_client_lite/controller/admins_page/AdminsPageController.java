@@ -75,9 +75,9 @@ public class AdminsPageController implements Initializable {
     private DeleteAdminConsole deleteAdminConsole = new DeleteAdminConsole();
     //Создаем экземпляр класса для добавления администратора
     private AddAdminConsole addAdminConsole = new AddAdminConsole();
-    //ID пользователя
-    public static Long user_id;
     //Вкладка "Пользователи"
+    //ID пользователя при нажатии на таблице
+    public static String valueOfUser;
     @FXML
     private Tab tabUsers = new Tab();
     @FXML
@@ -97,15 +97,17 @@ public class AdminsPageController implements Initializable {
             for (Users user: users) {
                 observableListUsers.add(new UsersData(String.valueOf(user.getId()), user.getFirst_name(), user.getMiddle_name(), user.getLast_name(), user.getCompany(), user.getOrganization()));
             }
-            } catch (RuntimeException e) {
-            logger.error(e);
+        } catch (RuntimeException e) {
+                logger.error(e);
         }
     }
     @FXML
     private Button buttonOpenPersonalCardUser = new Button();
     @FXML
     private void setButtonOpenPersonalCardUser() throws IOException {
-        userWindowConsole.start(stage);
+        if (valueOfUser != null) {
+            userWindowConsole.start(stage);
+        }
     }
     @FXML
     private Button buttonDeleteUser = new Button();
@@ -413,5 +415,13 @@ public class AdminsPageController implements Initializable {
         tableColumnAdminLogin.setCellValueFactory(cellData -> cellData.getValue().loginProperty());
         tableColumnAdminSuperAdmin.setCellValueFactory(cellData -> cellData.getValue().super_adminProperty());
 
+        //Фиксируем строку в таблице для пользователей
+        tableViewUsers.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            try {
+                valueOfUser = newSelection.getId();
+            } catch (NullPointerException e) {
+                valueOfUser = null;
+            }
+        });
     }
 }
