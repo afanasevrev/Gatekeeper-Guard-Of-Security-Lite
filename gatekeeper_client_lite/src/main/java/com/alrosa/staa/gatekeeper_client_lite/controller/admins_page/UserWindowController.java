@@ -63,10 +63,13 @@ public class UserWindowController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //Чистим все поля перед открытием формы
         clearFields();
         ResponseEntity<Users> response = null;
         try {
+            //Получаем от сервера ответ про пользователя
             response = restTemplate.exchange(url_getUser, HttpMethod.GET, null, Users.class);
+            //Записываем полученный ответ в класс User
             user = response.getBody();
             textFieldFirstName.setText(user.getFirst_name());
             textFieldMiddleName.setText(user.getMiddle_name());
