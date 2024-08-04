@@ -11,7 +11,7 @@ public class General {
     private String cardId;
     //IP - адрес контроллера
     private String ipAddress;
-    //Направление вход/выход
+    //Направление - вход/выход
     private int direction;
     //Доступ
     private boolean access;
