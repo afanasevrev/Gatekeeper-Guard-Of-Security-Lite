@@ -1,6 +1,7 @@
 package com.alrosa.staa.gatekeeper_server_lite.service;
 
 import com.alrosa.staa.gatekeeper_server_lite.entity.PhotosEntity;
+import com.alrosa.staa.gatekeeper_server_lite.entity.UsersEntity;
 import com.alrosa.staa.gatekeeper_server_lite.repository.PhotosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,5 +62,14 @@ public class PhotosServiceImpl implements PhotosService {
         PhotosEntity photosEntity = photosRepository.findById(id).get();
         photosEntity.setUserPhoto(entity.getUserPhoto());
         return "Фотография с ID = " + id + " успешно обновлена в БД";
+    }
+    /**
+     * Метод возвращает фотографию, зная пользователя
+     * @param usersEntity
+     * @return byte[]
+     */
+    @Override
+    public PhotosEntity findByUsersEntity(UsersEntity usersEntity) {
+        return photosRepository.findByUsersEntity(usersEntity);
     }
 }

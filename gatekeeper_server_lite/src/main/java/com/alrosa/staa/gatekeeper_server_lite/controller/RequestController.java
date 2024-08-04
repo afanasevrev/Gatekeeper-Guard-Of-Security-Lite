@@ -58,7 +58,9 @@ public class RequestController {
     @PostMapping("/fromController")
     private void messageFromController(@RequestBody General general) {
         if (general.getMessageType() == MessageType.OPERATOR) {
+            //Возвращаем текущую дату
             currentDate = new Date();
+            //Форматируем дату
             formattedDate = simpleDateFormat.format(currentDate);
             String user;
             UsersEntity usersEntity = cardsService.findByCard(general.getCardId()).getUsersEntity();

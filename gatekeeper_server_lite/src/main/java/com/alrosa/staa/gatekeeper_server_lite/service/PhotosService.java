@@ -1,6 +1,8 @@
 package com.alrosa.staa.gatekeeper_server_lite.service;
 
 import com.alrosa.staa.gatekeeper_server_lite.entity.PhotosEntity;
+import com.alrosa.staa.gatekeeper_server_lite.entity.UsersEntity;
+
 import java.util.List;
 public interface PhotosService {
     String createPhoto(PhotosEntity entity);
@@ -8,4 +10,5 @@ public interface PhotosService {
     PhotosEntity readPhoto(Long id);
     String deletePhoto(Long id);
     String updatePhoto(PhotosEntity entity, Long id);
+    PhotosEntity findByUsersEntity(UsersEntity usersEntity);
 }
