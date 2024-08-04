@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +25,8 @@ public class UserWindowController implements Initializable {
     private RestTemplate restTemplate = new RestTemplate();
     //Создаем URL
     private String url_getUser = "http://" + Variables.server_ip + ":" + Variables.server_port + "/getUser/" + AdminsPageController.valueOfUser;
+    //Создаем экземпляр класса Users
+    private Users user;
     //Создаем logger
     private Logger logger = Logger.getLogger(UserWindowController.class);
     @FXML
@@ -56,12 +59,28 @@ public class UserWindowController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        clearFields();
         ResponseEntity<Users> response = null;
         try {
             response = restTemplate.exchange(url_getUser, HttpMethod.GET, null, Users.class);
-            logger.info(response.getBody().getMiddle_name());
+            user = response.getBody();
+            textFieldFirstName.setText(user.getFirst_name());
+            textFieldMiddleName.setText(user.getMiddle_name());
+            textFieldLastName.setText(user.getLast_name());
+            textFieldCompany.setText(user.getCompany());
+            textFieldOrganization.setText(user.getOrganization());
         } catch (RuntimeException e) {
-
+            logger.error(e);
         }
+    }
+    private void clearFields() {
+        textFieldFirstName.setText("");
+        textFieldMiddleName.setText("");
+        textFieldLastName.setText("");
+        textFieldCompany.setText("");
+        textFieldOrganization.setText("");
+        imageViewPhotoUser.setImage(new WritableImage(135,180));
+        comboBoxAccessControl.getItems().clear();
+        textFieldCard.setText("");
     }
 }
