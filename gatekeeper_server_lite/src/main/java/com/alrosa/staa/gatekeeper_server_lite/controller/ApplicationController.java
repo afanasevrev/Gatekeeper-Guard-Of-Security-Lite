@@ -37,6 +37,7 @@ public class ApplicationController {
         UsersEntity usersEntity = usersService.readUser(Long.parseLong(id));
         byte[] photo = photosService.findByUsersEntity(usersEntity).getUserPhoto();
         CardsEntity cardsEntity = cardsService.findByUsersEntity(usersEntity);
+        
         UsersData usersData = new UsersData(usersEntity.getId(), usersEntity.getFirst_name(), usersEntity.getMiddle_name(), usersEntity.getLast_name(), usersEntity.getCompany(), usersEntity.getOrganization(), photo);
         textUsersData = gson.toJson(usersData);
         return textUsersData;
