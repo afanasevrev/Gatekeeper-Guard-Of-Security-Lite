@@ -19,6 +19,6 @@ public class OperatorWindowController {
     private Button buttonEdit = new Button();
     @FXML
     private void setButtonEdit() {
-        
+
     }
 }

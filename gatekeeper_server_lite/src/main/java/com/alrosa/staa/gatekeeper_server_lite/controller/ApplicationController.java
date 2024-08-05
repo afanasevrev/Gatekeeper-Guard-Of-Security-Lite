@@ -1,9 +1,11 @@
 package com.alrosa.staa.gatekeeper_server_lite.controller;
 
+import com.alrosa.staa.gatekeeper_server_lite.entity.CardsEntity;
 import com.alrosa.staa.gatekeeper_server_lite.entity.UsersEntity;
 import com.alrosa.staa.gatekeeper_server_lite.general.MessageType;
 import com.alrosa.staa.gatekeeper_server_lite.general.PhotoData;
 import com.alrosa.staa.gatekeeper_server_lite.general.UsersData;
+import com.alrosa.staa.gatekeeper_server_lite.service.CardsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.PhotosService;
 import com.alrosa.staa.gatekeeper_server_lite.service.UsersService;
 import com.google.gson.Gson;
@@ -24,6 +26,8 @@ public class ApplicationController {
     private UsersService usersService;
     @Autowired
     private PhotosService photosService;
+    @Autowired
+    private CardsService cardsService;
     @GetMapping("/getUsers")
     private List<UsersEntity> getUsers() {
         return usersService.readUsers();
@@ -32,6 +36,7 @@ public class ApplicationController {
     private String getUser(@PathVariable String id) {
         UsersEntity usersEntity = usersService.readUser(Long.parseLong(id));
         byte[] photo = photosService.findByUsersEntity(usersEntity).getUserPhoto();
+        CardsEntity cardsEntity = cardsService.findByUsersEntity(usersEntity);
         UsersData usersData = new UsersData(usersEntity.getId(), usersEntity.getFirst_name(), usersEntity.getMiddle_name(), usersEntity.getLast_name(), usersEntity.getCompany(), usersEntity.getOrganization(), photo);
         textUsersData = gson.toJson(usersData);
         return textUsersData;

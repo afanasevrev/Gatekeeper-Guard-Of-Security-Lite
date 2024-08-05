@@ -12,4 +12,5 @@ public interface CardsService {
     String deleteCard(Long id);
     String updateCard(CardsEntity entity, Long id);
     CardsEntity findByCard(String card_id);
+    CardsEntity findByUsersEntity(UsersEntity usersEntity);
 }
