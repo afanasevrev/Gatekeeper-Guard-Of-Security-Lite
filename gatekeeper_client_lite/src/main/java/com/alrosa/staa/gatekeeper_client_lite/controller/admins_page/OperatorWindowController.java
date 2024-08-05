@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
 public class OperatorWindowController {
     @FXML
     private TextField textFieldFirstName = new TextField();
@@ -20,6 +19,6 @@ public class OperatorWindowController {
     private Button buttonEdit = new Button();
     @FXML
     private void setButtonEdit() {
-
+        
     }
 }
