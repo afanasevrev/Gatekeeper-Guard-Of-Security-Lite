@@ -12,8 +12,9 @@ public class Users {
     private String company;
     private String organization;
     private byte[] photo;
+    private String cardId;
     public Users() {}
-    public Users(Long id, String first_name, String middle_name, String last_name, String company, String organization, byte[] photo) {
+    public Users(Long id, String first_name, String middle_name, String last_name, String company, String organization, byte[] photo, String cardId) {
         this.id = id;
         this.first_name = first_name;
         this.middle_name = middle_name;
@@ -21,5 +22,6 @@ public class Users {
         this.company = company;
         this.organization = organization;
         this.photo = photo;
+        this.cardId = cardId;
     }
 }

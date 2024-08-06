@@ -82,12 +82,13 @@ public class UserWindowController implements Initializable {
             imageViewPhotoUser.setFitWidth(135);
             imageViewPhotoUser.setFitHeight(180);
             imageViewPhotoUser.setImage(image);
+            textFieldCard.setText(user.getCardId());
         } catch (RuntimeException e) {
             logger.error(e);
         }
     }
     /**
-     * Метод позволяет чистить все поля перед открытием
+     * Метод позволяет чистить все поля перед открытием формы пользователя
      */
     private void clearFields() {
         textFieldFirstName.setText("");
