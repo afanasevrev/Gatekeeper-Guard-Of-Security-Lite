@@ -86,6 +86,9 @@ public class UserWindowController implements Initializable {
             logger.error(e);
         }
     }
+    /**
+     * Метод позволяет чистить все поля перед открытием
+     */
     private void clearFields() {
         textFieldFirstName.setText("");
         textFieldMiddleName.setText("");
