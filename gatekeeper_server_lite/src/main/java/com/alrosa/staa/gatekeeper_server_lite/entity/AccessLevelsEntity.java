@@ -13,9 +13,9 @@ public class AccessLevelsEntity {
     @Column(name = "id")
     private Long id;
     @Column(name = "access_level_name")
-    private String access_level_name;
+    private String accessLevelName;
     public AccessLevelsEntity(){}
-    public AccessLevelsEntity(String access_level_name) {
-        this.access_level_name = access_level_name;
+    public AccessLevelsEntity(String accessLevelName) {
+        this.accessLevelName = accessLevelName;
     }
 }
