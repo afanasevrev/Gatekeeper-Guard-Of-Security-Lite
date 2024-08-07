@@ -3,10 +3,8 @@ package com.alrosa.staa.gatekeeper_server_lite.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.HashSet;
 import java.util.Set;
-
 @Getter
 @Setter
 @Entity
@@ -25,7 +23,6 @@ public class AccessLevelsEntity {
             inverseJoinColumns = @JoinColumn(name = "controller_id")
     )
     private Set<ControllersEntity> controllers = new HashSet<>();
-
     public AccessLevelsEntity(){}
     public AccessLevelsEntity(String accessLevelName) {
         this.accessLevelName = accessLevelName;

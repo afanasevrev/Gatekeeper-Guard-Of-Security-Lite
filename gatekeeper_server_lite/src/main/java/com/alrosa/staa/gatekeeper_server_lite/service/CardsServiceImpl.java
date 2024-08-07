@@ -26,6 +26,7 @@ public class CardsServiceImpl implements CardsService {
     }
     @Override
     public String deleteCard(Long id) {
+        cardsRepository.deleteById(id);
         return "Карта доступа с ID = " + id + " успешно удалён из БД";
     }
     @Override
