@@ -16,18 +16,22 @@ public class AccessLevelsServiceImpl implements AccessLevelsService {
     }
     @Override
     public List<AccessLevelsEntity> readAccessLevels() {
-        return null;
+        return accessLevelsRepository.findAll();
     }
     @Override
     public AccessLevelsEntity readAccessLevel(Long id) {
-        return null;
+        return accessLevelsRepository.findById(id).get();
     }
     @Override
     public String deleteAccessLevel(Long id) {
-        return null;
+        accessLevelsRepository.deleteById(id);
+        return "уровень доступа с ID = " + id + " успешно удален из БД";
     }
     @Override
     public String updateAccessLevel(AccessLevelsEntity entity, Long id) {
-        return null;
+        AccessLevelsEntity accessLevelsEntity = accessLevelsRepository.findById(id).get();
+        accessLevelsEntity.setAccessLevelName(entity.getAccessLevelName());
+        accessLevelsEntity.setControllers(entity.getControllers());
+        return "уровень доступа с ID = " + id + " успешно обновлён";
     }
 }
