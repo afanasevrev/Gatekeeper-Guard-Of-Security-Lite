@@ -51,6 +51,10 @@ public class RequestController {
         this.cardsService = cardsService;
         this.photosService = photosService;
     }
+    /**
+     * Метод, чтобы узнать, запущен ли сервер или нет
+     * @return String
+     */
     @GetMapping("/")
     private String getInfo() {
         return "Система контроля и управления доступом. Lite - версия";
