@@ -3,9 +3,7 @@ package com.alrosa.staa.gatekeeper_server_lite.service;
 import com.alrosa.staa.gatekeeper_server_lite.entity.ControllersEntity;
 import com.alrosa.staa.gatekeeper_server_lite.repository.ControllersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
-
 public class ControllersServiceImpl implements ControllersService {
     @Autowired
     private ControllersRepository controllersRepository;
@@ -20,14 +18,20 @@ public class ControllersServiceImpl implements ControllersService {
     }
     @Override
     public ControllersEntity readController(Long id) {
-        return null;
+        return controllersRepository.findById(id).get();
     }
     @Override
     public String deleteController(Long id) {
-        return null;
+        controllersRepository.deleteById(id);
+        return "Контроллер с ID = " + id + " успешно удален из БД";
     }
     @Override
     public String updateController(ControllersEntity entity, Long id) {
-        return null;
+        ControllersEntity controllersEntity = controllersRepository.findById(id).get();
+        controllersEntity.setControllerName(entity.getControllerName());
+        controllersEntity.setIpAddress(entity.getIpAddress());
+        controllersEntity.setAccessLevels(entity.getAccessLevels());
+        controllersRepository.save(controllersEntity);
+        return "Контроллер с ID = " + id + " успешно обновлен в БД";
     }
 }
