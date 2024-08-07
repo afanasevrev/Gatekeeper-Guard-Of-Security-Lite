@@ -25,7 +25,7 @@ public class InspectorsServiceImpl implements InspectorsService {
      * @return List
      */
     @Override
-    public List<InspectorsEntity> readUsers() {
+    public List<InspectorsEntity> readInspectors() {
         return inspectorsRepository.findAll();
     }
     /**
