@@ -1,9 +1,11 @@
 package com.alrosa.staa.gatekeeper_server_lite.controller;
 
 import com.alrosa.staa.gatekeeper_server_lite.entity.CardsEntity;
+import com.alrosa.staa.gatekeeper_server_lite.entity.ControllersEntity;
 import com.alrosa.staa.gatekeeper_server_lite.entity.UsersEntity;
 import com.alrosa.staa.gatekeeper_server_lite.general.UsersData;
 import com.alrosa.staa.gatekeeper_server_lite.service.CardsService;
+import com.alrosa.staa.gatekeeper_server_lite.service.ControllersService;
 import com.alrosa.staa.gatekeeper_server_lite.service.PhotosService;
 import com.alrosa.staa.gatekeeper_server_lite.service.UsersService;
 import com.google.gson.Gson;
@@ -25,6 +27,8 @@ public class ApplicationController {
     private PhotosService photosService;
     @Autowired
     private CardsService cardsService;
+    @Autowired
+    private ControllersService controllersService;
     @GetMapping("/getUsers")
     private List<UsersEntity> getUsers() {
         return usersService.readUsers();
@@ -37,5 +41,14 @@ public class ApplicationController {
         UsersData usersData = new UsersData(usersEntity.getId(), usersEntity.getFirst_name(), usersEntity.getMiddle_name(), usersEntity.getLast_name(), usersEntity.getCompany(), usersEntity.getOrganization(), photo, cardsEntity.getCardId());
         textUsersData = gson.toJson(usersData);
         return textUsersData;
+    }
+    @GetMapping("/setController")
+    private String setController() {
+        //ControllersEntity controllersEntity = new ControllersEntity();
+        //controllersEntity.setId(1L);
+        //controllersEntity.setControllerName("Главный вход");
+        //controllersEntity.setIpAddress("10.21.0.26");
+        //controllersService.createController(controllersEntity);
+        return "Контроллер добавлен";
     }
 }
