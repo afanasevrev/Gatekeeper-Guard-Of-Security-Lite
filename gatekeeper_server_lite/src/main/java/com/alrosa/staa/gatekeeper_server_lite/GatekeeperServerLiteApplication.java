@@ -30,6 +30,14 @@ public class GatekeeperServerLiteApplication {
 	public OperatorsService operatorsService() {
 		return new OperatorsServiceImpl();
 	}
+	@Bean
+	public AccessLevelsService accessLevelsService() {
+		return new AccessLevelsServiceImpl();
+	}
+	@Bean
+	public ControllersService controllersService() {
+		return new ControllersServiceImpl();
+	}
 	public static void main(String[] args) {
 		BasicConfigurator.configure();
 		SpringApplication.run(GatekeeperServerLiteApplication.class, args);
