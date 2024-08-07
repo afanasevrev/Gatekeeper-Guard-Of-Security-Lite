@@ -55,6 +55,10 @@ public class RequestController {
     private String getInfo() {
         return "Система контроля и управления доступом. Lite - версия";
     }
+    /**
+     * В методе есть ошибки, нужно исправить
+     * @param general
+     */
     @PostMapping("/fromController")
     private void messageFromController(@RequestBody General general) {
         if (general.getMessageType() == MessageType.OPERATOR) {

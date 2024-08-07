@@ -2,15 +2,12 @@ package com.alrosa.staa.gatekeeper_server_lite.controller;
 
 import com.alrosa.staa.gatekeeper_server_lite.entity.CardsEntity;
 import com.alrosa.staa.gatekeeper_server_lite.entity.UsersEntity;
-import com.alrosa.staa.gatekeeper_server_lite.general.MessageType;
-import com.alrosa.staa.gatekeeper_server_lite.general.PhotoData;
 import com.alrosa.staa.gatekeeper_server_lite.general.UsersData;
 import com.alrosa.staa.gatekeeper_server_lite.service.CardsService;
 import com.alrosa.staa.gatekeeper_server_lite.service.PhotosService;
 import com.alrosa.staa.gatekeeper_server_lite.service.UsersService;
 import com.google.gson.Gson;
 import org.springframework.amqp.core.AmqpTemplate;
-import org.springframework.amqp.core.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
