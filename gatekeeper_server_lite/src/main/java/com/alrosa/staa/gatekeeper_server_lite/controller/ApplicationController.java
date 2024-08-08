@@ -47,17 +47,16 @@ public class ApplicationController {
         return textUsersData;
     }
     /**
-     * Потом поиеняю на @PostMapping
+     * Потом поменяю на @PostMapping
      * @return
      */
     @GetMapping("/setController")
     private String setController() {
         //ControllersEntity controllersEntity = new ControllersEntity();
-        //controllersEntity.setId(1L);
-        //controllersEntity.setControllerName("Главный вход");
-        //controllersEntity.setIpAddress("10.2.221.26");
+        //controllersEntity.setId(2L);
+        //controllersEntity.setControllerName("Пожарный выход №2");
+        //controllersEntity.setIpAddress("10.2.221.25");
         //controllersService.createController(controllersEntity);
-
         return "Контроллер добавлен";
     }
     /**
@@ -70,8 +69,10 @@ public class ApplicationController {
         //accessLevelsEntity.setId(1L);
         //accessLevelsEntity.setAccessLevelName("Вездеход");
         //accessLevelsService.createAccessLevel(accessLevelsEntity);
+
         Set<ControllersEntity> controllersEntitySet = new HashSet<>();
         controllersEntitySet.add(controllersService.readController(1L));
+        controllersEntitySet.add(controllersService.readController(2L));
         AccessLevelsEntity newAccess = accessLevelsService.readAccessLevel(1L);
         newAccess.setControllers(controllersEntitySet);
         accessLevelsService.updateAccessLevel(newAccess, 1L);
