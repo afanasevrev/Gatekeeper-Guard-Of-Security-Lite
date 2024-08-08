@@ -1,20 +1,22 @@
 package com.alrosa.staa.gatekeeper_server_lite.controller;
 
+import com.alrosa.staa.gatekeeper_server_lite.entity.AccessLevelsEntity;
 import com.alrosa.staa.gatekeeper_server_lite.entity.CardsEntity;
 import com.alrosa.staa.gatekeeper_server_lite.entity.ControllersEntity;
 import com.alrosa.staa.gatekeeper_server_lite.entity.UsersEntity;
 import com.alrosa.staa.gatekeeper_server_lite.general.UsersData;
-import com.alrosa.staa.gatekeeper_server_lite.service.CardsService;
-import com.alrosa.staa.gatekeeper_server_lite.service.ControllersService;
-import com.alrosa.staa.gatekeeper_server_lite.service.PhotosService;
-import com.alrosa.staa.gatekeeper_server_lite.service.UsersService;
+import com.alrosa.staa.gatekeeper_server_lite.service.*;
 import com.google.gson.Gson;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 @RestController
 public class ApplicationController {
     private Gson gson = new Gson();
@@ -29,6 +31,8 @@ public class ApplicationController {
     private CardsService cardsService;
     @Autowired
     private ControllersService controllersService;
+    @Autowired
+    private AccessLevelsService accessLevelsService;
     @GetMapping("/getUsers")
     private List<UsersEntity> getUsers() {
         return usersService.readUsers();
@@ -42,13 +46,35 @@ public class ApplicationController {
         textUsersData = gson.toJson(usersData);
         return textUsersData;
     }
+    /**
+     * Потом поиеняю на @PostMapping
+     * @return
+     */
     @GetMapping("/setController")
     private String setController() {
         //ControllersEntity controllersEntity = new ControllersEntity();
         //controllersEntity.setId(1L);
         //controllersEntity.setControllerName("Главный вход");
-        //controllersEntity.setIpAddress("10.21.0.26");
+        //controllersEntity.setIpAddress("10.2.221.26");
         //controllersService.createController(controllersEntity);
+
         return "Контроллер добавлен";
+    }
+    /**
+     * Потом поменяю на @PostMapping
+     * @return
+     */
+    @GetMapping("/setAccessLevel")
+    private String setAccessLevel() {
+        //AccessLevelsEntity accessLevelsEntity = new AccessLevelsEntity();
+        //accessLevelsEntity.setId(1L);
+        //accessLevelsEntity.setAccessLevelName("Вездеход");
+        //accessLevelsService.createAccessLevel(accessLevelsEntity);
+        Set<ControllersEntity> controllersEntitySet = new HashSet<>();
+        controllersEntitySet.add(controllersService.readController(1L));
+        AccessLevelsEntity newAccess = accessLevelsService.readAccessLevel(1L);
+        newAccess.setControllers(controllersEntitySet);
+        accessLevelsService.updateAccessLevel(newAccess, 1L);
+        return "Уровень доступа добавлен";
     }
 }
