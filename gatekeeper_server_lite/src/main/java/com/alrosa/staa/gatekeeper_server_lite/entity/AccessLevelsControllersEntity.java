@@ -8,15 +8,14 @@ import lombok.Setter;
 @Entity
 @Table(name = "access_levels_controllers")
 public class AccessLevelsControllersEntity {
-    @ManyToMany()
-    @JoinColumn(name = "access_level_id")
-    private AccessLevelsEntity accessLevelsEntity;
-    @ManyToMany()
-    @JoinColumn(name = "controller_id")
-    private ControllersEntity controllersEntity;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+    @Column(name = "controller_id")
+    private String controller_id;
+    @Column(name = "access_level_id")
+    private String access_level;
     public AccessLevelsControllersEntity() {}
-    public AccessLevelsControllersEntity(AccessLevelsEntity accessLevelsEntity, ControllersEntity controllersEntity) {
-        this.accessLevelsEntity = accessLevelsEntity;
-        this.controllersEntity = controllersEntity;
-    }
+
 }
