@@ -17,9 +17,7 @@ public class AccessLevelsControllersEntity {
     @ManyToMany()
     @JoinColumn(name = "controller_id")
     private ControllersEntity controllersEntity;
-
     public AccessLevelsControllersEntity() {}
-    
     public AccessLevelsControllersEntity(AccessLevelsEntity accessLevelsEntity, ControllersEntity controllersEntity) {
         this.accessLevelsEntity = accessLevelsEntity;
         this.controllersEntity = controllersEntity;
