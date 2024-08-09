@@ -18,12 +18,9 @@ public class ControllersEntity {
     private String controllerName;
     @Column(name = "ip_address")
     private String ipAddress;
-    @ManyToMany(mappedBy = "controllers")
-    private Set<AccessLevelsEntity> accessLevels = new HashSet<>();
     public ControllersEntity() {}
-    public ControllersEntity(String controllerName, String ipAddress, Set<AccessLevelsEntity> accessLevels) {
+    public ControllersEntity(String controllerName, String ipAddress) {
         this.controllerName = controllerName;
         this.ipAddress = ipAddress;
-        this.accessLevels = accessLevels;
     }
 }

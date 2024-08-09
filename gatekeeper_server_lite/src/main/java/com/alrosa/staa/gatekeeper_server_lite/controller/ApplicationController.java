@@ -47,8 +47,8 @@ public class ApplicationController {
         return textUsersData;
     }
     @GetMapping("/getAccessLevels")
-    private List<AccessLevelsEntity>  getAccessLevels() {
-        return accessLevelsService.readAccessLevels();
+    private AccessLevelsEntity  getAccessLevels() {
+        return accessLevelsService.readAccessLevel(1L);
     }
     /**
      * Потом поменяю на @PostMapping
