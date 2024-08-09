@@ -52,11 +52,10 @@ public class ApplicationController {
      */
     @GetMapping("/setController")
     private String setController() {
-        ControllersEntity controllersEntity = new ControllersEntity();
-        controllersEntity.setId(2L);
-        controllersEntity.setControllerName("Пожарный выход №2");
-        controllersEntity.setIpAddress("10.2.221.25");
-        controllersService.createController(controllersEntity);
+        //ControllersEntity controllersEntity = new ControllersEntity();
+        //controllersEntity.setControllerName("Пожарный выход №3");
+        //controllersEntity.setIpAddress("10.2.221.23");
+        //controllersService.createController(controllersEntity);
         return "Контроллер добавлен";
     }
     /**
@@ -66,16 +65,9 @@ public class ApplicationController {
     @GetMapping("/setAccessLevel")
     private String setAccessLevel() {
         //AccessLevelsEntity accessLevelsEntity = new AccessLevelsEntity();
-        //accessLevelsEntity.setId(1L);
-        //accessLevelsEntity.setAccessLevelName("Вездеход");
-        //accessLevelsService.createAccessLevel(accessLevelsEntity);
-
-        //Set<ControllersEntity> controllersEntitySet = new HashSet<>();
-        //controllersEntitySet.add(controllersService.readController(1L));
-        //controllersEntitySet.add(controllersService.readController(2L));
-        //AccessLevelsEntity newAccess = accessLevelsService.readAccessLevel(1L);
-        //newAccess.setControllers(controllersEntitySet);
-        //accessLevelsService.updateAccessLevel(newAccess, 1L);
+        //accessLevelsEntity = accessLevelsService.readAccessLevel(1L);
+        //accessLevelsEntity.getControllers().add(controllersService.readController(3L));
+        //accessLevelsService.updateAccessLevel(accessLevelsEntity, 1L);
         return "Уровень доступа добавлен";
     }
 }
