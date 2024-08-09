@@ -31,7 +31,6 @@ public class AccessLevelsServiceImpl implements AccessLevelsService {
     public String updateAccessLevel(AccessLevelsEntity entity, Long id) {
         AccessLevelsEntity accessLevelsEntity = accessLevelsRepository.findById(id).get();
         accessLevelsEntity.setAccessLevelName(entity.getAccessLevelName());
-        accessLevelsEntity.setControllers(entity.getControllers());
         accessLevelsRepository.save(accessLevelsEntity);
         return "Уровень доступа с ID = " + id + " успешно обновлён";
     }

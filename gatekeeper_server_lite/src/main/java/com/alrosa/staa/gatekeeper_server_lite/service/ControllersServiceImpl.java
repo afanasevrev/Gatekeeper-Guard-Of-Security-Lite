@@ -30,7 +30,6 @@ public class ControllersServiceImpl implements ControllersService {
         ControllersEntity controllersEntity = controllersRepository.findById(id).get();
         controllersEntity.setControllerName(entity.getControllerName());
         controllersEntity.setIpAddress(entity.getIpAddress());
-        controllersEntity.setAccessLevels(entity.getAccessLevels());
         controllersRepository.save(controllersEntity);
         return "Контроллер с ID = " + id + " успешно обновлен в БД";
     }
