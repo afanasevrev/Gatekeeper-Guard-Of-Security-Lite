@@ -46,6 +46,10 @@ public class ApplicationController {
         textUsersData = gson.toJson(usersData);
         return textUsersData;
     }
+    @GetMapping("/getAccessLevels")
+    private List<AccessLevelsEntity>  getAccessLevels() {
+        return accessLevelsService.readAccessLevels();
+    }
     /**
      * Потом поменяю на @PostMapping
      * @return
