@@ -1,6 +1,7 @@
 package com.alrosa.staa.gatekeeper_client_lite.controller.admins_page;
 
 import com.alrosa.staa.gatekeeper_client_lite.admins_data.*;
+import com.alrosa.staa.gatekeeper_client_lite.response_data.AccessLevels;
 import com.alrosa.staa.gatekeeper_client_lite.response_data.Users;
 import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
 import com.alrosa.staa.gatekeeper_client_lite.view.*;
@@ -255,6 +256,21 @@ public class AdminsPageController implements Initializable {
     private Tab tabAccessLevels = new Tab();
     @FXML
     private Button buttonUpdateListAccessLevels = new Button();
+    @FXML
+    private void setButtonUpdateListAccessLevels() {
+        String url_getListUsers = "http://" + server_ip + ":" + server_port + "/getAccessLevels";
+        ResponseEntity<List<AccessLevels>> response = null;
+        try {
+            observableListAccessLevels.clear();
+            response = restTemplate.exchange(url_getListUsers, HttpMethod.GET, null, new ParameterizedTypeReference<List<AccessLevels>>(){});
+            List<AccessLevels> accessLevels = response.getBody();
+            for (AccessLevels accessLevel: accessLevels) {
+                observableListAccessLevels.add(new AccessLevelsData(String.valueOf(accessLevel.getId()), accessLevel.getAccess_level_name()));
+            }
+        } catch (RuntimeException e) {
+            logger.error(e);
+        }
+    }
     @FXML
     private Button buttonOpenPersonalCardAccessLevel = new Button();
     @FXML

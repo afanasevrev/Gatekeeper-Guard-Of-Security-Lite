@@ -8,10 +8,9 @@ public class AccessLevelsData {
     public StringProperty access_level;
     public StringProperty controllers;
     public AccessLevelsData() {}
-    public AccessLevelsData(String id, String access_level, String controllers) {
+    public AccessLevelsData(String id, String access_level) {
         this.id = new SimpleStringProperty(this, "id", id);
         this.access_level = new SimpleStringProperty(this, "access_level", access_level);
-        this.controllers = new SimpleStringProperty(this, "controllers", controllers);
     }
     public String getId() {
         return id.get();
