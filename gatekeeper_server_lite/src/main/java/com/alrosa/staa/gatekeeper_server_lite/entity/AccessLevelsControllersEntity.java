@@ -17,5 +17,9 @@ public class AccessLevelsControllersEntity {
     @Column(name = "access_level_id")
     private String access_level;
     public AccessLevelsControllersEntity() {}
-
+    public AccessLevelsControllersEntity(Long id, String controller_id, String access_level) {
+        this.id = id;
+        this.controller_id = controller_id;
+        this.access_level = access_level;
+    }
 }
