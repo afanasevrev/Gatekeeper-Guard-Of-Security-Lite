@@ -23,7 +23,7 @@ import java.util.Date;
 public class RequestController {
     @Autowired
     private AmqpTemplate template;
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
     //Получаем текущую дату
     private Date currentDate;
     //Форматируем дату по своему усмотрению

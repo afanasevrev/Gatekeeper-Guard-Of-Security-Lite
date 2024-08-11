@@ -12,14 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
 @RestController
 public class ApplicationController {
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
     private String textUsersData;
     @Autowired
     private AmqpTemplate template;
