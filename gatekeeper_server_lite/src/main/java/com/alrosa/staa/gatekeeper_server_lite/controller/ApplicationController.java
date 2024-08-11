@@ -60,7 +60,6 @@ public class ApplicationController {
     }
     /**
      * Потом поменяю на @PostMapping
-     * @return
      */
     @GetMapping("/setAccessLevel")
     private String setAccessLevel() {
