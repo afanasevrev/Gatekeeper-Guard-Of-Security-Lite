@@ -252,10 +252,15 @@ public class AdminsPageController implements Initializable {
     @FXML
     private TableColumn<ControllersData, String> tableColumnControllerStatus = new TableColumn<ControllersData, String>("Online");
     //Вкладка "Уровни доступа"
+    //ID уровня доступа при выборе на таблице
+    public String valueOfAccessLevel;
     @FXML
     private Tab tabAccessLevels = new Tab();
     @FXML
     private Button buttonUpdateListAccessLevels = new Button();
+    /**
+     * Метод обновляет список уровней доступа в таблице
+     */
     @FXML
     private void setButtonUpdateListAccessLevels() {
         String url_getAccessLevels = "http://" + server_ip + ":" + server_port + "/getAccessLevels";
@@ -437,6 +442,14 @@ public class AdminsPageController implements Initializable {
                 valueOfUser = newSelection.getId();
             } catch (NullPointerException e) {
                 valueOfUser = null;
+            }
+        });
+        //Фиксируем строку в таблице для уровней доступа
+        tableViewAccessLevels.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            try {
+                valueOfAccessLevel = newSelection.getId();
+            } catch (NullPointerException e) {
+                valueOfAccessLevel = null;
             }
         });
     }
