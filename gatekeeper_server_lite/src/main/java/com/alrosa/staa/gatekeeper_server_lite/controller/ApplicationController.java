@@ -61,7 +61,7 @@ public class ApplicationController {
     }
     /**
      * Потом поменяю на @PostMapping
-     * @return
+     * @return статус обработки запроса
      */
     @GetMapping("/setController")
     private String setController() {

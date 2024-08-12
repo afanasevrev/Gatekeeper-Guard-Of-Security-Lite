@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.net.ConnectException;
 import java.util.concurrent.TimeoutException;
 public class ClientApplication extends Application {
-    private static Logger logger = Logger.getLogger(ClientApplication.class);
+    private static final Logger logger = Logger.getLogger(ClientApplication.class);
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ClientApplication.class.getResource("admins_page/admins_page.fxml"));
