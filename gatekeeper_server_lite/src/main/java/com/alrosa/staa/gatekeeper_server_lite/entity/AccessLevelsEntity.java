@@ -14,8 +14,10 @@ public class AccessLevelsEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "access_level_name")
+    @Column(name = "access_level_name", nullable = false, unique = true)
     private String accessLevelName;
+    @OneToMany(mappedBy = "accessLevelsEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<ControllersEntity> controllers = new HashSet<>();
     public AccessLevelsEntity(){}
     public AccessLevelsEntity(String accessLevelName) {
         this.accessLevelName = accessLevelName;
