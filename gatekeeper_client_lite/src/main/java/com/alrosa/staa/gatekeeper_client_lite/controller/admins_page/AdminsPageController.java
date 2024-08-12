@@ -253,7 +253,7 @@ public class AdminsPageController implements Initializable {
     private TableColumn<ControllersData, String> tableColumnControllerStatus = new TableColumn<ControllersData, String>("Online");
     //Вкладка "Уровни доступа"
     //ID уровня доступа при выборе на таблице
-    public String valueOfAccessLevel;
+    public static String valueOfAccessLevel;
     @FXML
     private Tab tabAccessLevels = new Tab();
     @FXML
