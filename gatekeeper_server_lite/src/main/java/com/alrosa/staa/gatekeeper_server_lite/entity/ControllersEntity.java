@@ -1,5 +1,6 @@
 package com.alrosa.staa.gatekeeper_server_lite.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +21,7 @@ public class ControllersEntity {
     private String ipAddress;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "access_level_id")
+    @JsonBackReference
     private AccessLevelsEntity accessLevelsEntity;
     public ControllersEntity() {}
     public ControllersEntity(String controllerName, String ipAddress) {

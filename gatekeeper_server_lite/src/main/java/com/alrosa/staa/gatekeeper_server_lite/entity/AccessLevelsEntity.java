@@ -1,5 +1,7 @@
 package com.alrosa.staa.gatekeeper_server_lite.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +19,7 @@ public class AccessLevelsEntity {
     @Column(name = "access_level_name", nullable = false, unique = true)
     private String accessLevelName;
     @OneToMany(mappedBy = "accessLevelsEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
     private Set<ControllersEntity> controllers = new HashSet<>();
     public AccessLevelsEntity(){}
     public AccessLevelsEntity(String accessLevelName) {

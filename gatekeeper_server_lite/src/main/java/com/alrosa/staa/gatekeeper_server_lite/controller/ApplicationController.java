@@ -12,7 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 @RestController
 public class ApplicationController {
     private final Gson gson = new Gson();
@@ -43,8 +47,12 @@ public class ApplicationController {
         return textUsersData;
     }
     @GetMapping("/getAccessLevels")
-    private AccessLevelsEntity  getAccessLevels() {
-        return accessLevelsService.readAccessLevel(1L);
+    private List<AccessLevelsEntity>  getAccessLevels() {
+        return accessLevelsService.readAccessLevels();
+    }
+    @GetMapping("/getControllers")
+    private List<ControllersEntity> getControllers() {
+        return controllersService.readControllers();
     }
     /**
      * Потом поменяю на @PostMapping
@@ -52,10 +60,15 @@ public class ApplicationController {
      */
     @GetMapping("/setController")
     private String setController() {
-        //ControllersEntity controllersEntity = new ControllersEntity();
-        //controllersEntity.setControllerName("Пожарный выход №3");
-        //controllersEntity.setIpAddress("10.2.221.23");
-        //controllersService.createController(controllersEntity);
+        ControllersEntity controllersEntity;
+        controllersEntity = controllersService.readController(1L);
+        AccessLevelsEntity accessLevelsEntity;
+        accessLevelsEntity = accessLevelsService.readAccessLevel(1L);
+        controllersEntity.setAccessLevelsEntity(accessLevelsEntity);
+        controllersService.updateController(controllersEntity, 1L);
+        controllersEntity = controllersService.readController(2L);
+        controllersEntity.setAccessLevelsEntity(accessLevelsEntity);
+        controllersService.updateController(controllersEntity, 2L);
         return "Контроллер добавлен";
     }
     /**
@@ -63,10 +76,7 @@ public class ApplicationController {
      */
     @GetMapping("/setAccessLevel")
     private String setAccessLevel() {
-        //AccessLevelsEntity accessLevelsEntity = new AccessLevelsEntity();
-        //accessLevelsEntity = accessLevelsService.readAccessLevel(1L);
-        //accessLevelsEntity.getControllers().add(controllersService.readController(3L));
-        //accessLevelsService.updateAccessLevel(accessLevelsEntity, 1L);
+
         return "Уровень доступа добавлен";
     }
 }
