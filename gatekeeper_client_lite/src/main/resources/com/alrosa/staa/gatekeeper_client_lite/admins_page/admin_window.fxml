@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.admins_page.AdminWindowController" prefHeight="325.0" prefWidth="225.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.admins_page.AdminWindowController" prefHeight="325.0" prefWidth="225.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
     <children>
         <TextField fx:id="textFieldFirstName" layoutX="21.0" layoutY="15.0" prefHeight="25.0" prefWidth="185.0" promptText="Фамилия" />
         <TextField fx:id="textFieldMiddleName" layoutX="21.0" layoutY="60.0" prefHeight="25.0" prefWidth="185.0" promptText="Имя" />

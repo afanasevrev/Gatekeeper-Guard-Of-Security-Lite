@@ -258,14 +258,14 @@ public class AdminsPageController implements Initializable {
     private Button buttonUpdateListAccessLevels = new Button();
     @FXML
     private void setButtonUpdateListAccessLevels() {
-        String url_getListUsers = "http://" + server_ip + ":" + server_port + "/getAccessLevels";
+        String url_getAccessLevels = "http://" + server_ip + ":" + server_port + "/getAccessLevels";
         ResponseEntity<List<AccessLevels>> response = null;
         try {
             observableListAccessLevels.clear();
-            response = restTemplate.exchange(url_getListUsers, HttpMethod.GET, null, new ParameterizedTypeReference<List<AccessLevels>>(){});
+            response = restTemplate.exchange(url_getAccessLevels, HttpMethod.GET, null, new ParameterizedTypeReference<List<AccessLevels>>(){});
             List<AccessLevels> accessLevels = response.getBody();
             for (AccessLevels accessLevel: accessLevels) {
-                observableListAccessLevels.add(new AccessLevelsData(String.valueOf(accessLevel.getId()), accessLevel.getAccess_level_name()));
+                observableListAccessLevels.add(new AccessLevelsData(String.valueOf(accessLevel.getId()), accessLevel.getAccessLevelName()));
             }
         } catch (RuntimeException e) {
             logger.error(e);

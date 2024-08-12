@@ -6,10 +6,10 @@ import lombok.Setter;
 @Setter
 public class AccessLevels {
     private String id;
-    private String access_level_name;
+    private String accessLevelName;
     public AccessLevels() {}
-    public AccessLevels(String id, String access_level_name) {
+    public AccessLevels(String id, String accesslevelName) {
         this.id = id;
-        this.access_level_name = access_level_name;
+        this.accessLevelName = accessLevelName;
     }
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.admins_page.AdminsPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.admins_page.AdminsPageController">
    <children>
       <TabPane layoutX="14.0" layoutY="65.0" prefHeight="412.0" prefWidth="668.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -30,10 +30,10 @@
                         </TableView>
                         <TextField fx:id="textFieldSearchUser" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="250.0" promptText="Поиск..." />
                         <Button fx:id="buttonSearchUser" layoutX="275.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" styleClass="button_12" text="Поиск" />
-                        <Button fx:id="buttonUpdateListUsers" onAction="#setButtonUpdateListUsers" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
-                        <Button fx:id="buttonOpenPersonalCardUser" onAction="#setButtonOpenPersonalCardUser" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
-                        <Button fx:id="buttonDeleteUser" onAction="#setButtonDeleteUser" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить " />
-                        <Button fx:id="buttonAddUser" onAction="#setButtonAddUser" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
+                        <Button fx:id="buttonUpdateListUsers" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonUpdateListUsers" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
+                        <Button fx:id="buttonOpenPersonalCardUser" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonOpenPersonalCardUser" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
+                        <Button fx:id="buttonDeleteUser" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonDeleteUser" prefHeight="25.0" prefWidth="125.0" text="Удалить " />
+                        <Button fx:id="buttonAddUser" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonAddUser" text="Добавить" />
                      </children></AnchorPane>
             </content>
           </Tab>
@@ -53,9 +53,9 @@
                           </columns>
                         </TableView>
                         <Button fx:id="buttonUpdateListPassOffice" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
-                        <Button fx:id="buttonOpenPersonalCardPassOffice" onAction="#setButtonOpenPersonalCardPassOffice" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
-                        <Button fx:id="buttonDeletePassOffice" onAction="#setButtonDeletePassOffice" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
-                        <Button fx:id="buttonAddPassOffice" onAction="#setButtonAddPassOffice" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
+                        <Button fx:id="buttonOpenPersonalCardPassOffice" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonOpenPersonalCardPassOffice" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
+                        <Button fx:id="buttonDeletePassOffice" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonDeletePassOffice" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button fx:id="buttonAddPassOffice" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonAddPassOffice" text="Добавить" />
                      </children></AnchorPane>
               </content>
             </Tab>
@@ -75,9 +75,9 @@
                           </columns>
                         </TableView>
                         <Button fx:id="buttonUpdateListOperators" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
-                        <Button fx:id="buttonOpenPersonalCardOperator" onAction="#setButtonOpenPersonalCardOperator" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
-                        <Button fx:id="buttonDeleteOperator" onAction="#setButtonDeleteOperator" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
-                        <Button fx:id="buttonAddOperator" onAction="#setButtonAddOperator" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
+                        <Button fx:id="buttonOpenPersonalCardOperator" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonOpenPersonalCardOperator" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
+                        <Button fx:id="buttonDeleteOperator" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonDeleteOperator" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button fx:id="buttonAddOperator" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonAddOperator" text="Добавить" />
                      </children></AnchorPane>
               </content>
             </Tab>
@@ -99,9 +99,9 @@
                           </columns>
                         </TableView>
                         <Button fx:id="buttonUpdateListControllers" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
-                        <Button fx:id="buttonOpenPersonalCardController" onAction="#setButtonOpenPersonalCardController" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
-                        <Button fx:id="buttonDeleteController" onAction="#setButtonDeleteController" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
-                        <Button fx:id="buttonAddController" onAction="#setButtonAddOperator" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
+                        <Button fx:id="buttonOpenPersonalCardController" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonOpenPersonalCardController" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
+                        <Button fx:id="buttonDeleteController" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonDeleteController" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button fx:id="buttonAddController" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonAddOperator" text="Добавить" />
                      </children></AnchorPane>
               </content>
             </Tab>
@@ -112,19 +112,18 @@
                         <TableView fx:id="tableViewAccessLevels" layoutX="14.0" layoutY="45.0" prefHeight="280.0" prefWidth="640.0">
                           <columns>
                             <TableColumn fx:id="tableColumnAccessLevelId" prefWidth="75.0" text="ID" />
-                            <TableColumn fx:id="tableColumnAccessLevelName" prefWidth="143.0" text="Уровень доступа" />
-                              <TableColumn fx:id="tableColumnAccessLevelControllers" prefWidth="420.0" text="Контроллеры" />
+                            <TableColumn fx:id="tableColumnAccessLevelName" prefWidth="558.0000076293945" text="Уровень доступа" />
                           </columns>
                         </TableView>
-                        <Button fx:id="buttonUpdateListAccessLevels" onAction="#setButtonUpdateListAccessLevels" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
-                        <Button fx:id="buttonOpenPersonalCardAccessLevel" onAction="#setButtonOpenPersonalCardAccessLevel" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
-                        <Button fx:id="buttonDeleteAccessLevel" onAction="#setButtonDeleteAccessLevel" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button fx:id="buttonUpdateListAccessLevels" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonUpdateListAccessLevels" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
+                        <Button fx:id="buttonOpenPersonalCardAccessLevel" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonOpenPersonalCardAccessLevel" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
+                        <Button fx:id="buttonDeleteAccessLevel" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonDeleteAccessLevel" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
                         <Label layoutX="14.0" layoutY="14.0" text="Уровни доступа" textFill="#794040">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button fx:id="buttonAddAccessLevel" onAction="#setButtonAddAccessControl" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
+                        <Button fx:id="buttonAddAccessLevel" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonAddAccessControl" text="Добавить" />
                      </children></AnchorPane>
               </content>
             </Tab>
@@ -143,9 +142,9 @@
                           </columns>
                         </TableView>
                         <Button fx:id="buttonUpdateListCards" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
-                        <Button fx:id="buttonOpenPersonalCardCard" onAction="#setButtonOpenPersonalCardCard" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
-                        <Button fx:id="buttonDeleteCard" onAction="#setButtonDeleteCard" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
-                        <Button fx:id="buttonAddCard" onAction="#setButtonAddCard" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
+                        <Button fx:id="buttonOpenPersonalCardCard" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonOpenPersonalCardCard" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
+                        <Button fx:id="buttonDeleteCard" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonDeleteCard" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button fx:id="buttonAddCard" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonAddCard" text="Добавить" />
                      </children>
                   </AnchorPane>
               </content>
@@ -166,9 +165,9 @@
                           </columns>
                         </TableView>
                         <Button fx:id="buttonUpdateListAdmins" layoutX="14.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Обновить список" />
-                        <Button fx:id="buttonOpenPersonalCardAdmin" onAction="#setButtonOpenPersonalCardAdmin" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
-                        <Button fx:id="buttonDeleteAdmin" onAction="#setButtonDeleteAdmin" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
-                        <Button fx:id="buttonAddAdmin" onAction="#setButtonAddAdmin" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" text="Добавить" />
+                        <Button fx:id="buttonOpenPersonalCardAdmin" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonOpenPersonalCardAdmin" prefHeight="25.0" prefWidth="125.0" text="Открыть карточку" />
+                        <Button fx:id="buttonDeleteAdmin" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonDeleteAdmin" prefHeight="25.0" prefWidth="125.0" text="Удалить" />
+                        <Button fx:id="buttonAddAdmin" layoutX="452.0" layoutY="340.0" mnemonicParsing="false" onAction="#setButtonAddAdmin" text="Добавить" />
                      </children></AnchorPane>
             </content>
           </Tab>
