@@ -1,6 +1,7 @@
 package com.alrosa.staa.gatekeeper_client_lite.controller.admins_page;
 
 import com.alrosa.staa.gatekeeper_client_lite.response_data.AccessLevels;
+import com.alrosa.staa.gatekeeper_client_lite.response_data.Controllers;
 import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -43,7 +44,11 @@ public class AccessControlWindowController implements Initializable {
         ResponseEntity<AccessLevels> response = null;
         try {
             response = restTemplate.exchange(url_GetAccessLevel, HttpMethod.GET, null, AccessLevels.class);
-            
+            accessLevel = response.getBody();
+            textFieldAccessControl.setText(accessLevel.getAccessLevelName());
+            for (Controllers controller: accessLevel.getControllers()) {
+                textAreaControllers.appendText(controller.getControllerName() + "\n");
+            }
         } catch (RuntimeException e) {
             logger.error(e);
         }

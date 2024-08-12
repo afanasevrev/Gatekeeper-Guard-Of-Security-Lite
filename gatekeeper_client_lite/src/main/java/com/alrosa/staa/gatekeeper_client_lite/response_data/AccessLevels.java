@@ -10,7 +10,7 @@ import java.util.Set;
 public class AccessLevels {
     private String id;
     private String accessLevelName;
-    private Set<Controllers> controllersSet;
+    private Set<Controllers> controllers;
     public AccessLevels() {}
     public AccessLevels(String id, String accessLevelName) {
         this.id = id;
