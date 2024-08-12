@@ -280,7 +280,9 @@ public class AdminsPageController implements Initializable {
     private Button buttonOpenPersonalCardAccessLevel = new Button();
     @FXML
     private void setButtonOpenPersonalCardAccessLevel() throws IOException {
-        accessControlWindowConsole.start(stage);
+        if(valueOfAccessLevel != null) {
+            accessControlWindowConsole.start(stage);
+        }
     }
     @FXML
     private Button buttonDeleteAccessLevel = new Button();
