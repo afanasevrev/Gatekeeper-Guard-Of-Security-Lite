@@ -65,15 +65,6 @@ public class ApplicationController {
      */
     @GetMapping("/setController")
     private String setController() {
-        ControllersEntity controllersEntity;
-        controllersEntity = controllersService.readController(1L);
-        AccessLevelsEntity accessLevelsEntity;
-        accessLevelsEntity = accessLevelsService.readAccessLevel(1L);
-        controllersEntity.setAccessLevelsEntity(accessLevelsEntity);
-        controllersService.updateController(controllersEntity, 1L);
-        controllersEntity = controllersService.readController(2L);
-        controllersEntity.setAccessLevelsEntity(accessLevelsEntity);
-        controllersService.updateController(controllersEntity, 2L);
         return "Контроллер добавлен";
     }
     /**
@@ -81,7 +72,6 @@ public class ApplicationController {
      */
     @GetMapping("/setAccessLevel")
     private String setAccessLevel() {
-
         return "Уровень доступа добавлен";
     }
 }
