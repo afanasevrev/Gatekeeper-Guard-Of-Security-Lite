@@ -17,7 +17,7 @@ public class ClientApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(ClientApplication.class.getResource("admins_page/admins_page.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 500);
         stage.setTitle("Войти");
-        //stage.setResizable(false);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
