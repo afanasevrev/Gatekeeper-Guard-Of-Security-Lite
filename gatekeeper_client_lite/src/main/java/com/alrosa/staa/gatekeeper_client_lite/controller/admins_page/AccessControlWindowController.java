@@ -4,18 +4,26 @@ import com.alrosa.staa.gatekeeper_client_lite.admins_data.ControllersData;
 import com.alrosa.staa.gatekeeper_client_lite.response_data.AccessLevels;
 import com.alrosa.staa.gatekeeper_client_lite.response_data.Controllers;
 import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
+import com.alrosa.staa.gatekeeper_client_lite.view.AccessControlAddControllerConsole;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 public class AccessControlWindowController implements Initializable {
+    //Создаем экземпляр класса AccessControlAddControllerConsole
+    private AccessControlAddControllerConsole accessControlAddControllerConsole = new AccessControlAddControllerConsole();
+    //Создаем экземпляр класса Stage
+    private Stage stage = new Stage();
     //Создаем экземпляр класса RestTemplate
     private RestTemplate restTemplate = new RestTemplate();
     //Создаем url для соединения с сервером
@@ -30,8 +38,8 @@ public class AccessControlWindowController implements Initializable {
     @FXML
     private Button buttonAddDelete = new Button();
     @FXML
-    private void setButtonAddDelete() {
-        
+    private void setButtonAddDelete() throws IOException {
+        accessControlAddControllerConsole.start(stage);
     }
     @FXML
     private Button buttonEdit = new Button();
