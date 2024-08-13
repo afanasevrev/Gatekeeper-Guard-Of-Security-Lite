@@ -14,30 +14,30 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="300.0">
                <children>
-                  <TableView layoutX="15.0" layoutY="40.0" prefHeight="295.0" prefWidth="266.0">
+                  <TableView fx:id="TableViewControllersLeft" layoutX="15.0" layoutY="40.0" prefHeight="295.0" prefWidth="266.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="ID" />
-                      <TableColumn prefWidth="186.0" text="Контроллер" />
+                      <TableColumn fx:id="tableColumnControllersLeftId" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="tableColumnControllersLeftName" prefWidth="186.0" text="Контроллер" />
                     </columns>
                   </TableView>
-                  <Button layoutX="230.0" layoutY="350.0" mnemonicParsing="false" text="&gt;&gt;&gt;&gt;" />
-                  <Label layoutX="15.0" layoutY="15.0" text="Уровень доступа">
+                  <Button fx:id="buttonLeft" layoutX="230.0" layoutY="350.0" mnemonicParsing="false" text="&gt;&gt;&gt;&gt;" />
+                  <Label fx:id="labelAccessLevelName" layoutX="15.0" layoutY="15.0" text="Уровень доступа">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button layoutX="15.0" layoutY="350.0" mnemonicParsing="false" text="Сохранить и выйти" />
+                  <Button fx:id="buttonSaveAndExit" layoutX="15.0" layoutY="350.0" mnemonicParsing="false" text="Сохранить и выйти" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="269.0">
                <children>
-                  <TableView layoutX="15.0" layoutY="40.0" prefHeight="295.0" prefWidth="276.0">
+                  <TableView fx:id="TableViewControllersRight" layoutX="15.0" layoutY="40.0" prefHeight="295.0" prefWidth="276.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="ID" />
-                      <TableColumn prefWidth="192.0" text="Контроллер" />
+                      <TableColumn fx:id="tableColumnControllersRightId" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="tableColumnControllersRightName" prefWidth="192.0" text="Контроллер" />
                     </columns>
                   </TableView>
-                  <Button layoutX="14.0" layoutY="350.0" mnemonicParsing="false" text="&lt;&lt;&lt;&lt;" />
+                  <Button fx:id="buttonRight" layoutX="14.0" layoutY="350.0" mnemonicParsing="false" text="&lt;&lt;&lt;&lt;" />
                </children>
             </AnchorPane>
         </items>

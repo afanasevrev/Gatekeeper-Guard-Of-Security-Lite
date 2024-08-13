@@ -30,14 +30,18 @@ public class AccessControlWindowController implements Initializable {
     @FXML
     private Button buttonAddDelete = new Button();
     @FXML
-    private Button buttonEdit = new Button();
+    private void setButtonAddDelete() {
+        
+    }
     @FXML
-    private void setButtonAddDelete() {}
+    private Button buttonEdit = new Button();
     @FXML
     private void setButtonEdit() {
 
     }
     //Объекты для формы добавления и удаления уровней доступа
+    @FXML
+    private Label labelAccessLevelName = new Label();
     @FXML
     private TableView<ControllersData> TableViewControllersLeft = new TableView<ControllersData>();
     private ObservableList<ControllersData> observableListControllersLeft = FXCollections.<ControllersData>observableArrayList();
@@ -52,7 +56,12 @@ public class AccessControlWindowController implements Initializable {
     private TableColumn<ControllersData, String> tableColumnControllersRightId = new TableColumn<ControllersData, String>("ID");
     @FXML
     private TableColumn<ControllersData, String> tableColumnControllersRightName = new TableColumn<ControllersData, String>("Наименование");
-    
+    @FXML
+    private Button buttonLeft = new Button();
+    @FXML
+    private Button buttonRight = new Button();
+    @FXML
+    private Button buttonSaveAndExit = new Button();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Чистим все поля перед открытием формы
