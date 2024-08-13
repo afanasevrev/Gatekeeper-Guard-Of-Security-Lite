@@ -69,14 +69,14 @@ public class AccessControlWindowController implements Initializable {
     private Label labelAccessLevelName = new Label();
     @FXML
     private TableView<ControllersData> tableViewControllersLeft = new TableView<ControllersData>();
-    private ObservableList<ControllersData> observableListControllersLeft = FXCollections.<ControllersData>observableArrayList();
+    private final ObservableList<ControllersData> observableListControllersLeft = FXCollections.<ControllersData>observableArrayList();
     @FXML
     private TableColumn<ControllersData, String> tableColumnControllersLeftId = new TableColumn<ControllersData, String>("ID");
     @FXML
     private TableColumn<ControllersData, String> tableColumnControllersLeftName = new TableColumn<ControllersData, String>("Наименование");
     @FXML
     private TableView<ControllersData> tableViewControllersRight = new TableView<ControllersData>();
-    private ObservableList<ControllersData> observableListControllersRight = FXCollections.<ControllersData>observableArrayList();
+    private final ObservableList<ControllersData> observableListControllersRight = FXCollections.<ControllersData>observableArrayList();
     @FXML
     private TableColumn<ControllersData, String> tableColumnControllersRightId = new TableColumn<ControllersData, String>("ID");
     @FXML
