@@ -48,8 +48,7 @@ public class ApplicationController {
     }
     @GetMapping("/getAccessLevel/{id}")
     private AccessLevelsEntity getAccessLevel(@PathVariable String id) {
-        AccessLevelsEntity accessLevel = accessLevelsService.readAccessLevel(Long.parseLong(id));
-        return accessLevel;
+        return accessLevelsService.readAccessLevel(Long.parseLong(id));
     }
     @GetMapping("/getControllers")
     private List<ControllersEntity> getControllers() {
