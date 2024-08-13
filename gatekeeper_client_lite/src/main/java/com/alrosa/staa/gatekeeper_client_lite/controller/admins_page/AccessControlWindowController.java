@@ -34,7 +34,7 @@ public class AccessControlWindowController implements Initializable {
     private void setButtonAddDelete() {}
     @FXML
     private void setButtonEdit() {
-
+        
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
