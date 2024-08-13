@@ -15,7 +15,6 @@ import org.apache.log4j.Logger;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
