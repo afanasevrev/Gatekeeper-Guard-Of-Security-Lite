@@ -3,6 +3,7 @@ package com.alrosa.staa.gatekeeper_client_lite.controller.admins_page;
 import com.alrosa.staa.gatekeeper_client_lite.admins_data.ControllersData;
 import com.alrosa.staa.gatekeeper_client_lite.response_data.AccessLevels;
 import com.alrosa.staa.gatekeeper_client_lite.response_data.Controllers;
+import com.alrosa.staa.gatekeeper_client_lite.response_data.Users;
 import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
 import com.alrosa.staa.gatekeeper_client_lite.view.AccessControlAddControllerConsole;
 import javafx.collections.FXCollections;
@@ -12,22 +13,26 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 public class AccessControlWindowController implements Initializable {
     //Создаем экземпляр класса AccessControlAddControllerConsole
-    private AccessControlAddControllerConsole accessControlAddControllerConsole = new AccessControlAddControllerConsole();
+    private final AccessControlAddControllerConsole accessControlAddControllerConsole = new AccessControlAddControllerConsole();
     //Создаем экземпляр класса Stage
-    private Stage stage = new Stage();
+    private final Stage stage = new Stage();
     //Создаем экземпляр класса RestTemplate
-    private RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate = new RestTemplate();
     //Создаем url для соединения с сервером
-    private String url_GetAccessLevel = "http://" + Variables.server_ip + ":" + Variables.server_port + "/getAccessLevel/" + AdminsPageController.valueOfAccessLevel;
-    private Logger logger = Logger.getLogger(AccessControlWindowController.class);
+    private final String url_GetAccessLevel = "http://" + Variables.server_ip + ":" + Variables.server_port + "/getAccessLevel/" + AdminsPageController.valueOfAccessLevel;
+    //Создаем url для соединения с сервером
+    private final String url_GetControllers = "http://" + Variables.server_ip + ":" + Variables.server_port + "/getControllers";
+    private final Logger logger = Logger.getLogger(AccessControlWindowController.class);
     //Создаем экземпляр класса AccessLevels
     private AccessLevels accessLevel;
     @FXML
@@ -38,8 +43,20 @@ public class AccessControlWindowController implements Initializable {
     private Button buttonAddDelete = new Button();
     @FXML
     private void setButtonAddDelete() throws IOException {
-
         accessControlAddControllerConsole.start(stage);
+        clearTables();
+        ResponseEntity<List<Controllers>> response = null;
+        try {
+            response = restTemplate.exchange(url_GetControllers, HttpMethod.GET, null, new ParameterizedTypeReference<List<Controllers>>(){});
+            List<Controllers> controllers = response.getBody();
+            assert controllers != null;
+            for (Controllers controller: controllers) {
+                logger.info(controller.getControllerName());
+                observableListControllersRight.add(new ControllersData(controller.getId(), controller.getControllerName()));
+            }
+        } catch (RuntimeException e) {
+            logger.error(e);
+        }
     }
     @FXML
     private Button buttonEdit = new Button();
@@ -78,6 +95,7 @@ public class AccessControlWindowController implements Initializable {
         try {
             response = restTemplate.exchange(url_GetAccessLevel, HttpMethod.GET, null, AccessLevels.class);
             accessLevel = response.getBody();
+            assert accessLevel != null;
             textFieldAccessControl.setText(accessLevel.getAccessLevelName());
             for (Controllers controller: accessLevel.getControllers()) {
                 textAreaControllers.appendText(controller.getControllerName() + "\n");
@@ -92,7 +110,7 @@ public class AccessControlWindowController implements Initializable {
         //Обновляем правую таблицу
         tableViewControllersRight.setItems(observableListControllersRight);
         tableColumnControllersRightId.setCellValueFactory(cellData -> cellData.getValue().idProperty());
-        tableColumnControllersRightName.setCellValueFactory(cellData -> cellData.getValue().controller_name);
+        tableColumnControllersRightName.setCellValueFactory(cellData -> cellData.getValue().controller_nameProperty());
     }
     /**
      * Метод позволяет чистить все поля перед открытием формы уровня доступа
@@ -100,5 +118,12 @@ public class AccessControlWindowController implements Initializable {
     private void clearFields() {
         textFieldAccessControl.setText("");
         textAreaControllers.setText("");
+    }
+    /**
+     * Метод позволяет чистить таблицу перед открытием формы
+     */
+    private void clearTables() {
+        observableListControllersLeft.clear();
+        observableListControllersRight.clear();
     }
 }

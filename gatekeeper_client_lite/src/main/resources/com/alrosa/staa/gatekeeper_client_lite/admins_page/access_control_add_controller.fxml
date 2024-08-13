@@ -8,13 +8,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.admins_page.AccessControlWindowController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.alrosa.staa.gatekeeper_client_lite.controller.admins_page.AccessControlWindowController">
    <children>
       <SplitPane dividerPositions="0.49274553571428575" prefHeight="400.0" prefWidth="600.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="300.0">
                <children>
-                  <TableView fx:id="TableViewControllersLeft" layoutX="15.0" layoutY="40.0" prefHeight="295.0" prefWidth="266.0">
+                  <TableView fx:id="tableViewControllersLeft" layoutX="15.0" layoutY="40.0" prefHeight="295.0" prefWidth="266.0">
                     <columns>
                       <TableColumn fx:id="tableColumnControllersLeftId" prefWidth="75.0" text="ID" />
                       <TableColumn fx:id="tableColumnControllersLeftName" prefWidth="186.0" text="Контроллер" />
@@ -31,7 +31,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="269.0">
                <children>
-                  <TableView fx:id="TableViewControllersRight" layoutX="15.0" layoutY="40.0" prefHeight="295.0" prefWidth="276.0">
+                  <TableView fx:id="tableViewControllersRight" layoutX="15.0" layoutY="40.0" prefHeight="295.0" prefWidth="276.0">
                     <columns>
                       <TableColumn fx:id="tableColumnControllersRightId" prefWidth="75.0" text="ID" />
                       <TableColumn fx:id="tableColumnControllersRightName" prefWidth="192.0" text="Контроллер" />

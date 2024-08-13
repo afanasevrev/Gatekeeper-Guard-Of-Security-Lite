@@ -8,7 +8,7 @@ import java.io.IOException;
 public class AccessControlAddControllerConsole {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ClientApplication.class.getResource("admins_page/access_control_add_controller.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Добавить/Удалить контроллер");
         stage.setResizable(false);
         stage.setScene(scene);

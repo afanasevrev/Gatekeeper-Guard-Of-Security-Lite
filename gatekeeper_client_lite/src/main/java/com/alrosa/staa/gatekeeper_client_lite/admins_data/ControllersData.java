@@ -14,6 +14,10 @@ public class ControllersData {
         this.ip_address = new SimpleStringProperty(this, "ip_address", ip_address);
         this.status = new SimpleStringProperty(this, "status", status);
     }
+    public ControllersData(String id, String controller_name) {
+        this.id = new SimpleStringProperty(this, "id", id);
+        this.controller_name = new SimpleStringProperty(this, "controller_name", controller_name);
+    }
     public String getId() {
         return id.get();
     }
