@@ -1,13 +1,14 @@
 package com.alrosa.staa.gatekeeper_client_lite.controller.admins_page;
 
+import com.alrosa.staa.gatekeeper_client_lite.admins_data.ControllersData;
 import com.alrosa.staa.gatekeeper_client_lite.response_data.AccessLevels;
 import com.alrosa.staa.gatekeeper_client_lite.response_data.Controllers;
 import com.alrosa.staa.gatekeeper_client_lite.variables.Variables;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -36,6 +37,22 @@ public class AccessControlWindowController implements Initializable {
     private void setButtonEdit() {
 
     }
+    //Объекты для формы добавления и удаления уровней доступа
+    @FXML
+    private TableView<ControllersData> TableViewControllersLeft = new TableView<ControllersData>();
+    private ObservableList<ControllersData> observableListControllersLeft = FXCollections.<ControllersData>observableArrayList();
+    @FXML
+    private TableColumn<ControllersData, String> tableColumnControllersLeftId = new TableColumn<ControllersData, String>("ID");
+    @FXML
+    private TableColumn<ControllersData, String> tableColumnControllersLeftName = new TableColumn<ControllersData, String>("Наименование");
+    @FXML
+    private TableView<ControllersData> TableViewControllersRight = new TableView<ControllersData>();
+    private ObservableList<ControllersData> observableListControllersRight = FXCollections.<ControllersData>observableArrayList();
+    @FXML
+    private TableColumn<ControllersData, String> tableColumnControllersRightId = new TableColumn<ControllersData, String>("ID");
+    @FXML
+    private TableColumn<ControllersData, String> tableColumnControllersRightName = new TableColumn<ControllersData, String>("Наименование");
+    
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Чистим все поля перед открытием формы

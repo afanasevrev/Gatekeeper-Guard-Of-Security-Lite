@@ -17,7 +17,7 @@
                   <TableView layoutX="15.0" layoutY="40.0" prefHeight="295.0" prefWidth="266.0">
                     <columns>
                       <TableColumn prefWidth="75.0" text="ID" />
-                      <TableColumn prefWidth="186.66667938232422" text="Контроллер" />
+                      <TableColumn prefWidth="186.0" text="Контроллер" />
                     </columns>
                   </TableView>
                   <Button layoutX="230.0" layoutY="350.0" mnemonicParsing="false" text="&gt;&gt;&gt;&gt;" />
@@ -34,7 +34,7 @@
                   <TableView layoutX="15.0" layoutY="40.0" prefHeight="295.0" prefWidth="276.0">
                     <columns>
                       <TableColumn prefWidth="75.0" text="ID" />
-                      <TableColumn prefWidth="192.66669464111328" text="Контроллер" />
+                      <TableColumn prefWidth="192.0" text="Контроллер" />
                     </columns>
                   </TableView>
                   <Button layoutX="14.0" layoutY="350.0" mnemonicParsing="false" text="&lt;&lt;&lt;&lt;" />
