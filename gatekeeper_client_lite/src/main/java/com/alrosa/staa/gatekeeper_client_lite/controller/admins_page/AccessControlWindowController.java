@@ -39,6 +39,7 @@ public class AccessControlWindowController implements Initializable {
     private Button buttonAddDelete = new Button();
     @FXML
     private void setButtonAddDelete() throws IOException {
+
         accessControlAddControllerConsole.start(stage);
     }
     @FXML
@@ -51,14 +52,14 @@ public class AccessControlWindowController implements Initializable {
     @FXML
     private Label labelAccessLevelName = new Label();
     @FXML
-    private TableView<ControllersData> TableViewControllersLeft = new TableView<ControllersData>();
+    private TableView<ControllersData> tableViewControllersLeft = new TableView<ControllersData>();
     private ObservableList<ControllersData> observableListControllersLeft = FXCollections.<ControllersData>observableArrayList();
     @FXML
     private TableColumn<ControllersData, String> tableColumnControllersLeftId = new TableColumn<ControllersData, String>("ID");
     @FXML
     private TableColumn<ControllersData, String> tableColumnControllersLeftName = new TableColumn<ControllersData, String>("Наименование");
     @FXML
-    private TableView<ControllersData> TableViewControllersRight = new TableView<ControllersData>();
+    private TableView<ControllersData> tableViewControllersRight = new TableView<ControllersData>();
     private ObservableList<ControllersData> observableListControllersRight = FXCollections.<ControllersData>observableArrayList();
     @FXML
     private TableColumn<ControllersData, String> tableColumnControllersRightId = new TableColumn<ControllersData, String>("ID");
@@ -85,6 +86,14 @@ public class AccessControlWindowController implements Initializable {
         } catch (RuntimeException e) {
             logger.error(e);
         }
+        //Обновляем левую таблицу
+        tableViewControllersLeft.setItems(observableListControllersLeft);
+        tableColumnControllersLeftId.setCellValueFactory(cellData -> cellData.getValue().idProperty());
+        tableColumnControllersLeftName.setCellValueFactory(cellData -> cellData.getValue().controller_nameProperty());
+        //Обновляем правую таблицу
+        tableViewControllersRight.setItems(observableListControllersRight);
+        tableColumnControllersRightId.setCellValueFactory(cellData -> cellData.getValue().idProperty());
+        tableColumnControllersRightName.setCellValueFactory(cellData -> cellData.getValue().controller_name);
     }
     /**
      * Метод позволяет чистить все поля перед открытием формы уровня доступа
